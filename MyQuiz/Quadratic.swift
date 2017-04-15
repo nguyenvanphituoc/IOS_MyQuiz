@@ -75,8 +75,15 @@ class Quadratic : UIViewController{
                 let result2 = (-1.0 * delta - numberB)/(2*numberA);
                 txtResult1.text = String(result1);
                 txtResult2.text = String(result2);
-                outpurExpression.text = expression;
-                
+                displayOutputExpression(String(result1), String(result2));
+            }
+            else{// trường hợp kết quả thuộc trường i
+                let delta = sqrt(-delta);
+                let result1 = "(\(delta)i - \(numberB))/\(2*numberA)";
+                let result2 = "(\(-delta)i - \(numberB))/\(2*numberA)";
+                txtResult1.text = String(result1);
+                txtResult2.text = String(result2);
+                displayOutputExpression(String(result1), String(result2));
             }
         }
     }
