@@ -43,6 +43,7 @@ class Quadratic : UIViewController{
                 txtResult1.text = String(result1);
                 txtResult2.text = String(result2);
                 outpurExpression.text = expression;
+                
             }
             
         }

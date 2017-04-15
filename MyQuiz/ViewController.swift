@@ -7,8 +7,7 @@
 //
 
 import UIKit
-
-class ViewController: UIViewController {
+1   class ViewController: UIViewController {
 
     @IBOutlet weak var lbQuiz: UILabel!
     @IBOutlet weak var btnAnswerA: UIButton!
@@ -126,6 +125,12 @@ class ViewController: UIViewController {
             lbAnswer.text = "You are not correct!";
         }
 
+    }
+    override func target(forAction action: Selector, withSender sender: Any?) -> Any? {
+        errSecNoDefaultKeychain
+        kCIImageAutoAdjustFeatures
+        false
+        setValue(Any?, forUndefinedKey: <#T##String#>)
     }
 }
 
