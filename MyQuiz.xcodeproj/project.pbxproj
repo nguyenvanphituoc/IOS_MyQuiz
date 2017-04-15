@@ -14,6 +14,11 @@
 		39326F901E94D84100C15D51 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39326F8E1E94D84100C15D51 /* LaunchScreen.storyboard */; };
 		39326F9B1E94D84100C15D51 /* MyQuizTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39326F9A1E94D84100C15D51 /* MyQuizTests.swift */; };
 		39326FA61E94D84100C15D51 /* MyQuizUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39326FA51E94D84100C15D51 /* MyQuizUITests.swift */; };
+		3988F5E61E9E1E980072260A /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3988F5E51E9E1E980072260A /* Animation.swift */; };
+		3988F5E81E9E22F00072260A /* BtnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3988F5E71E9E22F00072260A /* BtnView.swift */; };
+		9BCAA2C61EA1B1DC0052E67A /* Keyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BCAA2C51EA1B1DC0052E67A /* Keyboard.storyboard */; };
+		9BCAA2C81EA1C8200052E67A /* Keyboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BCAA2C71EA1C8200052E67A /* Keyboard.xib */; };
+		9BCAA2CB1EA1C9BB0052E67A /* CustomKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCAA2CA1EA1C9BB0052E67A /* CustomKeyboard.swift */; };
 		F5E4AAFE1E98D76700C86D47 /* Quadratic.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E4AAFD1E98D76700C86D47 /* Quadratic.swift */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +53,11 @@
 		39326FA11E94D84100C15D51 /* MyQuizUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyQuizUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		39326FA51E94D84100C15D51 /* MyQuizUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyQuizUITests.swift; sourceTree = "<group>"; };
 		39326FA71E94D84100C15D51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3988F5E51E9E1E980072260A /* Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
+		3988F5E71E9E22F00072260A /* BtnView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BtnView.swift; sourceTree = "<group>"; };
+		9BCAA2C51EA1B1DC0052E67A /* Keyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Keyboard.storyboard; sourceTree = "<group>"; };
+		9BCAA2C71EA1C8200052E67A /* Keyboard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Keyboard.xib; sourceTree = "<group>"; };
+		9BCAA2CA1EA1C9BB0052E67A /* CustomKeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomKeyboard.swift; sourceTree = "<group>"; };
 		F5E4AAFD1E98D76700C86D47 /* Quadratic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quadratic.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -99,6 +109,7 @@
 		39326F841E94D84100C15D51 /* MyQuiz */ = {
 			isa = PBXGroup;
 			children = (
+				9BCAA2C91EA1C9850052E67A /* custom */,
 				39326F851E94D84100C15D51 /* AppDelegate.swift */,
 				39326F871E94D84100C15D51 /* ViewController.swift */,
 				39326F891E94D84100C15D51 /* Main.storyboard */,
@@ -106,6 +117,8 @@
 				39326F8E1E94D84100C15D51 /* LaunchScreen.storyboard */,
 				39326F911E94D84100C15D51 /* Info.plist */,
 				F5E4AAFD1E98D76700C86D47 /* Quadratic.swift */,
+				3988F5E51E9E1E980072260A /* Animation.swift */,
+				3988F5E71E9E22F00072260A /* BtnView.swift */,
 			);
 			path = MyQuiz;
 			sourceTree = "<group>";
@@ -126,6 +139,16 @@
 				39326FA71E94D84100C15D51 /* Info.plist */,
 			);
 			path = MyQuizUITests;
+			sourceTree = "<group>";
+		};
+		9BCAA2C91EA1C9850052E67A /* custom */ = {
+			isa = PBXGroup;
+			children = (
+				9BCAA2C51EA1B1DC0052E67A /* Keyboard.storyboard */,
+				9BCAA2C71EA1C8200052E67A /* Keyboard.xib */,
+				9BCAA2CA1EA1C9BB0052E67A /* CustomKeyboard.swift */,
+			);
+			name = custom;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,7 +260,9 @@
 			files = (
 				39326F901E94D84100C15D51 /* LaunchScreen.storyboard in Resources */,
 				39326F8D1E94D84100C15D51 /* Assets.xcassets in Resources */,
+				9BCAA2C81EA1C8200052E67A /* Keyboard.xib in Resources */,
 				39326F8B1E94D84100C15D51 /* Main.storyboard in Resources */,
+				9BCAA2C61EA1B1DC0052E67A /* Keyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +289,9 @@
 			files = (
 				39326F881E94D84100C15D51 /* ViewController.swift in Sources */,
 				39326F861E94D84100C15D51 /* AppDelegate.swift in Sources */,
+				3988F5E61E9E1E980072260A /* Animation.swift in Sources */,
+				9BCAA2CB1EA1C9BB0052E67A /* CustomKeyboard.swift in Sources */,
+				3988F5E81E9E22F00072260A /* BtnView.swift in Sources */,
 				F5E4AAFE1E98D76700C86D47 /* Quadratic.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
