@@ -59,7 +59,7 @@
 		9BCAA2C51EA1B1DC0052E67A /* Keyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Keyboard.storyboard; sourceTree = "<group>"; };
 		9BCAA2C71EA1C8200052E67A /* Keyboard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Keyboard.xib; sourceTree = "<group>"; };
 		9BCAA2CA1EA1C9BB0052E67A /* CustomKeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomKeyboard.swift; sourceTree = "<group>"; };
-		F5148E451EA2020700AC548A /* Calculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
+		F5148E451EA2020700AC548A /* Calculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Calculator.swift; sourceTree = "<group>"; tabWidth = 4; };
 		F5148E471EA21A7400AC548A /* TestingPlayround.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = TestingPlayround.playground; sourceTree = "<group>"; };
 		F5E4AAFD1E98D76700C86D47 /* Quadratic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quadratic.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */

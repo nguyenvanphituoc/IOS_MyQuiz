@@ -405,7 +405,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="qwertyui" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hjq-YW-XU9">
-                                <rect key="frame" x="26" y="273.5" width="323" height="43"/>
+                                <rect key="frame" x="26" y="273" width="323" height="43"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Hjq-YW-XU9" secondAttribute="height" multiplier="15:2" id="htw-Rt-J05"/>
                                 </constraints>
@@ -434,7 +434,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Jg-ot-JXW">
-                                <rect key="frame" x="26" y="243.5" width="323" height="22"/>
+                                <rect key="frame" x="26" y="243.5" width="323" height="21.5"/>
                                 <color key="backgroundColor" red="0.320680456" green="1" blue="0.737534511" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="2Jg-ot-JXW" secondAttribute="height" multiplier="15:1" id="IAB-OL-Qb7"/>
@@ -448,7 +448,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BSr-20-pae">
-                                <rect key="frame" x="312" y="340.5" width="40" height="30"/>
+                                <rect key="frame" x="312" y="340" width="40" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" secondItem="BSr-20-pae" secondAttribute="width" multiplier="3:4" id="Vox-Fe-u99"/>
                                 </constraints>
@@ -527,10 +527,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ba-0Y-Jr4">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="9Ba-0Y-Jr4">
                                 <rect key="frame" x="0.0" y="137.5" width="375" height="112"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -567,14 +567,17 @@
                                     <action selector="BtnNumber_onClick:" destination="ESg-O0-zew" eventType="touchUpInside" id="H26-qd-YB7"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rgg-OL-Npw">
+                            <button opaque="NO" tag="106" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rgg-OL-Npw">
                                 <rect key="frame" x="281.5" y="417" width="93.5" height="83.5"/>
                                 <color key="backgroundColor" red="1" green="0.64315897735355576" blue="0.049107195856818109" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="−">
+                                <state key="normal" title="+">
                                     <color key="titleColor" red="0.36636772899999998" green="0.044002553290000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="BtnAction_onClick:" destination="ESg-O0-zew" eventType="touchUpInside" id="INo-sN-2Qm"/>
+                                </connections>
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z6p-NE-uLN">
                                 <rect key="frame" x="0.0" y="500.5" width="94" height="83"/>
@@ -587,16 +590,20 @@
                                     <action selector="BtnNumber_onClick:" destination="ESg-O0-zew" eventType="touchUpInside" id="rgZ-rP-yTj"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fvI-ae-FjX">
+                            <button opaque="NO" tag="105" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fvI-ae-FjX">
                                 <rect key="frame" x="281.5" y="500.5" width="93.5" height="83"/>
                                 <color key="backgroundColor" red="1" green="0.64315897735355576" blue="0.049107195856818109" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="()">
+                                <state key="normal" title="−">
+                                    <color key="titleColor" red="0.57093805074691772" green="0.23977863788604736" blue="0.67501509189605713" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="BtnAction_onClick:" destination="ESg-O0-zew" eventType="touchUpInside" id="oNg-xc-Pnm"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YuS-3k-ocg">
-                                <rect key="frame" x="0.0" y="583.5" width="94" height="83.5"/>
+                                <rect key="frame" x="0.0" y="583.5" width="187.5" height="83.5"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="0">
@@ -606,29 +613,18 @@
                                     <action selector="BtnNumber_onClick:" destination="ESg-O0-zew" eventType="touchUpInside" id="lkt-Z2-m3J"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="-1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6G6-Ll-Sdh">
-                                <rect key="frame" x="94" y="583.5" width="93.5" height="83.5"/>
+                            <button opaque="NO" tag="-1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7aO-Pt-JSo">
+                                <rect key="frame" x="187.5" y="583.5" width="94" height="83.5"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title=".">
                                     <color key="titleShadowColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 </state>
                                 <connections>
-                                    <action selector="BtnNumber_onClick:" destination="ESg-O0-zew" eventType="touchUpInside" id="aaJ-2K-chr"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" tag="-2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7aO-Pt-JSo">
-                                <rect key="frame" x="187.5" y="583.5" width="94" height="83.5"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="±">
-                                    <color key="titleShadowColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                </state>
-                                <connections>
                                     <action selector="BtnNumber_onClick:" destination="ESg-O0-zew" eventType="touchUpInside" id="qIl-5E-OJo"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wjq-LR-vz2">
+                            <button opaque="NO" tag="110" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wjq-LR-vz2">
                                 <rect key="frame" x="281.5" y="583.5" width="93.5" height="83.5"/>
                                 <color key="backgroundColor" red="0.99871975183486938" green="0.64313292503356934" blue="0.048394449055194855" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -636,33 +632,45 @@
                                     <color key="titleColor" red="0.083756628469999997" green="1" blue="0.073551967139999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="BtnAction_onClick:" destination="ESg-O0-zew" eventType="touchUpInside" id="Hqw-A6-gdg"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z3c-st-c2r">
+                            <button opaque="NO" tag="-2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z3c-st-c2r">
                                 <rect key="frame" x="94" y="250" width="93.5" height="83.5"/>
-                                <color key="backgroundColor" red="1" green="0.64315897735355576" blue="0.049107195856818109" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.87528675259835509" green="0.88192956412493217" blue="0.90185799870466321" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="×">
-                                    <color key="titleColor" red="0.3927999197" green="0.076867843130000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="±">
+                                    <color key="titleColor" red="0.1762489378452301" green="0.55181509256362915" blue="0.98148089647293091" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="BtnNumber_onClick:" destination="ESg-O0-zew" eventType="touchUpInside" id="md5-eE-Fpc"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B92-eg-tPU">
+                            <button opaque="NO" tag="-3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B92-eg-tPU">
                                 <rect key="frame" x="187.5" y="250" width="94" height="83.5"/>
-                                <color key="backgroundColor" red="1" green="0.64315897735355576" blue="0.049107195856818109" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.87528675259835509" green="0.88192956412493217" blue="0.90185799870466321" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="÷">
-                                    <color key="titleColor" red="0.37665609859999999" green="0.064647416880000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="％">
+                                    <color key="titleColor" red="0.26723867654800415" green="0.59126025438308716" blue="0.97356981039047241" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="BtnNumber_onClick:" destination="ESg-O0-zew" eventType="touchUpInside" id="MqQ-ja-kTX"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x4x-p7-yNf">
+                            <button opaque="NO" tag="108" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x4x-p7-yNf">
                                 <rect key="frame" x="281.5" y="250" width="93.5" height="83.5"/>
                                 <color key="backgroundColor" red="0.99871975183486938" green="0.64313292503356934" blue="0.048394449055194855" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <state key="normal" title="⌫">
-                                    <color key="titleColor" red="1" green="0.071819526460000005" blue="0.036607223709999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="×">
+                                    <color key="titleColor" red="0.57093805074691772" green="0.23977863788604736" blue="0.67501509189605713" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="BtnAction_onClick:" destination="ESg-O0-zew" eventType="touchUpInside" id="Euu-g1-kmW"/>
+                                </connections>
                             </button>
                             <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Two-TU-RzQ">
                                 <rect key="frame" x="0.0" y="333.5" width="94" height="83.5"/>
@@ -686,14 +694,17 @@
                                     <action selector="BtnNumber_onClick:" destination="ESg-O0-zew" eventType="touchUpInside" id="bGo-5S-MF8"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ZQ-PQ-c3B">
+                            <button opaque="NO" tag="107" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ZQ-PQ-c3B">
                                 <rect key="frame" x="281.5" y="333.5" width="93.5" height="83.5"/>
                                 <color key="backgroundColor" red="1" green="0.64315897735355576" blue="0.049107195856818109" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="+">
+                                <state key="normal" title="÷">
                                     <color key="titleColor" red="0.36636772899999998" green="0.044002553290000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="BtnAction_onClick:" destination="ESg-O0-zew" eventType="touchUpInside" id="W2r-Ii-0Fy"/>
+                                </connections>
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JWQ-1p-6ha">
                                 <rect key="frame" x="94" y="500.5" width="93.5" height="83"/>
@@ -719,17 +730,20 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MT1-ZP-4qC">
                                 <rect key="frame" x="0.0" y="250" width="94" height="83.5"/>
-                                <color key="backgroundColor" red="0.99871975183486938" green="0.64313292503356934" blue="0.048394449055194855" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.87528675259835509" green="0.88192956412493217" blue="0.90185799870466321" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="A/C">
                                     <color key="titleColor" red="0.023719997150000002" green="1" blue="0.94479195230000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="BtnClear_onClick:" destination="ESg-O0-zew" eventType="touchUpInside" id="gcv-6K-puz"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ARa-Af-Pns">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="ARa-Af-Pns">
                                 <rect key="frame" x="0.0" y="27.5" width="375" height="111.5"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -761,8 +775,6 @@
                             <constraint firstItem="x4x-p7-yNf" firstAttribute="width" secondItem="NgW-sA-T18" secondAttribute="width" multiplier="1:4" id="6DN-VN-Tev"/>
                             <constraint firstItem="5Ih-fe-OIK" firstAttribute="height" secondItem="NgW-sA-T18" secondAttribute="height" multiplier="1:8" id="6eU-AJ-AjY"/>
                             <constraint firstItem="fvI-ae-FjX" firstAttribute="width" secondItem="NgW-sA-T18" secondAttribute="width" multiplier="1:4" id="6pv-sO-p2j"/>
-                            <constraint firstItem="6G6-Ll-Sdh" firstAttribute="width" secondItem="NgW-sA-T18" secondAttribute="width" multiplier="1/4" id="7R1-WI-cWk"/>
-                            <constraint firstItem="6G6-Ll-Sdh" firstAttribute="centerX" secondItem="NgW-sA-T18" secondAttribute="centerX" multiplier="0.75" id="7RS-Ce-Tdi"/>
                             <constraint firstItem="x4x-p7-yNf" firstAttribute="height" secondItem="NgW-sA-T18" secondAttribute="height" multiplier="1:8" id="7d3-8d-Kv2"/>
                             <constraint firstItem="ARa-Af-Pns" firstAttribute="width" secondItem="NgW-sA-T18" secondAttribute="width" id="8hU-6w-mhj"/>
                             <constraint firstItem="6ZQ-PQ-c3B" firstAttribute="height" secondItem="NgW-sA-T18" secondAttribute="height" multiplier="1:8" id="8xB-Ab-7Ya"/>
@@ -771,7 +783,7 @@
                             <constraint firstItem="Z3c-st-c2r" firstAttribute="centerX" secondItem="NgW-sA-T18" secondAttribute="centerX" multiplier="0.75" id="B7u-L2-9gV"/>
                             <constraint firstItem="MUL-SC-pjQ" firstAttribute="width" secondItem="NgW-sA-T18" secondAttribute="width" multiplier="1:4" id="EKy-u6-nd6"/>
                             <constraint firstItem="6ZQ-PQ-c3B" firstAttribute="centerY" secondItem="NgW-sA-T18" secondAttribute="centerY" multiplier="1.125" id="Ebv-Wb-wCM"/>
-                            <constraint firstItem="YuS-3k-ocg" firstAttribute="centerX" secondItem="NgW-sA-T18" secondAttribute="centerX" multiplier="0.25" id="Ehy-WU-zjs"/>
+                            <constraint firstItem="YuS-3k-ocg" firstAttribute="centerX" secondItem="NgW-sA-T18" secondAttribute="centerX" multiplier="0.5" id="Ehy-WU-zjs"/>
                             <constraint firstItem="5Ih-fe-OIK" firstAttribute="centerX" secondItem="NgW-sA-T18" secondAttribute="centerX" multiplier="1:4" id="Fbg-sD-3bY"/>
                             <constraint firstItem="1dy-o7-TX4" firstAttribute="centerX" secondItem="NgW-sA-T18" secondAttribute="centerX" multiplier="1.25" id="GbU-Tu-Hdu"/>
                             <constraint firstItem="Pbq-hW-RA8" firstAttribute="centerX" secondItem="NgW-sA-T18" secondAttribute="centerX" multiplier="0.75" id="I4z-wx-KdD"/>
@@ -788,7 +800,6 @@
                             <constraint firstItem="1dy-o7-TX4" firstAttribute="height" secondItem="NgW-sA-T18" secondAttribute="height" multiplier="1:8" id="O7z-py-2iy"/>
                             <constraint firstItem="MT1-ZP-4qC" firstAttribute="width" secondItem="NgW-sA-T18" secondAttribute="width" multiplier="1:4" id="OHB-vv-wLt"/>
                             <constraint firstItem="Z3c-st-c2r" firstAttribute="centerY" secondItem="NgW-sA-T18" secondAttribute="centerY" multiplier="0.875" id="P4Q-Dj-hNh"/>
-                            <constraint firstItem="6G6-Ll-Sdh" firstAttribute="height" secondItem="NgW-sA-T18" secondAttribute="height" multiplier="1/8" id="P6B-fi-7fS"/>
                             <constraint firstItem="ARa-Af-Pns" firstAttribute="centerY" secondItem="NgW-sA-T18" secondAttribute="centerY" multiplier="0.25" id="PyY-3I-Wlf"/>
                             <constraint firstItem="9Ba-0Y-Jr4" firstAttribute="centerX" secondItem="NgW-sA-T18" secondAttribute="centerX" id="R41-Iw-VKQ"/>
                             <constraint firstItem="jEX-Ho-50Y" firstAttribute="centerX" secondItem="NgW-sA-T18" secondAttribute="centerX" multiplier="1.25" id="SIU-Gr-WHN"/>
@@ -826,9 +837,8 @@
                             <constraint firstItem="MUL-SC-pjQ" firstAttribute="centerX" secondItem="NgW-sA-T18" secondAttribute="centerX" multiplier="0.75" id="nfA-Ve-0hd"/>
                             <constraint firstItem="Z6p-NE-uLN" firstAttribute="height" secondItem="NgW-sA-T18" secondAttribute="height" multiplier="1:8" id="oOx-Kv-r9r"/>
                             <constraint firstItem="fhu-wC-Fn5" firstAttribute="centerX" secondItem="NgW-sA-T18" secondAttribute="centerX" multiplier="1.25" id="pB6-k4-ZxU"/>
-                            <constraint firstItem="YuS-3k-ocg" firstAttribute="width" secondItem="NgW-sA-T18" secondAttribute="width" multiplier="1/4" id="paA-Np-AeF"/>
+                            <constraint firstItem="YuS-3k-ocg" firstAttribute="width" secondItem="NgW-sA-T18" secondAttribute="width" multiplier="2/4" id="paA-Np-AeF"/>
                             <constraint firstItem="9Ba-0Y-Jr4" firstAttribute="centerY" secondItem="NgW-sA-T18" secondAttribute="centerY" multiplier="0.58" id="qHS-eK-heG"/>
-                            <constraint firstItem="6G6-Ll-Sdh" firstAttribute="centerY" secondItem="NgW-sA-T18" secondAttribute="centerY" multiplier="1.875" id="qXH-aV-ffx"/>
                             <constraint firstItem="7aO-Pt-JSo" firstAttribute="width" secondItem="NgW-sA-T18" secondAttribute="width" multiplier="1/4" id="vQh-aB-qrk"/>
                             <constraint firstItem="Wjq-LR-vz2" firstAttribute="height" secondItem="NgW-sA-T18" secondAttribute="height" multiplier="1/8" id="wnF-Sy-s54"/>
                             <constraint firstItem="Two-TU-RzQ" firstAttribute="centerX" secondItem="NgW-sA-T18" secondAttribute="centerX" multiplier="1:4" id="xeY-9i-eDa"/>
