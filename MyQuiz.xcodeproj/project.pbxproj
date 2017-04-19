@@ -16,7 +16,10 @@
 		39326FA61E94D84100C15D51 /* MyQuizUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39326FA51E94D84100C15D51 /* MyQuizUITests.swift */; };
 		3988F5E61E9E1E980072260A /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3988F5E51E9E1E980072260A /* Animation.swift */; };
 		3988F5E81E9E22F00072260A /* BtnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3988F5E71E9E22F00072260A /* BtnView.swift */; };
-		3988F5EA1E9E268C0072260A /* TableViewAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3988F5E91E9E268C0072260A /* TableViewAnimation.swift */; };
+		9BCAA2C61EA1B1DC0052E67A /* Keyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BCAA2C51EA1B1DC0052E67A /* Keyboard.storyboard */; };
+		9BCAA2C81EA1C8200052E67A /* Keyboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BCAA2C71EA1C8200052E67A /* Keyboard.xib */; };
+		9BCAA2CB1EA1C9BB0052E67A /* CustomKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCAA2CA1EA1C9BB0052E67A /* CustomKeyboard.swift */; };
+		F5148E461EA2020700AC548A /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5148E451EA2020700AC548A /* Calculator.swift */; };
 		F5E4AAFE1E98D76700C86D47 /* Quadratic.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E4AAFD1E98D76700C86D47 /* Quadratic.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,7 +56,11 @@
 		39326FA71E94D84100C15D51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3988F5E51E9E1E980072260A /* Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 		3988F5E71E9E22F00072260A /* BtnView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BtnView.swift; sourceTree = "<group>"; };
-		3988F5E91E9E268C0072260A /* TableViewAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewAnimation.swift; sourceTree = "<group>"; };
+		9BCAA2C51EA1B1DC0052E67A /* Keyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Keyboard.storyboard; sourceTree = "<group>"; };
+		9BCAA2C71EA1C8200052E67A /* Keyboard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Keyboard.xib; sourceTree = "<group>"; };
+		9BCAA2CA1EA1C9BB0052E67A /* CustomKeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomKeyboard.swift; sourceTree = "<group>"; };
+		F5148E451EA2020700AC548A /* Calculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Calculator.swift; sourceTree = "<group>"; tabWidth = 4; };
+		F5148E471EA21A7400AC548A /* TestingPlayround.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = TestingPlayround.playground; sourceTree = "<group>"; };
 		F5E4AAFD1E98D76700C86D47 /* Quadratic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quadratic.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -115,7 +122,8 @@
 				F5E4AAFD1E98D76700C86D47 /* Quadratic.swift */,
 				3988F5E51E9E1E980072260A /* Animation.swift */,
 				3988F5E71E9E22F00072260A /* BtnView.swift */,
-				3988F5E91E9E268C0072260A /* TableViewAnimation.swift */,
+				F5148E451EA2020700AC548A /* Calculator.swift */,
+				F5148E471EA21A7400AC548A /* TestingPlayround.playground */,
 			);
 			path = MyQuiz;
 			sourceTree = "<group>";
@@ -286,7 +294,7 @@
 			files = (
 				39326F881E94D84100C15D51 /* ViewController.swift in Sources */,
 				39326F861E94D84100C15D51 /* AppDelegate.swift in Sources */,
-				3988F5EA1E9E268C0072260A /* TableViewAnimation.swift in Sources */,
+				F5148E461EA2020700AC548A /* Calculator.swift in Sources */,
 				3988F5E61E9E1E980072260A /* Animation.swift in Sources */,
 				9BCAA2CB1EA1C9BB0052E67A /* CustomKeyboard.swift in Sources */,
 				3988F5E81E9E22F00072260A /* BtnView.swift in Sources */,

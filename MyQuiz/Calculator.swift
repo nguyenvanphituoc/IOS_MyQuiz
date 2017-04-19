@@ -63,8 +63,7 @@ class Calculator : UIViewController{
     
     //that func to perform reset click
     @IBAction func BtnClear_onClick(_ sender: UIButton) {
-        
-        BtnAnimation(sender) ;
+        BtnAnimation(sender);
         lbNumber.text = "" ;
         lbResult.text = "" ;
         
