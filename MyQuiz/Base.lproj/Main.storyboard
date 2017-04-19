@@ -249,10 +249,10 @@
             </objects>
             <point key="canvasLocation" x="1137" y="-553"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Table View Animation-->
         <scene sceneID="pFp-f5-gVw">
             <objects>
-                <tableViewController id="GEX-jH-HZe" sceneMemberID="viewController">
+                <tableViewController id="GEX-jH-HZe" customClass="TableViewAnimation" customModule="MyQuiz" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="11Y-O8-nrc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -16,6 +16,7 @@
 		39326FA61E94D84100C15D51 /* MyQuizUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39326FA51E94D84100C15D51 /* MyQuizUITests.swift */; };
 		3988F5E61E9E1E980072260A /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3988F5E51E9E1E980072260A /* Animation.swift */; };
 		3988F5E81E9E22F00072260A /* BtnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3988F5E71E9E22F00072260A /* BtnView.swift */; };
+		3988F5EA1E9E268C0072260A /* TableViewAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3988F5E91E9E268C0072260A /* TableViewAnimation.swift */; };
 		F5E4AAFE1E98D76700C86D47 /* Quadratic.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E4AAFD1E98D76700C86D47 /* Quadratic.swift */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +53,7 @@
 		39326FA71E94D84100C15D51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3988F5E51E9E1E980072260A /* Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 		3988F5E71E9E22F00072260A /* BtnView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BtnView.swift; sourceTree = "<group>"; };
+		3988F5E91E9E268C0072260A /* TableViewAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewAnimation.swift; sourceTree = "<group>"; };
 		F5E4AAFD1E98D76700C86D47 /* Quadratic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quadratic.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -112,6 +114,7 @@
 				F5E4AAFD1E98D76700C86D47 /* Quadratic.swift */,
 				3988F5E51E9E1E980072260A /* Animation.swift */,
 				3988F5E71E9E22F00072260A /* BtnView.swift */,
+				3988F5E91E9E268C0072260A /* TableViewAnimation.swift */,
 			);
 			path = MyQuiz;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 			files = (
 				39326F881E94D84100C15D51 /* ViewController.swift in Sources */,
 				39326F861E94D84100C15D51 /* AppDelegate.swift in Sources */,
+				3988F5EA1E9E268C0072260A /* TableViewAnimation.swift in Sources */,
 				3988F5E61E9E1E980072260A /* Animation.swift in Sources */,
 				3988F5E81E9E22F00072260A /* BtnView.swift in Sources */,
 				F5E4AAFE1E98D76700C86D47 /* Quadratic.swift in Sources */,
