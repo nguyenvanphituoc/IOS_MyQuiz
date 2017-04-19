@@ -7,8 +7,7 @@
 //
 
 import UIKit
-
-class ViewController: UIViewController {
+   class ViewController: UIViewController {
 
     @IBOutlet weak var lbQuiz: UILabel!
     @IBOutlet weak var btnAnswerA: UIButton!
@@ -127,5 +126,11 @@ class ViewController: UIViewController {
         }
 
     }
+//    override func target(forAction action: Selector, withSender sender: Any?) -> Any? {
+//        errSecNoDefaultKeychain
+//        kCIImageAutoAdjustFeatures
+//        false
+//        setValue(Any?, forUndefinedKey: <#T##String#>)
+//    }
 }
 
