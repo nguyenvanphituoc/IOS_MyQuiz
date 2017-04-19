@@ -31,7 +31,7 @@ class Calculator : UIViewController{
     // status off keyboard
     var isNumberClick : Bool = false;
     var isActionClick : Bool = false;
-//    var isDeleteClick : Bool = false;
+    var isPercentClick : Bool = false;
     
     @IBOutlet weak var lbNumber: UILabel!
     
@@ -72,6 +72,7 @@ class Calculator : UIViewController{
         
         isNumberClick = false ;
         isActionClick = false ;
+        isPercentClick = false;
 //        isDeleteClick = false ;
         chooseNumberA = true;
         
@@ -126,6 +127,7 @@ class Calculator : UIViewController{
                 //update status for keyboard
                 isNumberClick = false;
                 isActionClick = true;
+                isPercentClick = false;
                 return
         }
         
@@ -136,6 +138,7 @@ class Calculator : UIViewController{
         //update status for keyboard
         isNumberClick = false;
         isActionClick = true;
+        isPercentClick = false;
 //        isDeleteClick = false;
     }
     
@@ -157,8 +160,14 @@ class Calculator : UIViewController{
                 break;
             
             case -2:
-                value = String("-");
-                break;
+                if(text == "") {
+                    
+                    text = "0.0"
+                }
+                let number = Double(text)! * -1.0;
+                lbNumber.text = String(number)
+            return
+
             
             case -3:
                 // if is percent
@@ -166,21 +175,16 @@ class Calculator : UIViewController{
                     
                     text = "0.0"
                 }
-                let number = Double(text)! / 100 * 1.0;
-                lbNumber.text = String(number)
-                sender.tag = ~(-3) + 1 //  two's complement
-                return
-            
-            case ~(-3) + 1:
-                if(text == "") {
-                    
-                    text = "0.0"
+                if(!isPercentClick){
+                    let number = Double(text)! / 100 * 1.0;
+                    lbNumber.text = String(number)
                 }
-                let number = Double(text)! * 100 * 1.0;
-                lbNumber.text = String(number)
-                sender.tag = -3 //  two's complement
-                break;
-            
+                else {
+                    let number = Double(text)! * 100 * 1.0;
+                    lbNumber.text = String(number)
+                }
+                isPercentClick =  !isPercentClick;
+                return
             default:
                 value = String(sender.tag);
                 break;
