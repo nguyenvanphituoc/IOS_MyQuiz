@@ -105,7 +105,7 @@ class Calculator : UIViewController{
         chooseNumberA ? ( numberA = Double(s)! ) : ( numberB = Double(s)! )
         // the first time insert number to operandA
         chooseNumberA = false;
-        
+
         switch sender.tag {
             
             case 108:
@@ -150,7 +150,7 @@ class Calculator : UIViewController{
             lbNumber.text = ""
         }
         //get number from lbNumber
-        var text = lbNumber.text!
+        let text = lbNumber.text!
         var value : String = "";
         switch sender.tag {
             case -1:
@@ -163,22 +163,23 @@ class Calculator : UIViewController{
             
             case -3:
                 // if is percent
-                if(text == "") {
-                    
-                    text = "0.0"
+                
+                var result = lbResult.text!
+                if(result == "") {
+                    result = "0.0"
                 }
-                let number = Double(text)! / 100 * 1.0;
-                lbNumber.text = String(number)
-                sender.tag = ~(-3) + 1 //  two's complement
+                let number = Double(result)! / 100 * 1.0;
+                lbResult.text = String(number)
+                sender.tag = -103//  two's complement
                 return
             
-            case ~(-3) + 1:
-                if(text == "") {
-                    
-                    text = "0.0"
+            case -103:
+                var result = lbResult.text!
+                if(result == "") {
+                    result = "0.0"
                 }
-                let number = Double(text)! * 100 * 1.0;
-                lbNumber.text = String(number)
+                let number = Double(result)! * 100 * 1.0;
+                lbResult.text = String(number)
                 sender.tag = -3 //  two's complement
                 break;
             
