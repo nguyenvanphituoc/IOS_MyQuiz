@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="NDV-dH-sjX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Jm6-bd-5kj">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -251,7 +251,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ngf-VV-MeT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1981.5999999999999" y="436.73163418290858"/>
+            <point key="canvasLocation" x="2920.8000000000002" y="436.73163418290858"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="bzk-nm-Hop">
@@ -957,28 +957,10 @@
             </objects>
             <point key="canvasLocation" x="-1322" y="-951"/>
         </scene>
-        <!--phi tuoc-->
-        <scene sceneID="6Q5-KI-Avt">
-            <objects>
-                <navigationController title="phi tuoc" automaticallyAdjustsScrollViewInsets="NO" id="cIc-iw-MQ7" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ehe-1I-1nv">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="KYt-17-O5l" kind="relationship" relationship="rootViewController" id="Anu-RX-vCv"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QAj-fm-Dfw" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="305" y="-259"/>
-        </scene>
         <!--Apple Shop-->
         <scene sceneID="Jwu-3E-eM6">
             <objects>
-                <tableViewController id="KYt-17-O5l" customClass="MyProductTableViewCTC" customModule="MyQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="KYt-17-O5l" customClass="DemoTableViewTableViewController" customModule="MyQuiz" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="HQu-a9-KaM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1012,7 +994,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="5U2-ES-Rbh" kind="show" id="hXY-Tg-MwK"/>
+                                    <segue destination="5U2-ES-Rbh" kind="show" identifier="mySegue" id="hXY-Tg-MwK"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -1025,7 +1007,26 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D6y-5l-zea" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1177" y="437"/>
+            <point key="canvasLocation" x="2116" y="436.73163418290858"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="9Np-dd-BvP">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Jm6-bd-5kj" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="suy-7b-ENh"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4E8-MC-2Lj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="KYt-17-O5l" kind="relationship" relationship="rootViewController" id="iyq-oA-lFP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aVx-Ck-2c4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1176.8" y="436.73163418290858"/>
         </scene>
     </scenes>
     <resources>

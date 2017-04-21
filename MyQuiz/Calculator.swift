@@ -152,7 +152,7 @@ class Calculator : UIViewController{
             lbNumber.text = ""
         }
         //get number from lbNumber
-        let text = lbNumber.text!
+        var text = lbNumber.text!
         var value : String = "";
         switch sender.tag {
             case -1:
@@ -160,31 +160,31 @@ class Calculator : UIViewController{
                 break;
             
             case -2:
-                value = String("-");
-                break;
+                if(text == "") {
+                    
+                    text = "0.0"
+                }
+                let number = Double(text)! * -1.0;
+                lbNumber.text = String(number)
+            return
+
             
             case -3:
                 // if is percent
-                
-                var result = lbResult.text!
-                if(result == "") {
-                    result = "0.0"
+                if(text == "") {
+                    
+                    text = "0.0"
                 }
-                let number = Double(result)! / 100 * 1.0;
-                lbResult.text = String(number)
-                sender.tag = -103//  two's complement
+                if(!isPercentClick){
+                    let number = Double(text)! / 100 * 1.0;
+                    lbNumber.text = String(number)
+                }
+                else {
+                    let number = Double(text)! * 100 * 1.0;
+                    lbNumber.text = String(number)
+                }
+                isPercentClick =  !isPercentClick;
                 return
-            
-            case -103:
-                var result = lbResult.text!
-                if(result == "") {
-                    result = "0.0"
-                }
-                let number = Double(result)! * 100 * 1.0;
-                lbResult.text = String(number)
-                sender.tag = -3 //  two's complement
-                break;
-            
             default:
                 value = String(sender.tag);
                 break;
