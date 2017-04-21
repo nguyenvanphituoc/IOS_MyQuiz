@@ -31,7 +31,7 @@ class Calculator : UIViewController{
     // status off keyboard
     var isNumberClick : Bool = false;
     var isActionClick : Bool = false;
-//    var isDeleteClick : Bool = false;
+    var isPercentClick : Bool = false;
     
     @IBOutlet weak var lbNumber: UILabel!
     
@@ -63,8 +63,7 @@ class Calculator : UIViewController{
     
     //that func to perform reset click
     @IBAction func BtnClear_onClick(_ sender: UIButton) {
-        
-        BtnAnimation(sender) ;
+        BtnAnimation(sender);
         lbNumber.text = "" ;
         lbResult.text = "" ;
         
@@ -73,6 +72,7 @@ class Calculator : UIViewController{
         
         isNumberClick = false ;
         isActionClick = false ;
+        isPercentClick = false;
 //        isDeleteClick = false ;
         chooseNumberA = true;
         
@@ -127,6 +127,7 @@ class Calculator : UIViewController{
                 //update status for keyboard
                 isNumberClick = false;
                 isActionClick = true;
+                isPercentClick = false;
                 return
         }
         
@@ -137,6 +138,7 @@ class Calculator : UIViewController{
         //update status for keyboard
         isNumberClick = false;
         isActionClick = true;
+        isPercentClick = false;
 //        isDeleteClick = false;
     }
     
