@@ -62,6 +62,7 @@
 		9BCAA2C81EA1C8200052E67A /* Keyboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BCAA2C71EA1C8200052E67A /* Keyboard.xib */; };
 		9BCAA2CB1EA1C9BB0052E67A /* CustomKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCAA2CA1EA1C9BB0052E67A /* CustomKeyboard.swift */; };
 		F5148E461EA2020700AC548A /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5148E451EA2020700AC548A /* Calculator.swift */; };
+		F5609AEB1EAB1746001EC89A /* QuickInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5609AEA1EAB1746001EC89A /* QuickInformation.swift */; };
 		F5E4AAFE1E98D76700C86D47 /* Quadratic.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E4AAFD1E98D76700C86D47 /* Quadratic.swift */; };
 /* End PBXBuildFile section */
 
@@ -145,6 +146,7 @@
 		9BCAA2CA1EA1C9BB0052E67A /* CustomKeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomKeyboard.swift; sourceTree = "<group>"; };
 		F5148E451EA2020700AC548A /* Calculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Calculator.swift; sourceTree = "<group>"; tabWidth = 4; };
 		F5148E471EA21A7400AC548A /* TestingPlayround.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = TestingPlayround.playground; sourceTree = "<group>"; };
+		F5609AEA1EAB1746001EC89A /* QuickInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuickInformation.swift; path = ../QuickInformation.swift; sourceTree = "<group>"; };
 		F5E4AAFD1E98D76700C86D47 /* Quadratic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quadratic.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -196,6 +198,7 @@
 		39326F841E94D84100C15D51 /* MyQuiz */ = {
 			isa = PBXGroup;
 			children = (
+				F5609AEC1EAB1750001EC89A /* calculator */,
 				39FCCFDC1EA7409D00C49F56 /* tableview */,
 				39FCCFDB1EA73D7500C49F56 /* animation */,
 				9BCAA2C91EA1C9850052E67A /* custom */,
@@ -205,8 +208,6 @@
 				39326F8C1E94D84100C15D51 /* Assets.xcassets */,
 				39326F8E1E94D84100C15D51 /* LaunchScreen.storyboard */,
 				39326F911E94D84100C15D51 /* Info.plist */,
-				F5E4AAFD1E98D76700C86D47 /* Quadratic.swift */,
-				F5148E451EA2020700AC548A /* Calculator.swift */,
 				F5148E471EA21A7400AC548A /* TestingPlayround.playground */,
 			);
 			path = MyQuiz;
@@ -314,6 +315,16 @@
 			name = custom;
 			sourceTree = "<group>";
 		};
+		F5609AEC1EAB1750001EC89A /* calculator */ = {
+			isa = PBXGroup;
+			children = (
+				F5E4AAFD1E98D76700C86D47 /* Quadratic.swift */,
+				F5148E451EA2020700AC548A /* Calculator.swift */,
+				F5609AEA1EAB1746001EC89A /* QuickInformation.swift */,
+			);
+			name = calculator;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -382,6 +393,7 @@
 				TargetAttributes = {
 					39326F811E94D84100C15D51 = {
 						CreatedOnToolsVersion = 8.3;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					39326F951E94D84100C15D51 = {
@@ -496,6 +508,7 @@
 				3988F5E61E9E1E980072260A /* Animation.swift in Sources */,
 				9BCAA2CB1EA1C9BB0052E67A /* CustomKeyboard.swift in Sources */,
 				9B9F85521EAA1364001408F2 /* DemoTableViewTableViewController.swift in Sources */,
+				F5609AEB1EAB1746001EC89A /* QuickInformation.swift in Sources */,
 				397996AC1EA747E300AEF6AB /* ProductLine.swift in Sources */,
 				3988F5E81E9E22F00072260A /* BtnView.swift in Sources */,
 				F5E4AAFE1E98D76700C86D47 /* Quadratic.swift in Sources */,
@@ -650,11 +663,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = MyQuiz/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = nguyenvanphituoc.MyQuiz;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -663,6 +678,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = MyQuiz/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
