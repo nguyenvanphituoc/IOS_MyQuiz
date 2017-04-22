@@ -8,43 +8,50 @@
 
 import UIKit
 
-class MyProductTableViewCTC: UITableViewController {
+class MyEventManagerTableView : UITableViewController {
 
     //datasource
-    lazy var productLines : [ProductLine] = {
+    var days : [DayMoDel] {
         
-        return ProductLine.productLines();
-    }()
+        return DayMoDel.EventsInWeak()
+    }
     
-    
-    var productSender : Product = Product();
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return productLines.count;
+        return days.count;
     }
 
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return productLines[section].name;
+        return days[section].name;
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return productLines[section].products.count;
+        return days[section].events.count;
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell", for: indexPath) as! CustomEventTableViewCell
 
         // Configure the cell...
-        let productLine = productLines[indexPath.section];
-        let product = productLine.products[indexPath.row];
-        cell.textLabel?.text = product.title;
-        cell.detailTextLabel?.text = product.description;
-        cell.imageView?.image = product.image
+        let day = days[indexPath.section];
+        let event = day.events[indexPath.row];
         
+        cell.lbTitle.text = event.title;
+        cell.txtDescription.text = event.description;
+        
+//        cell.btnStatus.setTitle("A", for: .normal);
+        cell.lbTime.text = "00:00:00"
+        
+        switch event.status {
+        case .Incoming:
+            cell.btnStatus.setTitle("🛑", for: .normal)
+        default:
+            cell.btnStatus.setTitle("✅", for: .normal)
+        }
         
         return cell
     }
@@ -88,7 +95,7 @@ class MyProductTableViewCTC: UITableViewController {
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+ /*   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         if let identifier = segue.identifier {
@@ -106,10 +113,11 @@ class MyProductTableViewCTC: UITableViewController {
     }
     
     //MARK helper
-    func productAtIndexPath( indexPath : IndexPath) -> Product {
+    func productAtIndexPath( indexPath : IndexPath) -> EventModel {
         
-        let productline = productLines[indexPath.section]
-        return productline.products[indexPath.row];
+        let day = days[indexPath.section]
+        return day.events[indexPath.row];
     }
+ */
 
 }
