@@ -26,4 +26,26 @@ class CustomEventTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    func setCellData( event : AbsEventModel ) {
+        
+        self.lbTitle.text = event.title;
+        self.txtDescription.text = event.description;
+        
+        //        cell.btnStatus.setTitle("A", for: .normal);
+        self.lbTime.text = event.time.rawValue
+        
+        switch event.status {
+            
+        case .Incoming:
+            
+            self.btnStatus.setTitle("🛑", for: .normal)
+            break;
+        default:
+            
+            self.btnStatus.setTitle("✅", for: .normal)
+            break;
+        }
+
+    }
+    
 }

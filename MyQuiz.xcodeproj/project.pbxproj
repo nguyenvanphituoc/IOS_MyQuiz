@@ -57,7 +57,9 @@
 		3988F5E61E9E1E980072260A /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3988F5E51E9E1E980072260A /* Animation.swift */; };
 		3988F5E81E9E22F00072260A /* BtnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3988F5E71E9E22F00072260A /* BtnView.swift */; };
 		39FCCFDE1EA7412600C49F56 /* MyEventManagerTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FCCFDD1EA7412600C49F56 /* MyEventManagerTableView.swift */; };
+		9B34EE3D1EAFADAC000AA439 /* AbsEventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B34EE3C1EAFADAC000AA439 /* AbsEventModel.swift */; };
 		9B9F85521EAA1364001408F2 /* DemoTableViewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9F85511EAA1364001408F2 /* DemoTableViewTableViewController.swift */; };
+		9BA7BB221EAF828A00B63B36 /* EventCellDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA7BB211EAF828A00B63B36 /* EventCellDetail.swift */; };
 		9BCAA2C61EA1B1DC0052E67A /* Keyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BCAA2C51EA1B1DC0052E67A /* Keyboard.storyboard */; };
 		9BCAA2C81EA1C8200052E67A /* Keyboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BCAA2C71EA1C8200052E67A /* Keyboard.xib */; };
 		9BCAA2CB1EA1C9BB0052E67A /* CustomKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCAA2CA1EA1C9BB0052E67A /* CustomKeyboard.swift */; };
@@ -143,7 +145,9 @@
 		3988F5E51E9E1E980072260A /* Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 		3988F5E71E9E22F00072260A /* BtnView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BtnView.swift; sourceTree = "<group>"; };
 		39FCCFDD1EA7412600C49F56 /* MyEventManagerTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyEventManagerTableView.swift; sourceTree = "<group>"; };
+		9B34EE3C1EAFADAC000AA439 /* AbsEventModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbsEventModel.swift; sourceTree = "<group>"; };
 		9B9F85511EAA1364001408F2 /* DemoTableViewTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoTableViewTableViewController.swift; sourceTree = "<group>"; };
+		9BA7BB211EAF828A00B63B36 /* EventCellDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCellDetail.swift; sourceTree = "<group>"; };
 		9BCAA2C51EA1B1DC0052E67A /* Keyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Keyboard.storyboard; sourceTree = "<group>"; };
 		9BCAA2C71EA1C8200052E67A /* Keyboard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Keyboard.xib; sourceTree = "<group>"; };
 		9BCAA2CA1EA1C9BB0052E67A /* CustomKeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomKeyboard.swift; sourceTree = "<group>"; };
@@ -327,6 +331,7 @@
 				F5219B241EAB37E700A71EC3 /* Model */,
 				F5219B251EAB41DC00A71EC3 /* CustomEventTableViewCell.swift */,
 				39FCCFDD1EA7412600C49F56 /* MyEventManagerTableView.swift */,
+				9BA7BB211EAF828A00B63B36 /* EventCellDetail.swift */,
 			);
 			name = "event manager";
 			sourceTree = "<group>";
@@ -336,6 +341,7 @@
 			children = (
 				F5219B201EAB379300A71EC3 /* DayModel.swift */,
 				F5219B221EAB37D200A71EC3 /* EventModel.swift */,
+				9B34EE3C1EAFADAC000AA439 /* AbsEventModel.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -531,12 +537,14 @@
 				397996AB1EA747E300AEF6AB /* Product.swift in Sources */,
 				39FCCFDE1EA7412600C49F56 /* MyEventManagerTableView.swift in Sources */,
 				F5148E461EA2020700AC548A /* Calculator.swift in Sources */,
+				9B34EE3D1EAFADAC000AA439 /* AbsEventModel.swift in Sources */,
 				397996F91EA757AC00AEF6AB /* CellDetail.swift in Sources */,
 				3988F5E61E9E1E980072260A /* Animation.swift in Sources */,
 				9BCAA2CB1EA1C9BB0052E67A /* CustomKeyboard.swift in Sources */,
 				9B9F85521EAA1364001408F2 /* DemoTableViewTableViewController.swift in Sources */,
 				F5609AEB1EAB1746001EC89A /* QuickInformation.swift in Sources */,
 				397996AC1EA747E300AEF6AB /* ProductLine.swift in Sources */,
+				9BA7BB221EAF828A00B63B36 /* EventCellDetail.swift in Sources */,
 				3988F5E81E9E22F00072260A /* BtnView.swift in Sources */,
 				F5219B231EAB37D200A71EC3 /* EventModel.swift in Sources */,
 				F5E4AAFE1E98D76700C86D47 /* Quadratic.swift in Sources */,

@@ -14,34 +14,41 @@
 //  (7) Sunday
 import Foundation
 
-
-public enum enumStatus
+class EventModel : AbsEventModel
 {
-    case Completed
-    case Incoming
-}
-
-class EventModel
-{
-    var title: String
+    var time: enumDayInWeek
     var description: String
+    var title: String
     var status: enumStatus
-    var time : Date
     
     init()
     {
         self.title = "";
         self.description = "";
-        self.time = Date()
+        self.time = .Sunday
         self.status = .Incoming
     }
     
     
-    init(titled: String, description: String, status : enumStatus)
+    init(titled: String, description: String, status : enumStatus, time : enumDayInWeek)
     {
         self.title = titled
         self.description = description
         self.status = status
-        self.time = Date()
+        self.time = time
+    }
+    
+    static func parseDatetoString(day: Date) -> String {
+        
+        
+        let dateString = "Thu, 22 Oct 2015 07:45:17 +0000"
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "EEE, dd MMM yyyy hh:mm:ss +zzzz"
+        dateFormatter.locale = Locale.init(identifier: "en_GB")
+        
+        let dateObj = dateFormatter.date(from: dateString)
+        
+        dateFormatter.dateFormat = "MM-dd-yyyy hh:mm:ss"
+        return (dateFormatter.string(from: dateObj!))
     }
 }
