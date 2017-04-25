@@ -11,6 +11,7 @@ Nguyễn Văn Phi Tước learning, project trees <br>
   <i>Model
     <ul> 
       <i>DayModel.swift</i><br> 
+      <i>AbsEventModel.swift</i><br> 
       <i>EventModel.swift</i><br> 
     </ul>
   </i><br>
