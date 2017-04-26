@@ -1,11 +1,12 @@
 # IOS_MyQuiz
 Nguyễn Văn Phi Tước learning, project trees <br>
-<i><b>Group calculator project: </b></i>
+~*~ Ngày 26-4-2017 ~*~ <br>
+<i> <b> Group animation demo: </b><i> 
 <ul> 
-  <li>Quadractic.swift</li>
-  <li>Calculator.swift</li>
-  <li>QuickInformation.swift</li>
-</ul>
+  <li>BtnView.swift</li>
+  <li>Animation.swift</li>
+ </ul>
+~*~ Ngày 24-4-2017 ~*~ <br>
 <i> <b>Group Event Manger project: </b></i> 
 <ul> 
   <li>Model
@@ -19,6 +20,7 @@ Nguyễn Văn Phi Tước learning, project trees <br>
   <li>EventCellDetail.swift</li>
   <li>MyEventManagerTablView.swift</li>
 </ul>
+~*~ Ngày 21-4-2017 ~*~ <br>
 <i> <b> Group table view demo: </b></i> 
 <ul> 
   <li>DemoAssets
@@ -36,8 +38,15 @@ Nguyễn Văn Phi Tước learning, project trees <br>
   <li>CellDetail.swift</li>
   <li>DemoTableViewTableViewController.swift</li>
 </ul>
+~*~ Ngày 17-4-2017 ~*~ <br>
+<i><b>Group calculator project: </b></i>
+<ul> 
+  <li>Quadractic.swift</li>
+  <li>Calculator.swift</li>
+  <li>QuickInformation.swift</li>
+</ul>
 <i> <b> Group animation demo: </b><i> 
 <ul> 
   <li>BtnView.swift</li>
   <li>Animation.swift</li>
-    </ul>
+ </ul>
