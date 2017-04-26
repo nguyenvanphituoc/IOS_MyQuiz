@@ -13,15 +13,14 @@ class CellDetail: UIViewController {
     @IBOutlet weak var img: UIImageView!
     @IBOutlet weak var lbTitle: UILabel!
     @IBOutlet weak var lbDescription: UILabel!
+    
+    public var product : Product?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        guard var product : Product = self.value(forKey: "celldetail") as! Product
-        else {
-            
-        }
-        img.image = product.image;
-        lbTitle.text = product.title;
-        lbDescription.text = product.description
+        img.image = product?.image;
+        lbTitle.text = product?.title;
+        lbDescription.text = product?.description
         // Do any additional setup after loading the view.
     }
 

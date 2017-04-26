@@ -56,11 +56,18 @@
 		397996F91EA757AC00AEF6AB /* CellDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397996F81EA757AC00AEF6AB /* CellDetail.swift */; };
 		3988F5E61E9E1E980072260A /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3988F5E51E9E1E980072260A /* Animation.swift */; };
 		3988F5E81E9E22F00072260A /* BtnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3988F5E71E9E22F00072260A /* BtnView.swift */; };
-		39FCCFDE1EA7412600C49F56 /* MyProductTableViewCTC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FCCFDD1EA7412600C49F56 /* MyProductTableViewCTC.swift */; };
+		39FCCFDE1EA7412600C49F56 /* MyEventManagerTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FCCFDD1EA7412600C49F56 /* MyEventManagerTableView.swift */; };
+		9B34EE3D1EAFADAC000AA439 /* AbsEventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B34EE3C1EAFADAC000AA439 /* AbsEventModel.swift */; };
+		9B9F85521EAA1364001408F2 /* DemoTableViewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9F85511EAA1364001408F2 /* DemoTableViewTableViewController.swift */; };
+		9BA7BB221EAF828A00B63B36 /* EventCellDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA7BB211EAF828A00B63B36 /* EventCellDetail.swift */; };
 		9BCAA2C61EA1B1DC0052E67A /* Keyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BCAA2C51EA1B1DC0052E67A /* Keyboard.storyboard */; };
 		9BCAA2C81EA1C8200052E67A /* Keyboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BCAA2C71EA1C8200052E67A /* Keyboard.xib */; };
 		9BCAA2CB1EA1C9BB0052E67A /* CustomKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCAA2CA1EA1C9BB0052E67A /* CustomKeyboard.swift */; };
 		F5148E461EA2020700AC548A /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5148E451EA2020700AC548A /* Calculator.swift */; };
+		F5219B211EAB379300A71EC3 /* DayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5219B201EAB379300A71EC3 /* DayModel.swift */; };
+		F5219B231EAB37D200A71EC3 /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5219B221EAB37D200A71EC3 /* EventModel.swift */; };
+		F5219B261EAB41DC00A71EC3 /* CustomEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5219B251EAB41DC00A71EC3 /* CustomEventTableViewCell.swift */; };
+		F5609AEB1EAB1746001EC89A /* QuickInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5609AEA1EAB1746001EC89A /* QuickInformation.swift */; };
 		F5E4AAFE1E98D76700C86D47 /* Quadratic.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E4AAFD1E98D76700C86D47 /* Quadratic.swift */; };
 /* End PBXBuildFile section */
 
@@ -137,12 +144,19 @@
 		397996F81EA757AC00AEF6AB /* CellDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellDetail.swift; sourceTree = "<group>"; };
 		3988F5E51E9E1E980072260A /* Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 		3988F5E71E9E22F00072260A /* BtnView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BtnView.swift; sourceTree = "<group>"; };
-		39FCCFDD1EA7412600C49F56 /* MyProductTableViewCTC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProductTableViewCTC.swift; sourceTree = "<group>"; };
+		39FCCFDD1EA7412600C49F56 /* MyEventManagerTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyEventManagerTableView.swift; sourceTree = "<group>"; };
+		9B34EE3C1EAFADAC000AA439 /* AbsEventModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbsEventModel.swift; sourceTree = "<group>"; };
+		9B9F85511EAA1364001408F2 /* DemoTableViewTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoTableViewTableViewController.swift; sourceTree = "<group>"; };
+		9BA7BB211EAF828A00B63B36 /* EventCellDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCellDetail.swift; sourceTree = "<group>"; };
 		9BCAA2C51EA1B1DC0052E67A /* Keyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Keyboard.storyboard; sourceTree = "<group>"; };
 		9BCAA2C71EA1C8200052E67A /* Keyboard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Keyboard.xib; sourceTree = "<group>"; };
 		9BCAA2CA1EA1C9BB0052E67A /* CustomKeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomKeyboard.swift; sourceTree = "<group>"; };
 		F5148E451EA2020700AC548A /* Calculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Calculator.swift; sourceTree = "<group>"; tabWidth = 4; };
 		F5148E471EA21A7400AC548A /* TestingPlayround.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = TestingPlayround.playground; sourceTree = "<group>"; };
+		F5219B201EAB379300A71EC3 /* DayModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayModel.swift; sourceTree = "<group>"; };
+		F5219B221EAB37D200A71EC3 /* EventModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
+		F5219B251EAB41DC00A71EC3 /* CustomEventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomEventTableViewCell.swift; sourceTree = "<group>"; };
+		F5609AEA1EAB1746001EC89A /* QuickInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuickInformation.swift; path = ../QuickInformation.swift; sourceTree = "<group>"; };
 		F5E4AAFD1E98D76700C86D47 /* Quadratic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quadratic.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -194,7 +208,9 @@
 		39326F841E94D84100C15D51 /* MyQuiz */ = {
 			isa = PBXGroup;
 			children = (
+				F5219B1F1EAB356D00A71EC3 /* event manager */,
 				39FCCFDC1EA7409D00C49F56 /* tableview */,
+				F5609AEC1EAB1750001EC89A /* calculator */,
 				39FCCFDB1EA73D7500C49F56 /* animation */,
 				9BCAA2C91EA1C9850052E67A /* custom */,
 				39326F851E94D84100C15D51 /* AppDelegate.swift */,
@@ -203,8 +219,6 @@
 				39326F8C1E94D84100C15D51 /* Assets.xcassets */,
 				39326F8E1E94D84100C15D51 /* LaunchScreen.storyboard */,
 				39326F911E94D84100C15D51 /* Info.plist */,
-				F5E4AAFD1E98D76700C86D47 /* Quadratic.swift */,
-				F5148E451EA2020700AC548A /* Calculator.swift */,
 				F5148E471EA21A7400AC548A /* TestingPlayround.playground */,
 			);
 			path = MyQuiz;
@@ -295,8 +309,8 @@
 			children = (
 				397996AD1EA747FF00AEF6AB /* DemoAssets */,
 				397996A81EA747E300AEF6AB /* Model */,
-				39FCCFDD1EA7412600C49F56 /* MyProductTableViewCTC.swift */,
 				397996F81EA757AC00AEF6AB /* CellDetail.swift */,
+				9B9F85511EAA1364001408F2 /* DemoTableViewTableViewController.swift */,
 			);
 			name = tableview;
 			sourceTree = "<group>";
@@ -309,6 +323,37 @@
 				9BCAA2CA1EA1C9BB0052E67A /* CustomKeyboard.swift */,
 			);
 			name = custom;
+			sourceTree = "<group>";
+		};
+		F5219B1F1EAB356D00A71EC3 /* event manager */ = {
+			isa = PBXGroup;
+			children = (
+				F5219B241EAB37E700A71EC3 /* Model */,
+				F5219B251EAB41DC00A71EC3 /* CustomEventTableViewCell.swift */,
+				39FCCFDD1EA7412600C49F56 /* MyEventManagerTableView.swift */,
+				9BA7BB211EAF828A00B63B36 /* EventCellDetail.swift */,
+			);
+			name = "event manager";
+			sourceTree = "<group>";
+		};
+		F5219B241EAB37E700A71EC3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F5219B201EAB379300A71EC3 /* DayModel.swift */,
+				F5219B221EAB37D200A71EC3 /* EventModel.swift */,
+				9B34EE3C1EAFADAC000AA439 /* AbsEventModel.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		F5609AEC1EAB1750001EC89A /* calculator */ = {
+			isa = PBXGroup;
+			children = (
+				F5E4AAFD1E98D76700C86D47 /* Quadratic.swift */,
+				F5148E451EA2020700AC548A /* Calculator.swift */,
+				F5609AEA1EAB1746001EC89A /* QuickInformation.swift */,
+			);
+			name = calculator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -379,6 +424,7 @@
 				TargetAttributes = {
 					39326F811E94D84100C15D51 = {
 						CreatedOnToolsVersion = 8.3;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					39326F951E94D84100C15D51 = {
@@ -485,15 +531,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				39326F881E94D84100C15D51 /* ViewController.swift in Sources */,
+				F5219B261EAB41DC00A71EC3 /* CustomEventTableViewCell.swift in Sources */,
+				F5219B211EAB379300A71EC3 /* DayModel.swift in Sources */,
 				39326F861E94D84100C15D51 /* AppDelegate.swift in Sources */,
 				397996AB1EA747E300AEF6AB /* Product.swift in Sources */,
-				39FCCFDE1EA7412600C49F56 /* MyProductTableViewCTC.swift in Sources */,
+				39FCCFDE1EA7412600C49F56 /* MyEventManagerTableView.swift in Sources */,
 				F5148E461EA2020700AC548A /* Calculator.swift in Sources */,
+				9B34EE3D1EAFADAC000AA439 /* AbsEventModel.swift in Sources */,
 				397996F91EA757AC00AEF6AB /* CellDetail.swift in Sources */,
 				3988F5E61E9E1E980072260A /* Animation.swift in Sources */,
 				9BCAA2CB1EA1C9BB0052E67A /* CustomKeyboard.swift in Sources */,
+				9B9F85521EAA1364001408F2 /* DemoTableViewTableViewController.swift in Sources */,
+				F5609AEB1EAB1746001EC89A /* QuickInformation.swift in Sources */,
 				397996AC1EA747E300AEF6AB /* ProductLine.swift in Sources */,
+				9BA7BB221EAF828A00B63B36 /* EventCellDetail.swift in Sources */,
 				3988F5E81E9E22F00072260A /* BtnView.swift in Sources */,
+				F5219B231EAB37D200A71EC3 /* EventModel.swift in Sources */,
 				F5E4AAFE1E98D76700C86D47 /* Quadratic.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -646,11 +699,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = MyQuiz/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = nguyenvanphituoc.MyQuiz;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -659,6 +714,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = MyQuiz/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

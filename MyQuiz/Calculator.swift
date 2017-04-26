@@ -105,7 +105,7 @@ class Calculator : UIViewController{
         chooseNumberA ? ( numberA = Double(s)! ) : ( numberB = Double(s)! )
         // the first time insert number to operandA
         chooseNumberA = false;
-        
+
         switch sender.tag {
             
             case 108:
@@ -149,12 +149,14 @@ class Calculator : UIViewController{
         // check correct number
         var correctNumber : Bool = false;
         if isActionClick {
+            
             lbNumber.text = ""
         }
         //get number from lbNumber
         var text = lbNumber.text!
         var value : String = "";
         switch sender.tag {
+            
             case -1:
                 value = String(".");
                 break;
@@ -185,6 +187,7 @@ class Calculator : UIViewController{
                 }
                 isPercentClick =  !isPercentClick;
                 return
+            
             default:
                 value = String(sender.tag);
                 break;
