@@ -1,11 +1,18 @@
 # IOS_MyQuiz
 Nguyễn Văn Phi Tước learning, project trees <br>
 ~*~ Ngày 26-4-2017 ~*~ <br>
-<i> <b> Group animation demo: </b><i> 
+<i> <b> Group uicollection demo: </b><i> 
 <ul> 
-  <li>BtnView.swift</li>
-  <li>Animation.swift</li>
- </ul>
+  <li>Model
+    <ul> 
+      <li>Flickr.swift</li>
+      <li>FlickPhoto.swift</li>
+      <li>FlickrSearchResults.swift</li>
+    </ul>
+  </li><br>
+  <li>CustomCollectionCell.swift</li>
+  <li>CollectionView.swift</li>
+</ul>
 ~*~ Ngày 24-4-2017 ~*~ <br>
 <i> <b>Group Event Manger project: </b></i> 
 <ul> 
@@ -45,6 +52,7 @@ Nguyễn Văn Phi Tước learning, project trees <br>
   <li>Calculator.swift</li>
   <li>QuickInformation.swift</li>
 </ul>
+~*~ Ngày 14-4-2017 ~*~
 <i> <b> Group animation demo: </b><i> 
 <ul> 
   <li>BtnView.swift</li>
