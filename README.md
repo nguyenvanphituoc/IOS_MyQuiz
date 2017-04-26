@@ -2,43 +2,42 @@
 Nguyễn Văn Phi Tước learning, project trees <br>
 <b><i> Group calculator project: <i><b> 
 <ul> 
-  <i>Quadractic.swift</i><br> 
-  <i>Calculator.swift</i><br> 
-  <i>QuickInformation.swift</i><br>
+  <li>Quadractic.swift</li><br> 
+  <li>Calculator.swift</li><br> 
+  <li>QuickInformation.swift</li><br>
 </ul>
 <b><i> Group Event Manger project: <i><b>
 <ul> 
-  <i>Model
+  <li>Model
     <ul> 
-      <i>DayModel.swift</i><br> 
-      <i>AbsEventModel.swift</i><br> 
-      <i>EventModel.swift</i><br> 
+      <li>DayModel.swift</li><br> 
+      <li>AbsEventModel.swift</li><br> 
+      <li>EventModel.swift</li><br> 
     </ul>
-  </i><br>
-  <i>CustomEventTableViewCell.swift</i><br> 
-  <i>EventCellDetail.swift</i><br>
-  <i>MyEventManagerTablView.swift</i><br>
+  </li><br>
+  <li>CustomEventTableViewCell.swift</li><br> 
+  <li>EventCellDetail.swift</li><br>
+  <li>MyEventManagerTablView.swift</li><br>
 </ul>
 <b><i> Group table view demo: <i><b>
 <ul> 
-  <i>DemoAssets
+  <li>DemoAssets
     <ul> 
-      <i>image....</i><br> 
-      <i>image....</i><br> 
+      <li>image....</li><br> 
+      <li>image....</li><br> 
     </ul>
-  </i><br>
-  <i>Model
+  </li><br>
+  <li>Model
     <ul> 
-      <i>Product.swift</i><br> 
-      <i>ProductLine.swift</i><br> 
+      <li>Product.swift</li><br> 
+      <li>ProductLine.swift</li><br> 
     </ul>
-  </i><br>
-  <i>CellDetail.swift</i><br> 
-  <i>DemoTableViewTableViewController.swift</i><br>
+  </li><br>
+  <li>CellDetail.swift</li><br> 
+  <li>DemoTableViewTableViewController.swift</li><br>
 </ul>
 <b><i> Group animation demo: <i><b>
 <ul> 
-  <i>BtnView.swift</i><br>
-  <i>Animation.swift</i><br> 
+  <li>BtnView.swift</li><br>
+  <li>Animation.swift</li><br> 
     </ul>
-</ul>
