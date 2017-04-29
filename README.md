@@ -9,4 +9,4 @@ Nguyễn Văn Phi Tước learning, project trees, the prefix "W\\(number)" indi
 ~*~ Ngày 17-4-2017 ~*~ 
 <i><b>Group calculator project, prefix: W2</b></i><br>
 ~*~ Ngày 14-4-2017 ~*~
-<i> <b> Group animation demo, prefix: </b><i> <br>
+<i> <b> Group animation demo, prefix: W2</b><i> <br>
