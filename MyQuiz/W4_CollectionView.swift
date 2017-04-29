@@ -46,10 +46,29 @@ class CollectionView: UICollectionViewController {
         cell.backgroundColor = UIColor.black
         //2
         let flickrPhoto = photoForIndexPath(indexPath: indexPath)
-        cell.imgMyImg.image = flickrPhoto.thumbnail
+        cell.setGalleryItem(flickrPhoto)
         
         // Configure the cell
         return cell
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        
+        let commentView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "header", for: indexPath) as! GalleryItemCommentView
+        
+        commentView.lbHeader.text = "Supplementary view of kind \(kind)"
+        
+        return commentView
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let alert = UIAlertController(title: "didSelectItemAtIndexPath:", message: "Indexpath = \(indexPath)", preferredStyle: .alert)
+        
+        let alertAction = UIAlertAction(title: "Dismiss", style: .destructive, handler: nil)
+        alert.addAction(alertAction)
+        
+        self.present(alert, animated: true, completion: nil)
     }
     
     /*
@@ -114,7 +133,7 @@ extension CollectionView : UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        //2
+    //2
         let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
         let availableWidth = view.frame.width - paddingSpace
         let widthPerItem = availableWidth / itemsPerRow
@@ -126,7 +145,8 @@ extension CollectionView : UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         insetForSectionAt section: Int) -> UIEdgeInsets {
-        return sectionInsets
+        let leftRightInset = self.view.frame.size.width / 14.0
+        return UIEdgeInsetsMake(0, leftRightInset, 0, leftRightInset)
     }
     
     // 4

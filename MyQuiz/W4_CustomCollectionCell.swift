@@ -11,4 +11,8 @@ import UIKit
 class CustomCollectionCell: UICollectionViewCell {
     
     @IBOutlet weak var imgMyImg: UIImageView!
+    
+    func setGalleryItem(_ item: FlickrPhoto) {
+        imgMyImg.image = item.thumbnail
+    }
 }
