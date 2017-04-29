@@ -8,5 +8,5 @@ Nguyễn Văn Phi Tước learning, project trees, the prefix "W\\(number)" indi
 <i> <b> Group table view demo, prefix: W3</b></i> <br>
 ~*~ Ngày 17-4-2017 ~*~ 
 <i><b>Group calculator project, prefix: W2</b></i><br>
-~*~ Ngày 14-4-2017 ~*~<br>
+~*~ Ngày 14-4-2017 ~*~
 <i> <b> Group animation demo, prefix: </b><i> <br>
