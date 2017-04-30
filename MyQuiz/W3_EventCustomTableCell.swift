@@ -15,6 +15,7 @@ class CustomEventTableViewCell: UITableViewCell {
     @IBOutlet weak var txtDescription: UITextField!
     @IBOutlet weak var btnStatus: UIButton!
     @IBOutlet weak var lbTime: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -22,7 +23,10 @@ class CustomEventTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 12, options: .curveLinear, animations: {
+            self.layoutIfNeeded()
+        }, completion: nil)
         // Configure the view for the selected state
     }
 

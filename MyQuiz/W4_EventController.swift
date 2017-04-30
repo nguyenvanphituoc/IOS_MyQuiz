@@ -9,12 +9,12 @@
 import Foundation
 public class EventController: AbsController {
     
-    typealias Handle = DayMoDel
-    typealias Model  = AbsEventModel
+    typealias Section = DayMoDel
+    typealias Row  = AbsEventModel
     
-    private var dayEvents : [Handle]
+    private var dayEvents : [Section]
     
-    init(_ dayEvents: [Handle]) {
+    init(_ dayEvents: [Section]) {
         
         self.dayEvents = dayEvents
     }
@@ -25,7 +25,7 @@ public class EventController: AbsController {
   
     func getSectionName(at indexSection: Int) -> String { return dayEvents[indexSection].name.rawValue }
   
-    func getSection(at indexSection: Int) -> Handle? {
+    func getSection(at indexSection: Int) -> Section? {
         
         if !isValidIndexPath(at: indexSection, row: 0) {
             return nil
@@ -34,7 +34,7 @@ public class EventController: AbsController {
     }
 
     
-    func getModel(at indexSection: Int, row indexRow: Int) -> Model? {
+    func getModel(at indexSection: Int, row indexRow: Int) -> Row? {
         
         if !isValidIndexPath(at: indexSection, row: indexRow) {
             return nil
@@ -56,7 +56,7 @@ public class EventController: AbsController {
         // insert data to toIndexpath
         if !self.insertModel(at: to.section, row: to.row, model: dump) {
             //rollback
-            self.insertModel(at: fromIndexPath.section, row: fromIndexPath.row, model: dump)
+            let _  = self.insertModel(at: fromIndexPath.section, row: fromIndexPath.row, model: dump)
             return false
         }
         // If change day <=> move another section
@@ -82,7 +82,7 @@ public class EventController: AbsController {
         return true
     }
     
-    func insertModel (at indexSection: Int, row indexRow: Int, model: Model) -> Bool {
+    func insertModel (at indexSection: Int, row indexRow: Int, model: Row) -> Bool {
         
         if !isValidIndexPath(at: indexSection, row: indexRow) {
             return false
@@ -91,7 +91,7 @@ public class EventController: AbsController {
         return true
     }
     
-    func updateModel (at indexSection: Int, row indexRow: Int) -> Bool {
+    func updateModel (at indexSection: Int, row indexRow: Int, model: Row) -> Bool {
         
         if !isValidIndexPath(at: indexSection, row: indexRow) {
             return false

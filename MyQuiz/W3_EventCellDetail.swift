@@ -8,10 +8,10 @@
 
 import UIKit
 
-class EventCellDetail: UIViewController {
+class EventCellDetail: UITableViewController {
 
     @IBOutlet weak var lbTitle: UILabel!
-    @IBOutlet weak var lbTime: UILabel!    
+    @IBOutlet weak var pickTime: UIPickerView!
 //    @IBOutlet weak var lbDayEvent: UILabel!
     @IBOutlet weak var btnStatus: UISwitch!
     @IBOutlet weak var txtDescription: UITextView!
@@ -44,7 +44,7 @@ class EventCellDetail: UIViewController {
     private func setDataDetail(_ myEvent : AbsEventModel) {
         // set data detail
         lbTitle.text = myEvent.title
-        lbTime.text = myEvent.time.rawValue
+//        lbTime.text = myEvent.time.rawValue
         if myEvent.status == enumStatus.Completed {
             
             btnStatus.setOn(false, animated: true)

@@ -21,9 +21,10 @@ class MyEventManagerTableView : UITableViewController {
     //    }
     
     // MARK: - Table view data source
-    
     override func viewDidLoad() {
         
+        //register custom cell
+//        tableView.register(CustomEventTableViewCell.self, forCellReuseIdentifier: "customCellA")
         //initial datasource
         dataHandleController = EventController(DayMoDel.EventsInWeek())
         //edit button
@@ -65,8 +66,7 @@ class MyEventManagerTableView : UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell", for: indexPath) as! CustomEventTableViewCell
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "tableCell", for: indexPath) as! CustomEventTableViewCell
         // Configure the cell...
         guard let dump = dataHandleController else {
             return cell
@@ -114,9 +114,7 @@ class MyEventManagerTableView : UITableViewController {
                 self.tableView.deleteRows(at: [indexPath], with: .automatic)
             }
         }
-    }
-    
-    
+    }    
     
     // Override to support rearranging the table view.
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
@@ -150,7 +148,7 @@ class MyEventManagerTableView : UITableViewController {
             
             switch identifier {
                 
-            case "eventDetail":
+            case "eventEdit":
                 
                 // get view detail may be displayed data cell
                 let viewDetail = segue.destination as! EventCellDetail;
@@ -163,7 +161,7 @@ class MyEventManagerTableView : UITableViewController {
                 let section = dataHandleController?.getSection(at: dumpIndexPath.section)
                 viewDetail.setData(dayEvent: section!, row: dumpIndexPath.row)
                 break;
-                
+
             default:
                 break;
             }
