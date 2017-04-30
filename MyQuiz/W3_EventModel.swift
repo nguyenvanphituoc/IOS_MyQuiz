@@ -38,6 +38,25 @@ class EventModel : AbsEventModel
         self.time = time
     }
     
+    static func enumWeekToStringArray () -> [String] {
+        
+        var list : [String] = []
+        for s in enumDayInWeek.allValues {
+            list.append(s.rawValue)
+        }
+        return list
+    }
+    
+    static func enumWeekToArray () -> [enumDayInWeek] {
+        
+        var list : [enumDayInWeek] = []
+        for s in enumDayInWeek.allValues {
+            list.append(s)
+        }
+        return list
+    }
+
+    
     static func parseDatetoString(day: Date) -> String {
         
         
