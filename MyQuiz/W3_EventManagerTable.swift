@@ -11,21 +11,21 @@ import UIKit
 class MyEventManagerTableView : UITableViewController {
     
     //datasource
-    var dayEvents : [DayMoDel] = [] 
-//    lazy var dayEvents : [DayMoDel] { <- What is called, how that map the func not a create data
-       // When you call self.dayEvents, this function will be called. OK?
-       // Jump into DayMoDel.EventsInWeak() <- viet sai chinh ta roi chu'
-       // hhe, I will load data in viewDidLoad() right?
-        //First, check the below function
-//        return DayMoDel.EventsInWeak()
-//    }
+    var dataHandleController : EventController?
+    //    lazy var dayEvents : [DayMoDel] { <- What is called, how that map the func not a create data
+    // When you call self.dayEvents, this function will be called. OK?
+    // Jump into DayMoDel.EventsInWeak() <- viet sai chinh ta roi chu'
+    // hhe, I will load data in viewDidLoad() right?
+    //First, check the below function
+    //        return DayMoDel.EventsInWeak()
+    //    }
     
     // MARK: - Table view data source
     
     override func viewDidLoad() {
         
         //initial datasource
-        dayEvents = DayMoDel.EventsInWeek();
+        dataHandleController = EventController(DayMoDel.EventsInWeek())
         //edit button
         navigationItem.rightBarButtonItem = editButtonItem
     }
@@ -33,7 +33,11 @@ class MyEventManagerTableView : UITableViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
         
         // #warning Incomplete implementation, return the number of sections
-        return dayEvents.count;
+        guard let dump = dataHandleController else {
+            return 0
+            
+        }
+        return dump.getNumberOfSection();
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -42,13 +46,21 @@ class MyEventManagerTableView : UITableViewController {
         // You must change dayEvents to become a "stored property" or lazy var
         // okay, now I'm understand, tks ^^ love ya <3, my mistake when I watching video tutorial
         // Ok, just remember: Do not use computed property too much. It will impact your application's performance
-        return dayEvents[section].name.rawValue;
+        guard let dump = dataHandleController else {
+            return ""
+            
+        }
+        return dump.getSectionName(at: section);
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         // #warning Incomplete implementation, return the number of rows
-        return dayEvents[section].events.count;
+        guard let dump = dataHandleController else {
+            return 0
+            
+        }
+        return dump.getNumberOfRow(at: section);
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -56,11 +68,19 @@ class MyEventManagerTableView : UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell", for: indexPath) as! CustomEventTableViewCell
         
         // Configure the cell...
-        let dayEvent = dayEvents[indexPath.section];
-        let event = dayEvent.events[indexPath.row];
-        cell.setCellData(event: event)
+        guard let dump = dataHandleController else {
+            return cell
+            
+        }
+        let event = dump.getModel(at: indexPath.section, row: indexPath.row);
+        guard let dumpEvent = event else {
+            return cell
+            
+        }
+        cell.setCellData(event: dumpEvent)
         
         return cell
+        
     }
     
     
@@ -72,24 +92,27 @@ class MyEventManagerTableView : UITableViewController {
     }
     
     /*
-    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        let delAction = UITableViewRowAction(style: .default, title: "Delete") { (action, indexPath) in
-            
-            self.dayEvents[indexPath.section].events.remove(at: indexPath.row);
-            self.tableView.deleteRows(at: [indexPath], with: .fade);
-        }
-        
-        return [delAction]
-    }
-    */
-   
+     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+     let delAction = UITableViewRowAction(style: .default, title: "Delete") { (action, indexPath) in
+     
+     self.dayEvents[indexPath.section].events.remove(at: indexPath.row);
+     self.tableView.deleteRows(at: [indexPath], with: .fade);
+     }
+     
+     return [delAction]
+     }
+     */
+    
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         
-        if editingStyle == .delete {
+        guard let dump = dataHandleController else {
+            return
             
-            let dayEvent = dayEvents[indexPath.section]		
-            dayEvent.events.remove(at: indexPath.row)
-            self.tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+        if editingStyle == .delete {
+            if dump.removeModel(at: indexPath.section, row: indexPath.row) {
+                self.tableView.deleteRows(at: [indexPath], with: .automatic)
+            }
         }
     }
     
@@ -98,29 +121,14 @@ class MyEventManagerTableView : UITableViewController {
     // Override to support rearranging the table view.
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
         
-        sortEvent(moveRowAt: fromIndexPath, to: to)
-    }
-    
-    
-    func sortEvent(moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-        
-        // get data was moved
-        let eventTemp = dayEvents[fromIndexPath.section].events[fromIndexPath.row]
-        // remove data from fromIndexPath
-        dayEvents[fromIndexPath.section].events.remove(at: fromIndexPath.row)
-        // insert data to toIndexpath
-        dayEvents[to.section].events.insert(eventTemp, at: to.row)
-        
-        // If change day <=> move another section
-        if fromIndexPath.section != to.section {
+        guard let dump = dataHandleController else {
+            return
             
-            // change day
-            eventTemp.time = dayEvents[to.section].name
-            //reload after change
-            tableView.reloadRows(at : [to], with: .middle)
+        }
+        if dump.moveModel(moveRowAt: fromIndexPath, to: to) {
+            tableView.reloadRows(at: [fromIndexPath, to], with: .middle)
         }
     }
-    
     
     // Override to support conditional rearranging of the table view.
     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
@@ -148,23 +156,25 @@ class MyEventManagerTableView : UITableViewController {
                 let viewDetail = segue.destination as! EventCellDetail;
                 // get and send data to view
                 let indexPath = self.tableView.indexPath(for: sender as! UITableViewCell)
-                viewDetail.setData(dayEvent: dayEvents[(indexPath?.section)!], row: (indexPath?.row)!)
+                guard let dumpIndexPath = indexPath else {
+                    return
+                    
+                }
+                let section = dataHandleController?.getSection(at: dumpIndexPath.section)
+                viewDetail.setData(dayEvent: section!, row: dumpIndexPath.row)
                 break;
                 
             default:
-                
                 break;
             }
         }
     }
     
-    //MARK helper
-    func productAtIndexPath( indexPath : IndexPath) -> AbsEventModel {
-        
-        // return the event of day with indexPath
-        let day = dayEvents[indexPath.section]
-        return day.events[indexPath.row];
+    func unwrapOptional (obj: Any?) throws -> Any {
+        guard (obj != nil) else {
+            throw MyErrorHandle.unwrapOptional
+            
+        }
+        return obj!
     }
-    
-    
 }

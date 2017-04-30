@@ -61,7 +61,9 @@
 		39E8EA721EB0826300467FD1 /* W4_Flickr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E8EA6F1EB0826300467FD1 /* W4_Flickr.swift */; };
 		39E8EA731EB0826300467FD1 /* W4_FlickrPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E8EA701EB0826300467FD1 /* W4_FlickrPhoto.swift */; };
 		39E8EA741EB0826300467FD1 /* W4_FlickrSearchResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E8EA711EB0826300467FD1 /* W4_FlickrSearchResults.swift */; };
-		39FCCFDE1EA7412600C49F56 /* W3_MyEventManagerTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FCCFDD1EA7412600C49F56 /* W3_MyEventManagerTableView.swift */; };
+		39FCCFDE1EA7412600C49F56 /* W3_EventManagerTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FCCFDD1EA7412600C49F56 /* W3_EventManagerTable.swift */; };
+		9B0D30BB1EB574FE00187F8B /* AbsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0D30BA1EB574FE00187F8B /* AbsController.swift */; };
+		9B0D30BD1EB575CD00187F8B /* EventController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0D30BC1EB575CD00187F8B /* EventController.swift */; };
 		9B3455B71EB21A0000F08AFF /* W4_GalleryItemCommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3455B61EB21A0000F08AFF /* W4_GalleryItemCommentView.swift */; };
 		9B34EE3D1EAFADAC000AA439 /* W3_AbsEventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B34EE3C1EAFADAC000AA439 /* W3_AbsEventModel.swift */; };
 		9B9F85521EAA1364001408F2 /* W3_DemoTableViewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9F85511EAA1364001408F2 /* W3_DemoTableViewTableViewController.swift */; };
@@ -72,7 +74,7 @@
 		F5148E461EA2020700AC548A /* W2_Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5148E451EA2020700AC548A /* W2_Calculator.swift */; };
 		F5219B211EAB379300A71EC3 /* W3_DayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5219B201EAB379300A71EC3 /* W3_DayModel.swift */; };
 		F5219B231EAB37D200A71EC3 /* W3_EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5219B221EAB37D200A71EC3 /* W3_EventModel.swift */; };
-		F5219B261EAB41DC00A71EC3 /* W3_CustomEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5219B251EAB41DC00A71EC3 /* W3_CustomEventTableViewCell.swift */; };
+		F5219B261EAB41DC00A71EC3 /* W3_EventCustomTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5219B251EAB41DC00A71EC3 /* W3_EventCustomTableCell.swift */; };
 		F5609AEB1EAB1746001EC89A /* W2_QuickInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5609AEA1EAB1746001EC89A /* W2_QuickInformation.swift */; };
 		F5E4AAFE1E98D76700C86D47 /* W1_Quadratic.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E4AAFD1E98D76700C86D47 /* W1_Quadratic.swift */; };
 /* End PBXBuildFile section */
@@ -155,7 +157,9 @@
 		39E8EA6F1EB0826300467FD1 /* W4_Flickr.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = W4_Flickr.swift; sourceTree = "<group>"; };
 		39E8EA701EB0826300467FD1 /* W4_FlickrPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = W4_FlickrPhoto.swift; sourceTree = "<group>"; };
 		39E8EA711EB0826300467FD1 /* W4_FlickrSearchResults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = W4_FlickrSearchResults.swift; sourceTree = "<group>"; };
-		39FCCFDD1EA7412600C49F56 /* W3_MyEventManagerTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = W3_MyEventManagerTableView.swift; sourceTree = "<group>"; };
+		39FCCFDD1EA7412600C49F56 /* W3_EventManagerTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = W3_EventManagerTable.swift; sourceTree = "<group>"; };
+		9B0D30BA1EB574FE00187F8B /* AbsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbsController.swift; sourceTree = "<group>"; };
+		9B0D30BC1EB575CD00187F8B /* EventController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventController.swift; sourceTree = "<group>"; };
 		9B3455B61EB21A0000F08AFF /* W4_GalleryItemCommentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = W4_GalleryItemCommentView.swift; sourceTree = "<group>"; };
 		9B34EE3C1EAFADAC000AA439 /* W3_AbsEventModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = W3_AbsEventModel.swift; sourceTree = "<group>"; };
 		9B9F85511EAA1364001408F2 /* W3_DemoTableViewTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = W3_DemoTableViewTableViewController.swift; sourceTree = "<group>"; };
@@ -167,7 +171,7 @@
 		F5148E471EA21A7400AC548A /* TestingPlayround.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = TestingPlayround.playground; sourceTree = "<group>"; };
 		F5219B201EAB379300A71EC3 /* W3_DayModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = W3_DayModel.swift; sourceTree = "<group>"; };
 		F5219B221EAB37D200A71EC3 /* W3_EventModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = W3_EventModel.swift; sourceTree = "<group>"; };
-		F5219B251EAB41DC00A71EC3 /* W3_CustomEventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = W3_CustomEventTableViewCell.swift; sourceTree = "<group>"; };
+		F5219B251EAB41DC00A71EC3 /* W3_EventCustomTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = W3_EventCustomTableCell.swift; sourceTree = "<group>"; };
 		F5609AEA1EAB1746001EC89A /* W2_QuickInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = W2_QuickInformation.swift; path = ../W2_QuickInformation.swift; sourceTree = "<group>"; };
 		F5E4AAFD1E98D76700C86D47 /* W1_Quadratic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = W1_Quadratic.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -349,6 +353,41 @@
 			name = tableview;
 			sourceTree = "<group>";
 		};
+		9B0D30B61EB5712500187F8B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9B0D30B81EB571B700187F8B /* CollectionView */,
+				9B0D30B71EB5719000187F8B /* TableView */,
+				9BA7BB211EAF828A00B63B36 /* W3_EventCellDetail.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		9B0D30B71EB5719000187F8B /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				F5219B251EAB41DC00A71EC3 /* W3_EventCustomTableCell.swift */,
+				39FCCFDD1EA7412600C49F56 /* W3_EventManagerTable.swift */,
+			);
+			name = TableView;
+			sourceTree = "<group>";
+		};
+		9B0D30B81EB571B700187F8B /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = CollectionView;
+			sourceTree = "<group>";
+		};
+		9B0D30B91EB574E600187F8B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9B0D30BA1EB574FE00187F8B /* AbsController.swift */,
+				9B0D30BC1EB575CD00187F8B /* EventController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		9BCAA2C91EA1C9850052E67A /* custom */ = {
 			isa = PBXGroup;
 			children = (
@@ -362,10 +401,9 @@
 		F5219B1F1EAB356D00A71EC3 /* event manager */ = {
 			isa = PBXGroup;
 			children = (
+				9B0D30B91EB574E600187F8B /* Controller */,
+				9B0D30B61EB5712500187F8B /* View */,
 				F5219B241EAB37E700A71EC3 /* Model */,
-				F5219B251EAB41DC00A71EC3 /* W3_CustomEventTableViewCell.swift */,
-				39FCCFDD1EA7412600C49F56 /* W3_MyEventManagerTableView.swift */,
-				9BA7BB211EAF828A00B63B36 /* W3_EventCellDetail.swift */,
 			);
 			name = "event manager";
 			sourceTree = "<group>";
@@ -565,15 +603,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				39326F881E94D84100C15D51 /* ViewController.swift in Sources */,
-				F5219B261EAB41DC00A71EC3 /* W3_CustomEventTableViewCell.swift in Sources */,
+				F5219B261EAB41DC00A71EC3 /* W3_EventCustomTableCell.swift in Sources */,
 				F5219B211EAB379300A71EC3 /* W3_DayModel.swift in Sources */,
 				39326F861E94D84100C15D51 /* AppDelegate.swift in Sources */,
+				9B0D30BD1EB575CD00187F8B /* EventController.swift in Sources */,
 				397996AB1EA747E300AEF6AB /* W3_Product.swift in Sources */,
-				39FCCFDE1EA7412600C49F56 /* W3_MyEventManagerTableView.swift in Sources */,
+				39FCCFDE1EA7412600C49F56 /* W3_EventManagerTable.swift in Sources */,
 				39E8EA6D1EB072CF00467FD1 /* W4_CollectionView.swift in Sources */,
 				F5148E461EA2020700AC548A /* W2_Calculator.swift in Sources */,
 				9B34EE3D1EAFADAC000AA439 /* W3_AbsEventModel.swift in Sources */,
 				397996F91EA757AC00AEF6AB /* W3_CellDetail.swift in Sources */,
+				9B0D30BB1EB574FE00187F8B /* AbsController.swift in Sources */,
 				3988F5E61E9E1E980072260A /* W2_Animation.swift in Sources */,
 				9BCAA2CB1EA1C9BB0052E67A /* CustomKeyboard.swift in Sources */,
 				39E8EA6B1EB0729800467FD1 /* W4_CustomCollectionCell.swift in Sources */,

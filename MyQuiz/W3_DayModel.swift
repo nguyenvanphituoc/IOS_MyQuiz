@@ -13,9 +13,9 @@ class DayMoDel
 {
     // Variables
     var name: enumDayInWeek            // name of the product line
-    var events: [EventModel]     // all products in the line
+    var events: [AbsEventModel]     // all products in the line
     
-    init(named: enumDayInWeek, includeEvents: [EventModel])
+    init(named: enumDayInWeek, includeEvents: [AbsEventModel])
     {
         name = named
         events = includeEvents

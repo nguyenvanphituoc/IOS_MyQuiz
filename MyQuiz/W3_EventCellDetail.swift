@@ -17,8 +17,8 @@ class EventCellDetail: UIViewController {
     @IBOutlet weak var txtDescription: UITextView!
     
     // need to edit
-    var event : EventModel?
-    var row : Int?
+    private var event : AbsEventModel?
+    private var row : Int?
     override func viewDidLoad() {
         
         super.viewDidLoad()
