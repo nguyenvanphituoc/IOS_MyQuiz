@@ -39,6 +39,7 @@ public enum enumDayInWeek : String // raw type
 //}
 
 // use abstract model when i must change eventmodel to eventmodel bester and not need fix more hardcode
+
 protocol AbsEventModel {
 
     var title: String        { get set }
@@ -47,4 +48,5 @@ protocol AbsEventModel {
     var time : enumDayInWeek { get set }
     
     static func parseDatetoString( day : Date) -> String
+    func copy(with zone: NSZone?) -> Any
 }

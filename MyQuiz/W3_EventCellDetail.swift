@@ -10,18 +10,18 @@ import UIKit
 
 class EventCellDetail: UITableViewController {
     
-    @IBOutlet weak var lbTitle: UILabel!
     @IBOutlet weak var pickTime: UIPickerView!
     @IBOutlet weak var btnStatus: UISwitch!
     @IBOutlet weak var txtDescription: UITextView!
     @IBOutlet weak var txtTitle: UITextField!
     
     let pickerDataSource = EventModel.enumWeekToArray();
-    
+    var heightUnit : CGFloat = 0.0
     
     // need to edit
-    private var event : AbsEventModel?
-    private var row : Int?
+    var event : AbsEventModel?
+    var eventCopy : AbsEventModel?
+    var row : Int?
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -29,35 +29,59 @@ class EventCellDetail: UITableViewController {
         
         self.pickTime.dataSource = self
         self.pickTime.delegate   = self
-        //        lbDayEvent.text = dayEvent?.name.rawValue
-        setDataDetail( event!)
+        
+        heightUnit = (tableView.frame.height - 25 * 2 ) / 15
+        
+        setDataDetail( eventCopy!)
         
         // Do any additional setup after loading the view.
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        let labelWidth = pickTime.frame.width / CGFloat(pickTime.numberOfComponents)
-        let label: UILabel = UILabel(frame: CGRect(x: pickTime.frame.origin.x + labelWidth * CGFloat(0), y: 0, width: labelWidth, height: 20))
         
-        label.text = "Day"
-        label.textAlignment = .center
-        pickTime.addSubview(label)
-    }
+        self.pickerViewAddTitle(pickTime, at: 0, title: "DAY")
+     }
     
     override func didReceiveMemoryWarning() {
+        
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    func setData( dayEvent : DayMoDel, row : Int) {
+    
+    @IBAction func txtTitle_onChanged(_ sender: UITextField) {
+        eventCopy?.title = txtTitle.text!
+    }
+    
+    
+    
+    @IBAction func btnStatus_onClicked(_ sender: UISwitch) {
+        
+        if btnStatus.isOn { eventCopy?.status = enumStatus.Incoming }
+        else { eventCopy?.status = enumStatus.Completed }
+    }
+    
+    @IBAction func btnSave_onClicked(_ sender: UIButton) {
+        
+        //target: should learn about generics operator
+        event?.title = (eventCopy?.title)!
+        event?.description = (eventCopy?.description)!
+        event?.time = (eventCopy?.time)!
+        event?.status = (eventCopy?.status)!
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    public func setData( dayEvent : DayMoDel, row : Int) {
+        
         // receive data from table cell
         self.event = dayEvent.events[row]
+        self.eventCopy = event?.copy(with: nil) as? AbsEventModel
         self.row = row
     }
     
     private func setDataDetail(_ myEvent : AbsEventModel) {
+        
         // set data detail
-        lbTitle.text = "Title: "
         txtTitle.text = myEvent.title
         //        lbTime.text = myEvent.time.rawValue
         if myEvent.status == enumStatus.Completed {
@@ -69,23 +93,47 @@ class EventCellDetail: UITableViewController {
             btnStatus.setOn(true, animated: true)
         }
         txtDescription.text = myEvent.description
-        pickTime.selectRow( findDayInWeek(dayInWeek: myEvent.time), inComponent: 0, animated: true)
+        pickTime.selectRow( EventModel.findDayInWeek(data: pickerDataSource, dayInWeek: myEvent.time), inComponent: 0, animated: true)
     }
     
-    func makeBorder( sender : UIView) {
+    private func makeBorder( sender : UIView) {
         
         sender.layer.borderColor = UIColor(red : 0 / 255.0, green : 0 / 255.0, blue : 0.0 / 255.0, alpha : 1.0).cgColor
         sender.layer.borderWidth = 2.0
     }
-    
-    private func findDayInWeek ( dayInWeek: enumDayInWeek) -> Int {
+
+    private func pickerViewAddTitle (_ pickerView: UIPickerView, at component: Int, title: String) {
         
-        for day in 0..<pickerDataSource.count {
-            if dayInWeek == pickerDataSource[day] {
-                return day
+        let labelWidth = pickerView.frame.width / CGFloat(pickerView.numberOfComponents)
+        let label: UILabel = UILabel(frame: CGRect(x: pickerView.frame.origin.x + labelWidth * CGFloat(component), y: 0, width: labelWidth, height: heightUnit * 1.0))
+        
+        label.text = title
+        label.textAlignment = .center
+        pickerView.addSubview(label)
+
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.section == 0 {
+            if indexPath.row == 0 {
+                return heightUnit * 1.0
+            }
+            else if indexPath.row == 1 {
+                return heightUnit * 3.0
             }
         }
-        return -1
+        else  if indexPath.section == 1 {
+            if indexPath.row == 0 {
+                return heightUnit * 1.0
+            }
+            else if indexPath.row == 2 {
+                return heightUnit * 1.0
+            }
+            else if indexPath.row == 1 {
+                return heightUnit * 7.0
+            }
+        }
+        return heightUnit * 0.0
     }
     /*
      // MARK: - Navigation
@@ -113,15 +161,13 @@ extension EventCellDetail: UIPickerViewDataSource {
         return pickerDataSource[row].rawValue
     }
 }
-// MARK: PickerViewDelegate
+// MARK: PickerViewDelegate when change time
 extension EventCellDetail: UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        //        pickTime.selectedRow(inComponent: component)
+        eventCopy?.time = pickerDataSource[row]
     }
 }
-
-
 
 
 

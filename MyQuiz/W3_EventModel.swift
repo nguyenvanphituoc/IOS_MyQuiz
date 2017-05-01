@@ -16,6 +16,7 @@ import Foundation
 
 class EventModel : AbsEventModel
 {
+
     var time: enumDayInWeek
     var description: String
     var title: String
@@ -38,6 +39,19 @@ class EventModel : AbsEventModel
         self.time = time
     }
     
+    init(source: EventModel)
+    {
+        self.title = source.title
+        self.description = source.description
+        self.status = source.status
+        self.time = source.time
+    }
+
+    func copy(with zone: NSZone?) -> Any {
+        let copy = EventModel(source: self)
+        return copy
+    }
+    
     static func enumWeekToStringArray () -> [String] {
         
         var list : [String] = []
@@ -54,6 +68,16 @@ class EventModel : AbsEventModel
             list.append(s)
         }
         return list
+    }
+
+    static func findDayInWeek ( data: [enumDayInWeek] ,dayInWeek: enumDayInWeek) -> Int {
+        
+        for day in 0..<data.count {
+            if dayInWeek == data[day] {
+                return day
+            }
+        }
+        return -1
     }
 
     
