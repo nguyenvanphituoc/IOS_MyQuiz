@@ -14,7 +14,7 @@
 //  (7) Sunday
 import Foundation
 
-class EventModel : AbsEventModel
+final class EventModel : AbsEventModel
 {
 
     var time: enumDayInWeek
@@ -46,7 +46,7 @@ class EventModel : AbsEventModel
         self.status = source.status
         self.time = source.time
     }
-
+    
     func copy(with zone: NSZone?) -> Any {
         let copy = EventModel(source: self)
         return copy

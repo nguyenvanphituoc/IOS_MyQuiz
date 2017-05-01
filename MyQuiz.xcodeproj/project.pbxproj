@@ -66,6 +66,7 @@
 		9B050FF11EB5DEBE00B18C0A /* W4_EventCustomCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B050FF01EB5DEBE00B18C0A /* W4_EventCustomCollectionCell.swift */; };
 		9B0D30BB1EB574FE00187F8B /* W4_AbsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0D30BA1EB574FE00187F8B /* W4_AbsController.swift */; };
 		9B0D30BD1EB575CD00187F8B /* W4_EventController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0D30BC1EB575CD00187F8B /* W4_EventController.swift */; };
+		9B1673961EB7AA3400A1AEBA /* W4_EventmanagerCollectionReuse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1673951EB7AA3400A1AEBA /* W4_EventmanagerCollectionReuse.swift */; };
 		9B3455B71EB21A0000F08AFF /* W4_GalleryItemCommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3455B61EB21A0000F08AFF /* W4_GalleryItemCommentView.swift */; };
 		9B34EE3D1EAFADAC000AA439 /* W3_AbsEventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B34EE3C1EAFADAC000AA439 /* W3_AbsEventModel.swift */; };
 		9B9F85521EAA1364001408F2 /* W3_DemoTableViewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9F85511EAA1364001408F2 /* W3_DemoTableViewTableViewController.swift */; };
@@ -164,6 +165,7 @@
 		9B050FF01EB5DEBE00B18C0A /* W4_EventCustomCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = W4_EventCustomCollectionCell.swift; sourceTree = "<group>"; };
 		9B0D30BA1EB574FE00187F8B /* W4_AbsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = W4_AbsController.swift; sourceTree = "<group>"; };
 		9B0D30BC1EB575CD00187F8B /* W4_EventController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = W4_EventController.swift; sourceTree = "<group>"; };
+		9B1673951EB7AA3400A1AEBA /* W4_EventmanagerCollectionReuse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = W4_EventmanagerCollectionReuse.swift; sourceTree = "<group>"; };
 		9B3455B61EB21A0000F08AFF /* W4_GalleryItemCommentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = W4_GalleryItemCommentView.swift; sourceTree = "<group>"; };
 		9B34EE3C1EAFADAC000AA439 /* W3_AbsEventModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = W3_AbsEventModel.swift; sourceTree = "<group>"; };
 		9B9F85511EAA1364001408F2 /* W3_DemoTableViewTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = W3_DemoTableViewTableViewController.swift; sourceTree = "<group>"; };
@@ -381,6 +383,7 @@
 			children = (
 				9B050FEE1EB5DE9100B18C0A /* W4_EventManagerCollection.swift */,
 				9B050FF01EB5DEBE00B18C0A /* W4_EventCustomCollectionCell.swift */,
+				9B1673951EB7AA3400A1AEBA /* W4_EventmanagerCollectionReuse.swift */,
 			);
 			name = CollectionView;
 			sourceTree = "<group>";
@@ -621,6 +624,7 @@
 				397996F91EA757AC00AEF6AB /* W3_CellDetail.swift in Sources */,
 				9B0D30BB1EB574FE00187F8B /* W4_AbsController.swift in Sources */,
 				3988F5E61E9E1E980072260A /* W2_Animation.swift in Sources */,
+				9B1673961EB7AA3400A1AEBA /* W4_EventmanagerCollectionReuse.swift in Sources */,
 				9BCAA2CB1EA1C9BB0052E67A /* CustomKeyboard.swift in Sources */,
 				39E8EA6B1EB0729800467FD1 /* W4_CustomCollectionCell.swift in Sources */,
 				9B9F85521EAA1364001408F2 /* W3_DemoTableViewTableViewController.swift in Sources */,

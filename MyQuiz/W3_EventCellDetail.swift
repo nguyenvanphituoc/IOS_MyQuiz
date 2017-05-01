@@ -14,6 +14,7 @@ class EventCellDetail: UITableViewController {
     @IBOutlet weak var btnStatus: UISwitch!
     @IBOutlet weak var txtDescription: UITextView!
     @IBOutlet weak var txtTitle: UITextField!
+    @IBOutlet weak var btnSave: UIButton!
     
     let pickerDataSource = EventModel.enumWeekToArray();
     var heightUnit : CGFloat = 0.0
@@ -22,6 +23,7 @@ class EventCellDetail: UITableViewController {
     var event : AbsEventModel?
     var eventCopy : AbsEventModel?
     var row : Int?
+    var isClickedSave = false
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -31,7 +33,12 @@ class EventCellDetail: UITableViewController {
         self.pickTime.delegate   = self
         
         heightUnit = (tableView.frame.height - 25 * 2 ) / 15
-        
+        if equalModel(left: event!, right: eventCopy!) {
+            btnSave.isEnabled = false
+        }
+        else {
+            btnSave.isEnabled = true
+        }
         setDataDetail( eventCopy!)
         
         // Do any additional setup after loading the view.
@@ -42,6 +49,13 @@ class EventCellDetail: UITableViewController {
         self.pickerViewAddTitle(pickTime, at: 0, title: "DAY")
      }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        // must delected when back button pressed
+        if !isClickedSave && !equalModel(left: event!, right: eventCopy!) {
+//            showWarningAlert()
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         
         super.didReceiveMemoryWarning()
@@ -50,7 +64,10 @@ class EventCellDetail: UITableViewController {
     
     
     @IBAction func txtTitle_onChanged(_ sender: UITextField) {
+        
         eventCopy?.title = txtTitle.text!
+        if equalModel(left: event!, right: eventCopy!) { btnSave.isEnabled = false }
+        else { btnSave.isEnabled = true }
     }
     
     
@@ -59,16 +76,37 @@ class EventCellDetail: UITableViewController {
         
         if btnStatus.isOn { eventCopy?.status = enumStatus.Incoming }
         else { eventCopy?.status = enumStatus.Completed }
+        if equalModel(left: event!, right: eventCopy!) { btnSave.isEnabled = false }
+        else { btnSave.isEnabled = true }
     }
     
     @IBAction func btnSave_onClicked(_ sender: UIButton) {
         
         //target: should learn about generics operator
-        event?.title = (eventCopy?.title)!
-        event?.description = (eventCopy?.description)!
-        event?.time = (eventCopy?.time)!
-        event?.status = (eventCopy?.status)!
+        if sender.isEnabled {
+            isClickedSave = true
+        }
+        assignmentModel(left: &event!, right: eventCopy!)
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    func equalModel (left: AbsEventModel, right: AbsEventModel) -> Bool {
+        
+        var isEqual = true
+        isEqual = isEqual && (left.title == right.title)
+        isEqual = isEqual && (left.description == right.description)
+        isEqual = isEqual && (left.time == right.time)
+        isEqual = isEqual && (left.status == right.status)
+        return isEqual
+    }
+
+    
+    func assignmentModel (left: inout AbsEventModel, right: AbsEventModel) {
+        
+        left.title = (right.title)
+        left.description = (right.description)
+        left.time = (right.time)
+        left.status = (right.status)
     }
     
     public func setData( dayEvent : DayMoDel, row : Int) {
@@ -113,7 +151,23 @@ class EventCellDetail: UITableViewController {
 
     }
     
+    private func showWarningAlert() {
+        
+        let refreshAlert = UIAlertController(title: "Save", message: "Do you want save data changed.", preferredStyle: UIAlertControllerStyle.alert)
+        
+        refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
+            self.assignmentModel(left: &self.event!, right: self.eventCopy!)
+        }))
+        
+        refreshAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
+            print("Handle Cancel Logic here")
+        }))
+        
+        present(refreshAlert, animated: true, completion: nil)
+    }
+    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
         if indexPath.section == 0 {
             if indexPath.row == 0 {
                 return heightUnit * 1.0
@@ -150,14 +204,17 @@ class EventCellDetail: UITableViewController {
 extension EventCellDetail: UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        
         return pickerDataSource.count
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        
         return 1
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        
         return pickerDataSource[row].rawValue
     }
 }
@@ -165,11 +222,30 @@ extension EventCellDetail: UIPickerViewDataSource {
 extension EventCellDetail: UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
         eventCopy?.time = pickerDataSource[row]
+        if equalModel(left: event!, right: eventCopy!) {
+            btnSave.isEnabled = false
+        }
+        else {
+            btnSave.isEnabled = true
+        }
     }
 }
-
-
+// MARK: textview description delegate
+extension EventCellDetail: UITextViewDelegate {
+    
+    func textViewDidChange(_ textView: UITextView) {
+        
+        eventCopy?.description = txtDescription.text
+        if equalModel(left: event!, right: eventCopy!) {
+            btnSave.isEnabled = false
+        }
+        else {
+            btnSave.isEnabled = true
+        }
+    }
+}
 
 
 
