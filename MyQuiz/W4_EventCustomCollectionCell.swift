@@ -14,6 +14,20 @@ class W4_EventCustomCollectionCell: UICollectionViewCell {
     @IBOutlet weak var lbTitle: UILabel!
     @IBOutlet weak var lbTime: UILabel!
     @IBOutlet weak var txtDescription: UITextView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
+    // MARK: - Properties
+    override var isSelected: Bool {
+        didSet {
+            self.layer.borderWidth = isSelected ? 10 : 0
+        }
+    }
+    
+    // MARK: - View Life Cycle
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        isSelected = false
+    }
     
     func setCellData( event : AbsEventModel ) {
         

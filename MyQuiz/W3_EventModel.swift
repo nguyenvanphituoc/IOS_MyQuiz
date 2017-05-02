@@ -12,7 +12,7 @@
 //  (5) Sunday
 //  (6) Sunday
 //  (7) Sunday
-import Foundation
+import UIKit
 
 final class EventModel : AbsEventModel
 {
@@ -51,6 +51,22 @@ final class EventModel : AbsEventModel
         let copy = EventModel(source: self)
         return copy
     }
+    
+    func sizeToFillWidthOfSize(_ selfSize: CGSize, _ size: CGSize) -> CGSize {
+        
+        var returnSize = size        
+        let aspectRatio = selfSize.width / selfSize.height
+        
+        returnSize.height = returnSize.width / aspectRatio
+        
+        if returnSize.height > size.height {
+            returnSize.height = size.height
+            returnSize.width = size.height * aspectRatio
+        }
+        
+        return returnSize
+    }
+
     
     static func enumWeekToStringArray () -> [String] {
         

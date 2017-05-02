@@ -6,7 +6,8 @@
 //  Copyright © 2017 nguyenvanphituoc. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
 
 public enum enumStatus
 {
@@ -51,4 +52,5 @@ protocol AbsEventModel {
     
     static func parseDatetoString( day : Date) -> String
     func copy(with zone: NSZone?) -> Any
+    func sizeToFillWidthOfSize(_ selfSiza: CGSize, _ size:CGSize) -> CGSize
 }

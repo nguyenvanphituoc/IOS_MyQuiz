@@ -129,7 +129,8 @@ class MyEventManagerTableView : UITableViewController {
             
         }
         if dump.moveModel(moveRowAt: fromIndexPath, to: to) {
-            tableView.reloadRows(at: [fromIndexPath, to], with: .middle)
+            tableView.reloadSections(IndexSet([fromIndexPath.section]), with: .left)
+            tableView.reloadRows(at: [to], with: .middle)
         }
     }
     
