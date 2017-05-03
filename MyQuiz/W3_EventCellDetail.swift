@@ -27,6 +27,14 @@ class EventCellDetail: UITableViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
+        let dismiss: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(EventCellDetail.DismissKeyboard))
+        view.addGestureRecognizer(dismiss)
+        
+        // add these two lines
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow(sender:)), name:NSNotification.Name.UIKeyboardWillShow, object: self.view.window)
+        NotificationCenter.default.addObserver(self, selector: #selector(EventCellDetail.keyboardWillHide(sender:)), name:NSNotification.Name.UIKeyboardWillHide, object: self.view.window)
+        
         makeBorder(sender: txtDescription)
         
         self.pickTime.dataSource = self
@@ -51,6 +59,9 @@ class EventCellDetail: UITableViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         // must delected when back button pressed
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: self.view.window)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: self.view.window)
+
         if !isClickedSave && !equalModel(left: event!, right: eventCopy!) {
 //            showWarningAlert()
         }
@@ -164,6 +175,36 @@ class EventCellDetail: UITableViewController {
         }))
         
         present(refreshAlert, animated: true, completion: nil)
+    }
+    
+    func keyboardWillShow(sender: NSNotification) {
+        let userInfo = sender.userInfo!
+        
+        let keyboardSize: CGSize = (userInfo[UIKeyboardFrameBeginUserInfoKey]! as AnyObject).cgRectValue.size
+        let offset: CGSize = (userInfo[UIKeyboardFrameEndUserInfoKey]! as AnyObject).cgRectValue.size
+        
+        if keyboardSize.height == offset.height {
+            if self.view.frame.origin.y == 0 {
+                UIView.animate(withDuration: 0.1, animations: { () -> Void in
+                    self.view.frame.origin.y -= keyboardSize.height
+                })
+            }
+        } else {
+            UIView.animate(withDuration: 0.1, animations: { () -> Void in
+                self.view.frame.origin.y += keyboardSize.height - offset.height
+            })
+        }
+        print(self.view.frame.origin.y)
+    }
+    
+    func keyboardWillHide(sender: NSNotification) {
+        let userInfo = sender.userInfo!
+        let keyboardSize: CGSize = (userInfo[UIKeyboardFrameBeginUserInfoKey]! as AnyObject).cgRectValue.size
+        self.view.frame.origin.y += keyboardSize.height
+    }
+    
+    func DismissKeyboard(){
+        view.endEditing(true)
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

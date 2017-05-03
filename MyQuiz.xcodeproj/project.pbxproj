@@ -56,6 +56,7 @@
 		397996F91EA757AC00AEF6AB /* CellDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397996F81EA757AC00AEF6AB /* CellDetail.swift */; };
 		3988F5E61E9E1E980072260A /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3988F5E51E9E1E980072260A /* Animation.swift */; };
 		3988F5E81E9E22F00072260A /* BtnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3988F5E71E9E22F00072260A /* BtnView.swift */; };
+		39E0928C1EB9D0B7007CEDD4 /* Testing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E0928B1EB9D0B7007CEDD4 /* Testing.swift */; };
 		39E8EA6B1EB0729800467FD1 /* CustomCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E8EA6A1EB0729800467FD1 /* CustomCollectionCell.swift */; };
 		39E8EA6D1EB072CF00467FD1 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E8EA6C1EB072CF00467FD1 /* CollectionView.swift */; };
 		39E8EA721EB0826300467FD1 /* Flickr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E8EA6F1EB0826300467FD1 /* Flickr.swift */; };
@@ -155,6 +156,7 @@
 		397996F81EA757AC00AEF6AB /* CellDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellDetail.swift; sourceTree = "<group>"; };
 		3988F5E51E9E1E980072260A /* Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 		3988F5E71E9E22F00072260A /* BtnView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BtnView.swift; sourceTree = "<group>"; };
+		39E0928B1EB9D0B7007CEDD4 /* Testing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Testing.swift; sourceTree = "<group>"; };
 		39E8EA6A1EB0729800467FD1 /* CustomCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCollectionCell.swift; sourceTree = "<group>"; };
 		39E8EA6C1EB072CF00467FD1 /* CollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
 		39E8EA6F1EB0826300467FD1 /* Flickr.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flickr.swift; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 				397996AD1EA747FF00AEF6AB /* DemoAssets */,
 				39326F851E94D84100C15D51 /* AppDelegate.swift */,
 				39326F871E94D84100C15D51 /* ViewController.swift */,
+				39E0928B1EB9D0B7007CEDD4 /* Testing.swift */,
 				39326F891E94D84100C15D51 /* Main.storyboard */,
 				39326F8C1E94D84100C15D51 /* Assets.xcassets */,
 				39326F8E1E94D84100C15D51 /* LaunchScreen.storyboard */,
@@ -623,6 +626,7 @@
 				9B34EE3D1EAFADAC000AA439 /* W3_AbsEventModel.swift in Sources */,
 				397996F91EA757AC00AEF6AB /* CellDetail.swift in Sources */,
 				9B0D30BB1EB574FE00187F8B /* W4_AbsController.swift in Sources */,
+				39E0928C1EB9D0B7007CEDD4 /* Testing.swift in Sources */,
 				3988F5E61E9E1E980072260A /* Animation.swift in Sources */,
 				9B1673961EB7AA3400A1AEBA /* W4_EventmanagerCollectionReuse.swift in Sources */,
 				9BCAA2CB1EA1C9BB0052E67A /* CustomKeyboard.swift in Sources */,
