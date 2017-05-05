@@ -18,13 +18,13 @@ public class EventController: AbsController {
         
         self.dayEvents = dayEvents
     }
-
+    
     func getNumberOfSection() -> Int { return dayEvents.count }
-  
+    
     func getNumberOfRow(at indexSection: Int) -> Int { return dayEvents[indexSection].events.count }
-  
+    
     func getSectionName(at indexSection: Int) -> String { return dayEvents[indexSection].name.rawValue }
-  
+    
     func getSection(at indexSection: Int) -> Section? {
         
         if !isValidIndexPath(at: indexSection, row: 0) {
@@ -32,7 +32,7 @@ public class EventController: AbsController {
         }
         return dayEvents[indexSection]
     }
-
+    
     
     func getModel(at indexSection: Int, row indexRow: Int) -> Row? {
         
@@ -48,21 +48,21 @@ public class EventController: AbsController {
         let namespace = Bundle.main.infoDictionary!["CFBundleExecutable"] as! String;
         
         /// get 'anyClass' with classname and namespace
-        do {
-            let clsAny: AnyClass? = try NSClassFromString("\(namespace).\(abstractType)")
-            
-            guard let cls = clsAny else {
-                return nil
-            }
-            
-            let myItem = cls as! EventModel.Type
-            let instanceItem = myItem.init()
-    
-            return instanceItem
-            
-        } catch is Error {
+        let clsAny: AnyClass? = NSClassFromString("\(namespace).\(abstractType)")
+        
+        guard let cls = clsAny else {
             return nil
         }
+        
+        let myItem = cls as! EventModel.Type
+        let instanceItem = myItem.init()
+        
+        return instanceItem
+    }
+    
+    func tryParseToRow (any anyObject: AnyObject) -> Row? {
+        let parsing = anyObject as? Row
+        return parsing
     }
     
     func moveModel(moveRowAt fromIndexPath: IndexPath, to: IndexPath) -> Bool{
@@ -90,18 +90,18 @@ public class EventController: AbsController {
         }
         return true
     }
-
+    
     
     func removeModel (at indexSection: Int, row indexRow: Int) -> Bool {
         
         if !isValidIndexPath(at: indexSection, row: indexRow) {
             return false
-        }        
+        }
         dayEvents[indexSection].events.remove(at: indexRow) // that's okay
-//        let day = dayEvents[indexSection]
-//        day.events.remove(at: indexRow) // that's okay
-//        var events = day.events
-//        events.remove(at: indexRow)// that's error
+        //        let day = dayEvents[indexSection]
+        //        day.events.remove(at: indexRow) // that's okay
+        //        var events = day.events
+        //        events.remove(at: indexRow)// that's error
         return true
     }
     
@@ -120,6 +120,20 @@ public class EventController: AbsController {
             return false
         }
         return true
+    }
+    
+    func filterContentForSearchText(searchText: String, scope: String = "All") -> [Row] {
+        
+        var filteredEvent = [Row]()
+        for day in dayEvents {
+            let templateEvents = day.events.filter { event in
+                let categoryMatch = (scope == "All") || (day.name.rawValue == scope)
+                return  categoryMatch && ( event.title.lowercased().contains(searchText.lowercased()) ||
+                            event.mDescription.lowercased().contains(searchText.lowercased()) )
+            }
+            filteredEvent.append(contentsOf: templateEvents)
+        }
+        return filteredEvent
     }
     
     private func isValidIndexPath(at indexSection: Int, row indexRow: Int) -> Bool {

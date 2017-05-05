@@ -42,7 +42,7 @@ final class EventModel : NSObject, AbsEventModel
     init(source: EventModel)
     {
         self.title = source.title
-        self.mDescription = source.description
+        self.mDescription = source.mDescription
         self.status = source.status
         self.time = source.time
     }

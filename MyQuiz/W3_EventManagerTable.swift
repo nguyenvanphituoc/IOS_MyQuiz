@@ -164,8 +164,8 @@ class MyEventManagerTableView : UITableViewController {
                     return
                     
                 }
-                let section = dataHandleController?.getSection(at: dumpIndexPath.section)
-                viewDetail.setData(dayEvent: section!, row: dumpIndexPath.row)
+                let data = dataHandleController?.getModel(at: dumpIndexPath.section, row: dumpIndexPath.row)!
+                viewDetail.setData(myEvent: data!)
                 break;
 
             default:

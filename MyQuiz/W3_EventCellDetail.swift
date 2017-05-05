@@ -10,6 +10,8 @@ import UIKit
 
 class EventCellDetail: UITableViewController {
     
+    // MARK: - Variables and Constant
+    
     @IBOutlet weak var pickTime: UIPickerView!
     @IBOutlet weak var btnStatus: UISwitch!
     @IBOutlet weak var txtDescription: UITextView!
@@ -23,16 +25,23 @@ class EventCellDetail: UITableViewController {
     var event : AbsEventModel?
     var eventCopy : AbsEventModel?
     var row : Int?
-    var isClickedSave = false
+    var mustAddNewItem: Int = -1 // isn't add func
+    
+    // MARK: - Life Cycle Controller
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
+        // handle user's tap in screen
+        // selector: the func will perform when observer trigger
         let dismiss: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(EventCellDetail.DismissKeyboard))
         view.addGestureRecognizer(dismiss)
         
         // add these two lines
+        //observer to handle show keyboard make all view above keyboard
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow(sender:)), name:NSNotification.Name.UIKeyboardWillShow, object: self.view.window)
+        //observer to handle hide keyboard and resize previous screen
         NotificationCenter.default.addObserver(self, selector: #selector(EventCellDetail.keyboardWillHide(sender:)), name:NSNotification.Name.UIKeyboardWillHide, object: self.view.window)
         
         makeBorder(sender: txtDescription)
@@ -46,6 +55,12 @@ class EventCellDetail: UITableViewController {
         }
         else {
             btnSave.isEnabled = true
+        }
+        if mustAddNewItem != -1 {
+            pickTime.isUserInteractionEnabled = false
+        }
+        else {
+             pickTime.isUserInteractionEnabled = true
         }
         setDataDetail( eventCopy!)
         
@@ -62,8 +77,11 @@ class EventCellDetail: UITableViewController {
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: self.view.window)
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: self.view.window)
 
-        if !isClickedSave && !equalModel(left: event!, right: eventCopy!) {
+        if mustAddNewItem == 1 { // btn save clicked
 //            showWarningAlert()
+        }
+        else if mustAddNewItem == 0 {// not clicked
+            event?.time = enumDayInWeek.NotADay
         }
     }
     
@@ -73,6 +91,7 @@ class EventCellDetail: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: - Outlet Action Func
     
     @IBAction func txtTitle_onChanged(_ sender: UITextField) {
         
@@ -95,11 +114,14 @@ class EventCellDetail: UITableViewController {
         
         //target: should learn about generics operator
         if sender.isEnabled {
-            isClickedSave = true
+//            isAddNewItem = true
+            mustAddNewItem = 1
         }
         assignmentModel(left: &event!, right: eventCopy!)
         self.navigationController?.popViewController(animated: true)
     }
+    
+    // MARK: - Some private features
     
     func equalModel (left: AbsEventModel, right: AbsEventModel) -> Bool {
         
@@ -120,12 +142,11 @@ class EventCellDetail: UITableViewController {
         left.status = (right.status)
     }
     
-    public func setData( dayEvent : DayMoDel, row : Int) {
+    public func setData ( myEvent : AbsEventModel ) {
         
-        // receive data from table cell
-        self.event = dayEvent.events[row]
+        //
+        event = myEvent
         self.eventCopy = event?.copy(with: nil) as? AbsEventModel
-        self.row = row
     }
     
     private func setDataDetail(_ myEvent : AbsEventModel) {
@@ -137,7 +158,7 @@ class EventCellDetail: UITableViewController {
             
             btnStatus.setOn(false, animated: true)
         }
-        else{
+        else {
             
             btnStatus.setOn(true, animated: true)
         }
@@ -177,19 +198,22 @@ class EventCellDetail: UITableViewController {
         present(refreshAlert, animated: true, completion: nil)
     }
     
+    // MARK: - Observer to control keyboard
+    
     func keyboardWillShow(sender: NSNotification) {
+        // get action from user
         let userInfo = sender.userInfo!
-        
+        // get action with user key
         let keyboardSize: CGSize = (userInfo[UIKeyboardFrameBeginUserInfoKey]! as AnyObject).cgRectValue.size
         let offset: CGSize = (userInfo[UIKeyboardFrameEndUserInfoKey]! as AnyObject).cgRectValue.size
-        
+        // make screen vertical scroll above for the first keyboard show
         if keyboardSize.height == offset.height {
             if self.view.frame.origin.y == 0 {
                 UIView.animate(withDuration: 0.1, animations: { () -> Void in
                     self.view.frame.origin.y -= keyboardSize.height
                 })
             }
-        } else {
+        } else { // return for after keyboard show
             UIView.animate(withDuration: 0.1, animations: { () -> Void in
                 self.view.frame.origin.y += keyboardSize.height - offset.height
             })
@@ -204,8 +228,10 @@ class EventCellDetail: UITableViewController {
     }
     
     func DismissKeyboard(){
-        view.endEditing(true)
+        view.endEditing(true) // that to call the first responder seem the textshould return i do
     }
+    
+    // MARK: - TableView datasource
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
@@ -241,7 +267,7 @@ class EventCellDetail: UITableViewController {
      */
     
 }
-// MARK: PickerViewData
+// MARK: - PickerViewData
 extension EventCellDetail: UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
@@ -259,7 +285,7 @@ extension EventCellDetail: UIPickerViewDataSource {
         return pickerDataSource[row].rawValue
     }
 }
-// MARK: PickerViewDelegate when change time
+// MARK: - PickerViewDelegate when change time
 extension EventCellDetail: UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
@@ -273,7 +299,7 @@ extension EventCellDetail: UIPickerViewDelegate {
         }
     }
 }
-// MARK: textview description delegate
+// MARK: - textview description delegate
 extension EventCellDetail: UITextViewDelegate {
     
     func textViewDidChange(_ textView: UITextView) {

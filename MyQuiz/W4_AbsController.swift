@@ -31,6 +31,8 @@ protocol AbsController {
     
     func createModel (type abstractType: String) -> Row?
     
+    func tryParseToRow (any anyClass: AnyObject) -> Row?
+    
     func moveModel(moveRowAt fromIndexPath: IndexPath, to: IndexPath) -> Bool
 
     func removeModel (at indexSection: Int, row indexRow: Int) -> Bool
@@ -38,4 +40,6 @@ protocol AbsController {
     func insertModel (at indexSection: Int, row indexRow: Int, model: Row) -> Bool
     
     func updateModel (at indexSection: Int, row indexRow: Int, model: Row) -> Bool
+    
+    func filterContentForSearchText(searchText: String, scope: String) -> [Row]
 }

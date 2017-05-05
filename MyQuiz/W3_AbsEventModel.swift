@@ -17,6 +17,7 @@ public enum enumStatus
 
 public enum enumDayInWeek : String // raw type
 {
+    case NotADay = "Nil"
     case Sunday = "Sunday"
     case Monday = "Monday"
     case Tuesday = "TuesDay"

@@ -17,6 +17,7 @@ class W4_EventCustomCollectionCell: UICollectionViewCell {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     // MARK: - Properties
+    // observer property to make boder, not use yet
     override var isSelected: Bool {
         didSet {
             self.layer.borderWidth = isSelected ? 10 : 0
@@ -29,6 +30,7 @@ class W4_EventCustomCollectionCell: UICollectionViewCell {
         isSelected = false
     }
     
+    // set details cell when load
     func setCellData( event : AbsEventModel ) {
         
         self.lbTitle.text = event.title;

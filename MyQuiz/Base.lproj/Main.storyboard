@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="VH7-Zo-B2O">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="VH7-Zo-B2O">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -492,95 +492,32 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" id="nyG-eo-BCJ">
+                        <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" systemItem="add" id="6dh-ec-wkf">
                             <connections>
                                 <segue destination="01s-3r-Gfr" kind="show" identifier="eventAdd" id="VFA-NP-fpp"/>
                             </connections>
                         </barButtonItem>
+                        <textField key="titleView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="search" textAlignment="natural" minimumFontSize="17" id="2Cz-d3-N7c">
+                            <rect key="frame" x="124.5" y="7" width="165" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <action selector="txtSearch_onChanged:" destination="3sc-rl-43X" eventType="editingChanged" id="1bx-1Y-euC"/>
+                                <outlet property="delegate" destination="3sc-rl-43X" id="OhA-jp-eQE"/>
+                            </connections>
+                        </textField>
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="e6N-F9-Iw3"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="txtSearch" destination="2Cz-d3-N7c" id="EWc-TM-QDo"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OVR-I6-5e6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="306" y="-1663"/>
-        </scene>
-        <!--Demo-->
-        <scene sceneID="x6Q-qu-bdX">
-            <objects>
-                <viewController title="Demo" id="ysy-pz-qV5" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="rBE-3n-Op1"/>
-                        <viewControllerLayoutGuide type="bottom" id="cyi-9i-3ix"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="PP2-cs-iss">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B8k-hf-md2">
-                                <rect key="frame" x="0.0" y="82" width="103.66666666666667" height="30"/>
-                                <state key="normal" title="Button"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jF0-Y6-gTP">
-                                <rect key="frame" x="103.66666666666669" y="82" width="103.33333333333331" height="30"/>
-                                <state key="normal" title="Button"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mgW-9I-pcW">
-                                <rect key="frame" x="207.00000000000003" y="82" width="103.66666666666671" height="30"/>
-                                <state key="normal" title="Button"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ilf-KH-DGk">
-                                <rect key="frame" x="310.66666666666674" y="82" width="103.33333333333331" height="30"/>
-                                <state key="normal" title="Button"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zae-Zz-3iC">
-                                <rect key="frame" x="0.0" y="113" width="103.66666666666667" height="30"/>
-                                <state key="normal" title="Button"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e9w-gm-7NU">
-                                <rect key="frame" x="103.66666666666669" y="113" width="103.33333333333331" height="30"/>
-                                <state key="normal" title="Button"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cuz-Wb-NgO">
-                                <rect key="frame" x="207.00000000000003" y="113" width="103.66666666666671" height="30"/>
-                                <state key="normal" title="Button"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MMF-6a-yWv">
-                                <rect key="frame" x="310.66666666666674" y="113" width="103.33333333333331" height="30"/>
-                                <state key="normal" title="Button"/>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="ilf-KH-DGk" secondAttribute="trailing" id="0lj-IK-6uY"/>
-                            <constraint firstItem="e9w-gm-7NU" firstAttribute="leading" secondItem="zae-Zz-3iC" secondAttribute="trailing" id="3ca-5r-w2M"/>
-                            <constraint firstItem="MMF-6a-yWv" firstAttribute="leading" secondItem="cuz-Wb-NgO" secondAttribute="trailing" id="4XC-r2-Jqz"/>
-                            <constraint firstItem="MMF-6a-yWv" firstAttribute="width" secondItem="zae-Zz-3iC" secondAttribute="width" id="6j1-kM-UMd"/>
-                            <constraint firstItem="cuz-Wb-NgO" firstAttribute="leading" secondItem="e9w-gm-7NU" secondAttribute="trailing" id="7u2-gn-Ym3"/>
-                            <constraint firstItem="ilf-KH-DGk" firstAttribute="leading" secondItem="mgW-9I-pcW" secondAttribute="trailing" id="CB2-5y-xuz"/>
-                            <constraint firstItem="mgW-9I-pcW" firstAttribute="leading" secondItem="jF0-Y6-gTP" secondAttribute="trailing" id="Djx-3I-aej"/>
-                            <constraint firstItem="jF0-Y6-gTP" firstAttribute="centerY" secondItem="B8k-hf-md2" secondAttribute="centerY" id="ELf-cg-kkl"/>
-                            <constraint firstItem="ilf-KH-DGk" firstAttribute="width" secondItem="B8k-hf-md2" secondAttribute="width" id="Ehg-KV-afy"/>
-                            <constraint firstItem="MMF-6a-yWv" firstAttribute="centerY" secondItem="cuz-Wb-NgO" secondAttribute="centerY" id="HEN-g5-Atf"/>
-                            <constraint firstItem="zae-Zz-3iC" firstAttribute="leading" secondItem="PP2-cs-iss" secondAttribute="leading" id="IdM-Mp-U1S"/>
-                            <constraint firstItem="zae-Zz-3iC" firstAttribute="top" secondItem="B8k-hf-md2" secondAttribute="bottom" constant="1" id="ShK-Nq-Why"/>
-                            <constraint firstItem="mgW-9I-pcW" firstAttribute="centerY" secondItem="jF0-Y6-gTP" secondAttribute="centerY" id="Z4R-SJ-jU1"/>
-                            <constraint firstItem="e9w-gm-7NU" firstAttribute="width" secondItem="zae-Zz-3iC" secondAttribute="width" id="aI7-Uk-3X8"/>
-                            <constraint firstItem="cuz-Wb-NgO" firstAttribute="width" secondItem="zae-Zz-3iC" secondAttribute="width" id="b7y-Yi-9iU"/>
-                            <constraint firstItem="mgW-9I-pcW" firstAttribute="width" secondItem="B8k-hf-md2" secondAttribute="width" id="fh3-40-EMn"/>
-                            <constraint firstItem="cuz-Wb-NgO" firstAttribute="centerY" secondItem="e9w-gm-7NU" secondAttribute="centerY" id="gKh-oE-kxM"/>
-                            <constraint firstItem="ilf-KH-DGk" firstAttribute="centerY" secondItem="mgW-9I-pcW" secondAttribute="centerY" id="gPu-kP-cnB"/>
-                            <constraint firstItem="B8k-hf-md2" firstAttribute="top" secondItem="rBE-3n-Op1" secondAttribute="bottom" constant="62" id="gQq-Au-1Hh"/>
-                            <constraint firstItem="e9w-gm-7NU" firstAttribute="centerY" secondItem="zae-Zz-3iC" secondAttribute="centerY" id="l1H-IY-hcc"/>
-                            <constraint firstItem="jF0-Y6-gTP" firstAttribute="leading" secondItem="B8k-hf-md2" secondAttribute="trailing" id="l53-aB-ESA"/>
-                            <constraint firstAttribute="trailing" secondItem="MMF-6a-yWv" secondAttribute="trailing" id="og7-AA-59t"/>
-                            <constraint firstItem="jF0-Y6-gTP" firstAttribute="width" secondItem="B8k-hf-md2" secondAttribute="width" id="uZT-6y-fcU"/>
-                            <constraint firstItem="B8k-hf-md2" firstAttribute="leading" secondItem="PP2-cs-iss" secondAttribute="leading" id="yj6-Wf-JhK"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uhe-ou-eK1" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1323" y="-947"/>
         </scene>
         <!--Table View Animation-->
         <scene sceneID="pFp-f5-gVw">
