@@ -29,6 +29,8 @@ protocol AbsController {
     
     func getModel(at indexSection: Int, row indexRow: Int) -> Row?
     
+    func createModel (type abstractType: String) -> Row
+    
     func moveModel(moveRowAt fromIndexPath: IndexPath, to: IndexPath) -> Bool
 
     func removeModel (at indexSection: Int, row indexRow: Int) -> Bool

@@ -14,6 +14,8 @@ class W4_EventManagerCollection: UICollectionViewController {
     
     //datasource
     var dataHandleController : EventController?
+    var newItem: Any?
+    
     
     fileprivate let itemsPerRow: CGFloat = 3
     //1
@@ -64,6 +66,11 @@ class W4_EventManagerCollection: UICollectionViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        
+        if let tmpItem = newItem {
+            alert(message: "new item added")
+        }
+        
         collectionView?.reloadData()
     }
     
@@ -97,7 +104,6 @@ class W4_EventManagerCollection: UICollectionViewController {
         }
     }
     
-    
     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -122,13 +128,19 @@ class W4_EventManagerCollection: UICollectionViewController {
                 viewDetail.setData(dayEvent: section!, row: dumpIndexPath.row)
                 break;
                 
+            case "eventAdd":
+                
+                newItem = dataHandleController?.createModel(type: "EventModel")
+                break;
             default:
                 break;
             }
+            
+            
         }
-        
-    }
     
+    }
+
     // MARK: UICollectionViewDataSource
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -234,6 +246,16 @@ class W4_EventManagerCollection: UICollectionViewController {
         collectionView.reloadSections(IndexSet([sourceIndexPath.section]))
     }
     
+    //that func to perform message box to user
+    func alert(message: String, title: String = "") {
+        
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let OKAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(OKAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
+
+    
 }
 
 extension W4_EventManagerCollection : UICollectionViewDelegateFlowLayout {
@@ -245,7 +267,10 @@ extension W4_EventManagerCollection : UICollectionViewDelegateFlowLayout {
         // New code
         if indexPath == largePhotoIndexPath {
             let data = dataHandleController?.getModel(at: indexPath.section, row: indexPath.row)
-            let cellData = collectionView.cellForItem(at: indexPath)!
+            let cellData = collectionView.cellForItem(at: indexPath) as! W4_EventCustomCollectionCell
+            //
+            cellData.setCellData(event: data!)
+            //
             let selfSize = cellData.bounds.size
             var size = collectionView.bounds.size
             size.height -= topLayoutGuide.length

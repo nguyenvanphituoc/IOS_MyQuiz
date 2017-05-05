@@ -42,6 +42,20 @@ public class EventController: AbsController {
         return dayEvents[indexSection].events[indexRow]
     }
     
+    func createModel (type abstractType: String) -> Row {
+        
+        /// get namespace
+        let namespace = Bundle.main.infoDictionary!["CFBundleExecutable"] as! String;
+        
+        /// get 'anyClass' with classname and namespace
+        let cls: AnyClass = NSClassFromString("\(namespace).\(abstractType)")!;
+        
+        let myItem = cls as! EventModel.Type
+        let instanceItem = myItem.init()
+        
+        return instanceItem
+    }
+    
     func moveModel(moveRowAt fromIndexPath: IndexPath, to: IndexPath) -> Bool{
         
         // get data was moved

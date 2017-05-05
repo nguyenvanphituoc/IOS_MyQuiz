@@ -34,7 +34,7 @@ class W4_EventCustomCollectionCell: UICollectionViewCell {
         self.lbTitle.text = event.title;
         //        cell.btnStatus.setTitle("A", for: .normal);
         self.lbTime.text = event.time.rawValue
-        self.txtDescription.text = event.description
+        self.txtDescription.text = event.mDescription
         self.txtDescription.centerVertically()
         switch event.status {
             

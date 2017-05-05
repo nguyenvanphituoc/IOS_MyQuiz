@@ -33,7 +33,7 @@ class CustomEventTableViewCell: UITableViewCell {
     func setCellData( event : AbsEventModel ) {
         
         self.lbTitle.text = event.title;
-        self.txtDescription.text = event.description;
+        self.txtDescription.text = event.mDescription;
         
         //        cell.btnStatus.setTitle("A", for: .normal);
         self.lbTime.text = event.time.rawValue

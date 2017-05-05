@@ -105,7 +105,7 @@ class EventCellDetail: UITableViewController {
         
         var isEqual = true
         isEqual = isEqual && (left.title == right.title)
-        isEqual = isEqual && (left.description == right.description)
+        isEqual = isEqual && (left.mDescription == right.mDescription)
         isEqual = isEqual && (left.time == right.time)
         isEqual = isEqual && (left.status == right.status)
         return isEqual
@@ -115,7 +115,7 @@ class EventCellDetail: UITableViewController {
     func assignmentModel (left: inout AbsEventModel, right: AbsEventModel) {
         
         left.title = (right.title)
-        left.description = (right.description)
+        left.mDescription = (right.mDescription)
         left.time = (right.time)
         left.status = (right.status)
     }
@@ -141,7 +141,7 @@ class EventCellDetail: UITableViewController {
             
             btnStatus.setOn(true, animated: true)
         }
-        txtDescription.text = myEvent.description
+        txtDescription.text = myEvent.mDescription
         pickTime.selectRow( EventModel.findDayInWeek(data: pickerDataSource, dayInWeek: myEvent.time), inComponent: 0, animated: true)
     }
     
@@ -278,7 +278,7 @@ extension EventCellDetail: UITextViewDelegate {
     
     func textViewDidChange(_ textView: UITextView) {
         
-        eventCopy?.description = txtDescription.text
+        eventCopy?.mDescription = txtDescription.text
         if equalModel(left: event!, right: eventCopy!) {
             btnSave.isEnabled = false
         }
