@@ -106,6 +106,25 @@ class W4_EventManagerCollection: UICollectionViewController {
     
     // MARK: - Navigation
     
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        
+        switch identifier {
+            
+        case "eventEdit":
+            return true
+        case "eventAdd":
+            
+            newItem = dataHandleController?.createModel(type: "EventModel")
+            // get view detail may be displayed data cell
+            guard newItem != nil else {
+                return false
+            }
+            return true
+        default:
+            return false
+        }
+    }
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using [segue destinationViewController].
@@ -129,8 +148,10 @@ class W4_EventManagerCollection: UICollectionViewController {
                 break;
                 
             case "eventAdd":
-                
-                newItem = dataHandleController?.createModel(type: "EventModel")
+                // get view detail may be displayed data cell
+                let viewDetail = segue.destination as! EventCellDetail;
+                let dayModel = DayMoDel(named: enumDayInWeek.Sunday, includeEvents: [newItem as! AbsEventModel])
+                viewDetail.setData(dayEvent: dayModel, row: 0) 
                 break;
             default:
                 break;
