@@ -113,7 +113,7 @@ class EventCellDetail: UITableViewController {
     @IBAction func btnSave_onClicked(_ sender: UIButton) {
         
         //target: should learn about generics operator
-        if sender.isEnabled {
+        if sender.isEnabled && mustAddNewItem != -1 {
 //            isAddNewItem = true
             mustAddNewItem = 1
         }
@@ -164,6 +164,9 @@ class EventCellDetail: UITableViewController {
         }
         txtDescription.text = myEvent.mDescription
         pickTime.selectRow( EventModel.findDayInWeek(data: pickerDataSource, dayInWeek: myEvent.time), inComponent: 0, animated: true)
+        if mustAddNewItem != -1 {
+            pickTime.alpha = 0.7
+        }
     }
     
     private func makeBorder( sender : UIView) {

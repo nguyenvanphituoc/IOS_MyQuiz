@@ -65,6 +65,16 @@
 		39FCCFDE1EA7412600C49F56 /* W3_EventManagerTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FCCFDD1EA7412600C49F56 /* W3_EventManagerTable.swift */; };
 		9B050FEF1EB5DE9100B18C0A /* W4_EventManagerCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B050FEE1EB5DE9100B18C0A /* W4_EventManagerCollection.swift */; };
 		9B050FF11EB5DEBE00B18C0A /* W4_EventCustomCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B050FF01EB5DEBE00B18C0A /* W4_EventCustomCollectionCell.swift */; };
+		9B071CBA1EBDF2DC00EE1961 /* W5_IFStudent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B071CB91EBDF2DC00EE1961 /* W5_IFStudent.swift */; };
+		9B071CBC1EBDF30800EE1961 /* W5_AbsStudent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B071CBB1EBDF30800EE1961 /* W5_AbsStudent.swift */; };
+		9B071CBE1EBDF31A00EE1961 /* W5_StudentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B071CBD1EBDF31A00EE1961 /* W5_StudentModel.swift */; };
+		9B071CC01EBDF34300EE1961 /* W5_AbsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B071CBF1EBDF34300EE1961 /* W5_AbsController.swift */; };
+		9B071CC21EBDF38C00EE1961 /* W5_StudentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B071CC11EBDF38C00EE1961 /* W5_StudentController.swift */; };
+		9B071CC41EBDF8D600EE1961 /* W5_UniversityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B071CC31EBDF8D600EE1961 /* W5_UniversityModel.swift */; };
+		9B071CC71EBE1A4B00EE1961 /* W5_StuTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B071CC61EBE1A4B00EE1961 /* W5_StuTableController.swift */; };
+		9B071CC91EBE1A7400EE1961 /* W5_StuTableCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B071CC81EBE1A7400EE1961 /* W5_StuTableCustomCell.swift */; };
+		9B071CCB1EBE1AB700EE1961 /* W5_StuDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B071CCA1EBE1AB700EE1961 /* W5_StuDetail.swift */; };
+		9B071CCE1EBE2B6600EE1961 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B071CCD1EBE2B6600EE1961 /* RadioButton.swift */; };
 		9B0D30BB1EB574FE00187F8B /* W4_AbsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0D30BA1EB574FE00187F8B /* W4_AbsController.swift */; };
 		9B0D30BD1EB575CD00187F8B /* W4_EventController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0D30BC1EB575CD00187F8B /* W4_EventController.swift */; };
 		9B1673961EB7AA3400A1AEBA /* W4_EventmanagerCollectionReuse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1673951EB7AA3400A1AEBA /* W4_EventmanagerCollectionReuse.swift */; };
@@ -165,6 +175,16 @@
 		39FCCFDD1EA7412600C49F56 /* W3_EventManagerTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = W3_EventManagerTable.swift; sourceTree = "<group>"; };
 		9B050FEE1EB5DE9100B18C0A /* W4_EventManagerCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = W4_EventManagerCollection.swift; sourceTree = "<group>"; };
 		9B050FF01EB5DEBE00B18C0A /* W4_EventCustomCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = W4_EventCustomCollectionCell.swift; sourceTree = "<group>"; };
+		9B071CB91EBDF2DC00EE1961 /* W5_IFStudent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = W5_IFStudent.swift; sourceTree = "<group>"; };
+		9B071CBB1EBDF30800EE1961 /* W5_AbsStudent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = W5_AbsStudent.swift; sourceTree = "<group>"; };
+		9B071CBD1EBDF31A00EE1961 /* W5_StudentModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = W5_StudentModel.swift; sourceTree = "<group>"; };
+		9B071CBF1EBDF34300EE1961 /* W5_AbsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = W5_AbsController.swift; sourceTree = "<group>"; };
+		9B071CC11EBDF38C00EE1961 /* W5_StudentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = W5_StudentController.swift; sourceTree = "<group>"; };
+		9B071CC31EBDF8D600EE1961 /* W5_UniversityModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = W5_UniversityModel.swift; sourceTree = "<group>"; };
+		9B071CC61EBE1A4B00EE1961 /* W5_StuTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = W5_StuTableController.swift; sourceTree = "<group>"; };
+		9B071CC81EBE1A7400EE1961 /* W5_StuTableCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = W5_StuTableCustomCell.swift; sourceTree = "<group>"; };
+		9B071CCA1EBE1AB700EE1961 /* W5_StuDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = W5_StuDetail.swift; sourceTree = "<group>"; };
+		9B071CCD1EBE2B6600EE1961 /* RadioButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
 		9B0D30BA1EB574FE00187F8B /* W4_AbsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = W4_AbsController.swift; sourceTree = "<group>"; };
 		9B0D30BC1EB575CD00187F8B /* W4_EventController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = W4_EventController.swift; sourceTree = "<group>"; };
 		9B1673951EB7AA3400A1AEBA /* W4_EventmanagerCollectionReuse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = W4_EventmanagerCollectionReuse.swift; sourceTree = "<group>"; };
@@ -233,6 +253,7 @@
 			isa = PBXGroup;
 			children = (
 				39E8EA691EB0711300467FD1 /* uicollection demo */,
+				9B071CB51EBDF1E400EE1961 /* student manager */,
 				F5219B1F1EAB356D00A71EC3 /* event manager */,
 				39FCCFDC1EA7409D00C49F56 /* tableview */,
 				F5609AEC1EAB1750001EC89A /* calculator */,
@@ -360,6 +381,63 @@
 				9B9F85511EAA1364001408F2 /* DemoTableViewTableViewController.swift */,
 			);
 			name = tableview;
+			sourceTree = "<group>";
+		};
+		9B071CB51EBDF1E400EE1961 /* student manager */ = {
+			isa = PBXGroup;
+			children = (
+				9B071CCC1EBE2B4000EE1961 /* Custom */,
+				9B071CB81EBDF1FD00EE1961 /* Controller */,
+				9B071CB71EBDF1F900EE1961 /* View */,
+				9B071CB61EBDF1F200EE1961 /* Model */,
+			);
+			name = "student manager";
+			sourceTree = "<group>";
+		};
+		9B071CB61EBDF1F200EE1961 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9B071CC31EBDF8D600EE1961 /* W5_UniversityModel.swift */,
+				9B071CBD1EBDF31A00EE1961 /* W5_StudentModel.swift */,
+				9B071CBB1EBDF30800EE1961 /* W5_AbsStudent.swift */,
+				9B071CB91EBDF2DC00EE1961 /* W5_IFStudent.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		9B071CB71EBDF1F900EE1961 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9B071CC51EBE1A3100EE1961 /* TableView */,
+				9B071CCA1EBE1AB700EE1961 /* W5_StuDetail.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		9B071CB81EBDF1FD00EE1961 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9B071CC11EBDF38C00EE1961 /* W5_StudentController.swift */,
+				9B071CBF1EBDF34300EE1961 /* W5_AbsController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		9B071CC51EBE1A3100EE1961 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				9B071CC61EBE1A4B00EE1961 /* W5_StuTableController.swift */,
+				9B071CC81EBE1A7400EE1961 /* W5_StuTableCustomCell.swift */,
+			);
+			name = TableView;
+			sourceTree = "<group>";
+		};
+		9B071CCC1EBE2B4000EE1961 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				9B071CCD1EBE2B6600EE1961 /* RadioButton.swift */,
+			);
+			name = Custom;
 			sourceTree = "<group>";
 		};
 		9B0D30B61EB5712500187F8B /* View */ = {
@@ -614,11 +692,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B071CCB1EBE1AB700EE1961 /* W5_StuDetail.swift in Sources */,
 				39326F881E94D84100C15D51 /* ViewController.swift in Sources */,
 				F5219B261EAB41DC00A71EC3 /* W3_EventCustomTableCell.swift in Sources */,
 				F5219B211EAB379300A71EC3 /* W3_DayModel.swift in Sources */,
 				39326F861E94D84100C15D51 /* AppDelegate.swift in Sources */,
 				9B0D30BD1EB575CD00187F8B /* W4_EventController.swift in Sources */,
+				9B071CC41EBDF8D600EE1961 /* W5_UniversityModel.swift in Sources */,
+				9B071CCE1EBE2B6600EE1961 /* RadioButton.swift in Sources */,
 				397996AB1EA747E300AEF6AB /* Product.swift in Sources */,
 				39FCCFDE1EA7412600C49F56 /* W3_EventManagerTable.swift in Sources */,
 				39E8EA6D1EB072CF00467FD1 /* CollectionView.swift in Sources */,
@@ -630,12 +711,15 @@
 				3988F5E61E9E1E980072260A /* Animation.swift in Sources */,
 				9B1673961EB7AA3400A1AEBA /* W4_EventmanagerCollectionReuse.swift in Sources */,
 				9BCAA2CB1EA1C9BB0052E67A /* CustomKeyboard.swift in Sources */,
+				9B071CC01EBDF34300EE1961 /* W5_AbsController.swift in Sources */,
 				39E8EA6B1EB0729800467FD1 /* CustomCollectionCell.swift in Sources */,
+				9B071CC21EBDF38C00EE1961 /* W5_StudentController.swift in Sources */,
 				9B9F85521EAA1364001408F2 /* DemoTableViewTableViewController.swift in Sources */,
 				9B050FF11EB5DEBE00B18C0A /* W4_EventCustomCollectionCell.swift in Sources */,
 				F5609AEB1EAB1746001EC89A /* W2_QuickInformation.swift in Sources */,
 				9B050FEF1EB5DE9100B18C0A /* W4_EventManagerCollection.swift in Sources */,
 				39E8EA731EB0826300467FD1 /* FlickrPhoto.swift in Sources */,
+				9B071CBC1EBDF30800EE1961 /* W5_AbsStudent.swift in Sources */,
 				397996AC1EA747E300AEF6AB /* ProductLine.swift in Sources */,
 				9BA7BB221EAF828A00B63B36 /* W3_EventCellDetail.swift in Sources */,
 				3988F5E81E9E22F00072260A /* BtnView.swift in Sources */,
@@ -643,7 +727,11 @@
 				9B3455B71EB21A0000F08AFF /* GalleryItemCommentView.swift in Sources */,
 				F5219B231EAB37D200A71EC3 /* W3_EventModel.swift in Sources */,
 				39E8EA721EB0826300467FD1 /* Flickr.swift in Sources */,
+				9B071CBE1EBDF31A00EE1961 /* W5_StudentModel.swift in Sources */,
+				9B071CC91EBE1A7400EE1961 /* W5_StuTableCustomCell.swift in Sources */,
+				9B071CBA1EBDF2DC00EE1961 /* W5_IFStudent.swift in Sources */,
 				F5E4AAFE1E98D76700C86D47 /* W1_Quadratic.swift in Sources */,
+				9B071CC71EBE1A4B00EE1961 /* W5_StuTableController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
