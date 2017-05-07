@@ -9,6 +9,7 @@
 import UIKit
 
 infix operator +=
+infix operator ==
 
 class W5_AbsStudent: W5_IFStudent
 {
@@ -16,37 +17,41 @@ class W5_AbsStudent: W5_IFStudent
     
     var stuName: String
     var stuDescription: String
+    var stuGender: Bool?
     var stuAge: Int8
     var stuUniversityName: String
-    var stuUniversity: Universitymodel?
+    var University: Universitymodel?
     
     required init() {
         
         self.stuName = ""
         self.stuDescription = ""
-        self.stuAge = 18
+        self.stuGender = nil
         self.stuUniversityName = ""
-        self.stuUniversity = nil
+        self.stuAge = 18
+        self.University = nil
     }
     
-    init(name: String, description: String, age : Int8, stuUniversityName: String) {
+    init(name: String, description: String, gender : Bool, stuUniversityName: String, stuAge: Int8) {
         
-        self.stuName = ""
-        self.stuDescription = ""
-        self.stuAge = 18
-        self.stuUniversityName = ""
-        self.stuUniversity = nil
+        self.stuName = name
+        self.stuDescription = description
+        self.stuGender = gender
+        self.stuUniversityName = stuUniversityName
+        self.stuAge = stuAge
+        self.University = nil
     }
     
     // copy constructor
     init(_ source: W5_AbsStudent) {
-
+        
         self.stuName = source.stuName;
         self.stuDescription = source.stuDescription;
-        self.stuAge = source.stuAge
+        self.stuGender = source.stuGender
         self.stuUniversityName = source.stuUniversityName
-        if source.stuUniversity != nil {
-            self.stuUniversity = Universitymodel(source: source.stuUniversity!)
+        self.stuAge = source.stuAge
+        if source.University != nil {
+            self.University = Universitymodel(source: source.University!)
         }
     }
     
@@ -55,12 +60,24 @@ class W5_AbsStudent: W5_IFStudent
         
         dest.stuName = source.stuName;
         dest.stuDescription = source.stuDescription;
-        dest.stuAge = source.stuAge
+        dest.stuGender = source.stuGender
         dest.stuUniversityName = source.stuUniversityName
-        if source.stuUniversity != nil {
-            dest.stuUniversity = Universitymodel(source: source.stuUniversity!)
+        dest.stuAge = source.stuAge
+        if source.University != nil {
+            dest.University = Universitymodel(source: source.University!)
         }
     }
+    
+    static func == (dest: W5_AbsStudent, source: W5_AbsStudent) -> Bool {
+        var isEqual = true
+        isEqual = isEqual && (dest.stuName == source.stuName)
+        isEqual = isEqual && (dest.stuDescription == source.stuDescription)
+        isEqual = isEqual && (dest.stuGender == source.stuGender)
+        isEqual = isEqual && (dest.stuUniversityName == source.stuUniversityName)
+        isEqual = isEqual && (dest.stuAge == source.stuAge)
+        return isEqual
+    }
+    
     
     func parseDatetoString( day : Date) -> String { return "" }
     

@@ -19,10 +19,10 @@ class W5_StudentModel: W5_AbsStudent {
     }
     
     
-    required override init(name: String, description: String, age : Int8, stuUniversityName: String) {
+    required override init(name: String, description: String, gender: Bool, stuUniversityName: String, stuAge: Int8) {
         
         self.image = UIImage()
-        super.init(name: name, description: description, age: age, stuUniversityName: stuUniversityName)
+        super.init(name: name, description: description, gender: gender, stuUniversityName: stuUniversityName, stuAge: stuAge)
     }
     
     // copy constructor
@@ -34,16 +34,17 @@ class W5_StudentModel: W5_AbsStudent {
     
     // assignment operator
     
-    static func += (source: inout W5_StudentModel, dest: W5_StudentModel) {
+    static func += (dest: inout W5_StudentModel, source: W5_StudentModel) {
         
-        dest.stuName = source.stuName;
-        dest.stuDescription = source.stuDescription;
-        dest.stuAge = source.stuAge
-        dest.stuUniversityName = source.stuUniversityName
+        dest += source
         dest.image = source.image
-        if source.stuUniversity != nil {
-            dest.stuUniversity = Universitymodel(source: source.stuUniversity!)
-        }
+    }
+    
+    static func == (dest: W5_StudentModel, source: W5_StudentModel) -> Bool {
+        var isEqual = true
+        isEqual = isEqual && (dest == source)
+        isEqual = isEqual && (dest.image === source.image)
+        return isEqual
     }
     
     //

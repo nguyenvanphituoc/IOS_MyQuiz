@@ -49,7 +49,9 @@ class EventCellDetail: UITableViewController {
         self.pickTime.dataSource = self
         self.pickTime.delegate   = self
         
+        tableView.sectionHeaderHeight = 25
         heightUnit = (tableView.frame.height - 25 * 2 ) / 15
+        
         if equalModel(left: event!, right: eventCopy!) {
             btnSave.isEnabled = false
         }

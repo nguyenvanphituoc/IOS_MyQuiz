@@ -27,7 +27,7 @@ class RadioButton: UIButton {
             outerCircleLayer.strokeColor = outerCircleColor.cgColor
         }
     }
-    @IBInspectable public var innerCircleCircleColor: UIColor = UIColor.green {
+    @IBInspectable public var innerCircleColor: UIColor = UIColor.green {
         didSet {
             setFillState()
         }
@@ -48,6 +48,7 @@ class RadioButton: UIButton {
         super.init(frame: frame)
         customInitialization()
     }
+    
     // MARK: Initialization
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -120,7 +121,7 @@ class RadioButton: UIButton {
     // MARK: Custom
     private func setFillState() {
         if self.isSelected {
-            innerCircleLayer.fillColor = outerCircleColor.cgColor
+            innerCircleLayer.fillColor = innerCircleColor.cgColor
         } else {
             innerCircleLayer.fillColor = UIColor.clear.cgColor
         }

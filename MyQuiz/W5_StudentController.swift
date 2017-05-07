@@ -15,9 +15,9 @@ public class W5_StudentController: W5_AbsController {
     
     private var studentOfUnivers : [Section]
     
-    init(_ dayEvents: [Section]) {
+    init(_ studentUnivers: [Section]) {
         
-        self.studentOfUnivers = dayEvents
+        self.studentOfUnivers = studentUnivers
     }
     
     func getNumberOfSection() -> Int {
@@ -31,6 +31,15 @@ public class W5_StudentController: W5_AbsController {
             return 0
         }
         return studentOfUnivers[indexSection].Students!.count
+    }
+    
+    func getNumberAllRow() -> Int {
+        
+        var count = 0
+        for section in studentOfUnivers {
+            count += (section.Students?.count)!
+        }
+        return count
     }
     
     func getSectionName(at indexSection: Int) -> String {
@@ -85,7 +94,7 @@ public class W5_StudentController: W5_AbsController {
         
         // get data was moved
         let modelTemp = self.getModel(at: fromIndexPath.section, row: fromIndexPath.row)
-        guard var dump = modelTemp else {
+        guard let dump = modelTemp else {
             return false
         }
         // remove data from fromIndexPath
@@ -103,7 +112,7 @@ public class W5_StudentController: W5_AbsController {
             
             // change university
             dump.stuUniversityName = studentOfUnivers[to.section].uName
-            dump.stuUniversity = studentOfUnivers[to.section]
+            dump.University = studentOfUnivers[to.section]
         }
         return true
     }

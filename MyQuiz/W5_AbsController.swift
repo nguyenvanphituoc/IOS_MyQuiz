@@ -17,6 +17,8 @@ protocol W5_AbsController {
     
     func getNumberOfRow(at indexSection: Int) -> Int
     
+    func getNumberAllRow() -> Int
+    
     func getSectionName(at indexSection: Int) -> String
     
     func getSection(at indexSection: Int) -> Section?

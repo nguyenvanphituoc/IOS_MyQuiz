@@ -74,7 +74,7 @@
 		9B071CC71EBE1A4B00EE1961 /* W5_StuTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B071CC61EBE1A4B00EE1961 /* W5_StuTableController.swift */; };
 		9B071CC91EBE1A7400EE1961 /* W5_StuTableCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B071CC81EBE1A7400EE1961 /* W5_StuTableCustomCell.swift */; };
 		9B071CCB1EBE1AB700EE1961 /* W5_StuDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B071CCA1EBE1AB700EE1961 /* W5_StuDetail.swift */; };
-		9B071CCE1EBE2B6600EE1961 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B071CCD1EBE2B6600EE1961 /* RadioButton.swift */; };
+		9B071CCE1EBE2B6600EE1961 /* W5_RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B071CCD1EBE2B6600EE1961 /* W5_RadioButton.swift */; };
 		9B0D30BB1EB574FE00187F8B /* W4_AbsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0D30BA1EB574FE00187F8B /* W4_AbsController.swift */; };
 		9B0D30BD1EB575CD00187F8B /* W4_EventController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0D30BC1EB575CD00187F8B /* W4_EventController.swift */; };
 		9B1673961EB7AA3400A1AEBA /* W4_EventmanagerCollectionReuse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1673951EB7AA3400A1AEBA /* W4_EventmanagerCollectionReuse.swift */; };
@@ -82,9 +82,11 @@
 		9B34EE3D1EAFADAC000AA439 /* W3_AbsEventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B34EE3C1EAFADAC000AA439 /* W3_AbsEventModel.swift */; };
 		9B9F85521EAA1364001408F2 /* DemoTableViewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9F85511EAA1364001408F2 /* DemoTableViewTableViewController.swift */; };
 		9BA7BB221EAF828A00B63B36 /* W3_EventCellDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA7BB211EAF828A00B63B36 /* W3_EventCellDetail.swift */; };
+		9BB3890B1EBEDE3C0059F80F /* W5_InitialData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB3890A1EBEDE3C0059F80F /* W5_InitialData.swift */; };
 		9BCAA2C61EA1B1DC0052E67A /* Keyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BCAA2C51EA1B1DC0052E67A /* Keyboard.storyboard */; };
 		9BCAA2C81EA1C8200052E67A /* Keyboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BCAA2C71EA1C8200052E67A /* Keyboard.xib */; };
 		9BCAA2CB1EA1C9BB0052E67A /* CustomKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCAA2CA1EA1C9BB0052E67A /* CustomKeyboard.swift */; };
+		9BF5531A1EBF9BC40078152C /* W5_AddDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF553191EBF9BC40078152C /* W5_AddDelegate.swift */; };
 		F5148E461EA2020700AC548A /* W2_Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5148E451EA2020700AC548A /* W2_Calculator.swift */; };
 		F5219B211EAB379300A71EC3 /* W3_DayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5219B201EAB379300A71EC3 /* W3_DayModel.swift */; };
 		F5219B231EAB37D200A71EC3 /* W3_EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5219B221EAB37D200A71EC3 /* W3_EventModel.swift */; };
@@ -184,7 +186,7 @@
 		9B071CC61EBE1A4B00EE1961 /* W5_StuTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = W5_StuTableController.swift; sourceTree = "<group>"; };
 		9B071CC81EBE1A7400EE1961 /* W5_StuTableCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = W5_StuTableCustomCell.swift; sourceTree = "<group>"; };
 		9B071CCA1EBE1AB700EE1961 /* W5_StuDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = W5_StuDetail.swift; sourceTree = "<group>"; };
-		9B071CCD1EBE2B6600EE1961 /* RadioButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
+		9B071CCD1EBE2B6600EE1961 /* W5_RadioButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = W5_RadioButton.swift; sourceTree = "<group>"; };
 		9B0D30BA1EB574FE00187F8B /* W4_AbsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = W4_AbsController.swift; sourceTree = "<group>"; };
 		9B0D30BC1EB575CD00187F8B /* W4_EventController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = W4_EventController.swift; sourceTree = "<group>"; };
 		9B1673951EB7AA3400A1AEBA /* W4_EventmanagerCollectionReuse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = W4_EventmanagerCollectionReuse.swift; sourceTree = "<group>"; };
@@ -192,9 +194,11 @@
 		9B34EE3C1EAFADAC000AA439 /* W3_AbsEventModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = W3_AbsEventModel.swift; sourceTree = "<group>"; };
 		9B9F85511EAA1364001408F2 /* DemoTableViewTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoTableViewTableViewController.swift; sourceTree = "<group>"; };
 		9BA7BB211EAF828A00B63B36 /* W3_EventCellDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = W3_EventCellDetail.swift; sourceTree = "<group>"; };
+		9BB3890A1EBEDE3C0059F80F /* W5_InitialData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = W5_InitialData.swift; sourceTree = "<group>"; };
 		9BCAA2C51EA1B1DC0052E67A /* Keyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Keyboard.storyboard; sourceTree = "<group>"; };
 		9BCAA2C71EA1C8200052E67A /* Keyboard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Keyboard.xib; sourceTree = "<group>"; };
 		9BCAA2CA1EA1C9BB0052E67A /* CustomKeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomKeyboard.swift; sourceTree = "<group>"; };
+		9BF553191EBF9BC40078152C /* W5_AddDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = W5_AddDelegate.swift; sourceTree = "<group>"; };
 		F5148E451EA2020700AC548A /* W2_Calculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = W2_Calculator.swift; sourceTree = "<group>"; tabWidth = 4; };
 		F5148E471EA21A7400AC548A /* TestingPlayround.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = TestingPlayround.playground; sourceTree = "<group>"; };
 		F5219B201EAB379300A71EC3 /* W3_DayModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = W3_DayModel.swift; sourceTree = "<group>"; };
@@ -386,6 +390,7 @@
 		9B071CB51EBDF1E400EE1961 /* student manager */ = {
 			isa = PBXGroup;
 			children = (
+				9BF553181EBF9BAF0078152C /* Delegate */,
 				9B071CCC1EBE2B4000EE1961 /* Custom */,
 				9B071CB81EBDF1FD00EE1961 /* Controller */,
 				9B071CB71EBDF1F900EE1961 /* View */,
@@ -397,6 +402,7 @@
 		9B071CB61EBDF1F200EE1961 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9BB3890A1EBEDE3C0059F80F /* W5_InitialData.swift */,
 				9B071CC31EBDF8D600EE1961 /* W5_UniversityModel.swift */,
 				9B071CBD1EBDF31A00EE1961 /* W5_StudentModel.swift */,
 				9B071CBB1EBDF30800EE1961 /* W5_AbsStudent.swift */,
@@ -435,7 +441,7 @@
 		9B071CCC1EBE2B4000EE1961 /* Custom */ = {
 			isa = PBXGroup;
 			children = (
-				9B071CCD1EBE2B6600EE1961 /* RadioButton.swift */,
+				9B071CCD1EBE2B6600EE1961 /* W5_RadioButton.swift */,
 			);
 			name = Custom;
 			sourceTree = "<group>";
@@ -486,6 +492,14 @@
 				9BCAA2CA1EA1C9BB0052E67A /* CustomKeyboard.swift */,
 			);
 			name = custom;
+			sourceTree = "<group>";
+		};
+		9BF553181EBF9BAF0078152C /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				9BF553191EBF9BC40078152C /* W5_AddDelegate.swift */,
+			);
+			name = Delegate;
 			sourceTree = "<group>";
 		};
 		F5219B1F1EAB356D00A71EC3 /* event manager */ = {
@@ -699,7 +713,7 @@
 				39326F861E94D84100C15D51 /* AppDelegate.swift in Sources */,
 				9B0D30BD1EB575CD00187F8B /* W4_EventController.swift in Sources */,
 				9B071CC41EBDF8D600EE1961 /* W5_UniversityModel.swift in Sources */,
-				9B071CCE1EBE2B6600EE1961 /* RadioButton.swift in Sources */,
+				9B071CCE1EBE2B6600EE1961 /* W5_RadioButton.swift in Sources */,
 				397996AB1EA747E300AEF6AB /* Product.swift in Sources */,
 				39FCCFDE1EA7412600C49F56 /* W3_EventManagerTable.swift in Sources */,
 				39E8EA6D1EB072CF00467FD1 /* CollectionView.swift in Sources */,
@@ -712,6 +726,7 @@
 				9B1673961EB7AA3400A1AEBA /* W4_EventmanagerCollectionReuse.swift in Sources */,
 				9BCAA2CB1EA1C9BB0052E67A /* CustomKeyboard.swift in Sources */,
 				9B071CC01EBDF34300EE1961 /* W5_AbsController.swift in Sources */,
+				9BB3890B1EBEDE3C0059F80F /* W5_InitialData.swift in Sources */,
 				39E8EA6B1EB0729800467FD1 /* CustomCollectionCell.swift in Sources */,
 				9B071CC21EBDF38C00EE1961 /* W5_StudentController.swift in Sources */,
 				9B9F85521EAA1364001408F2 /* DemoTableViewTableViewController.swift in Sources */,
@@ -719,6 +734,7 @@
 				F5609AEB1EAB1746001EC89A /* W2_QuickInformation.swift in Sources */,
 				9B050FEF1EB5DE9100B18C0A /* W4_EventManagerCollection.swift in Sources */,
 				39E8EA731EB0826300467FD1 /* FlickrPhoto.swift in Sources */,
+				9BF5531A1EBF9BC40078152C /* W5_AddDelegate.swift in Sources */,
 				9B071CBC1EBDF30800EE1961 /* W5_AbsStudent.swift in Sources */,
 				397996AC1EA747E300AEF6AB /* ProductLine.swift in Sources */,
 				9BA7BB221EAF828A00B63B36 /* W3_EventCellDetail.swift in Sources */,
