@@ -43,7 +43,13 @@ class W5_StuTableCustomCell: UITableViewCell {
         guard student is W5_StudentModel else {
             return
         }
-        self.imgStu.image = (student as! W5_StudentModel).image
+        if student.stuGender! {
+           self.imgStu.image = UIImage(named: "theBoy")
+        }
+        else {
+            self.imgStu.image = UIImage(named: "theGirl")
+        }
+
     }
     
 }

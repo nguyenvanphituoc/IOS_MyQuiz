@@ -21,7 +21,7 @@ class W5_StuDetail: UITableViewController {
     // MARK: - Local variables
     var senderViewController: W5_AddNewStudent? = nil
     var pickerDataSource: [String]? = nil
-    let numberPattern : String = "^[1-9]*$"
+    let numberPattern : String = "^[0-9]*$"
     var rdBtns: [RadioButton] = []
     var heightUnit : CGFloat = 0.0
     var activeText: UIView?
@@ -30,7 +30,8 @@ class W5_StuDetail: UITableViewController {
     var studentCopy : W5_StudentController.Row?
     var row : Int?
     var mustAddNewItem: Int = -1 // isn't add func
-    
+    //
+    var canSave = true
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -101,6 +102,9 @@ class W5_StuDetail: UITableViewController {
         else {
             studentCopy?.stuGender = false
         }
+        if studentCopy! is W5_StudentModel {
+            (studentCopy as! W5_StudentModel).image = ((studentCopy?.stuGender)! ? UIImage(named: "theBoy") : UIImage(named: "theGirl"))!
+        }
         if student! == studentCopy! {
             btnSave.isEnabled = false
         }
@@ -112,6 +116,10 @@ class W5_StuDetail: UITableViewController {
     
     @IBAction func btnSave_OnClicked(_ sender: UIButton) {
         
+        if !canSave {
+            alert(message: "Incorrect Age")
+            return
+        }
         if sender.isEnabled && mustAddNewItem != -1 {
             //            isAddNewItem = true
             mustAddNewItem = 1
@@ -130,11 +138,22 @@ class W5_StuDetail: UITableViewController {
             studentCopy?.stuName = sender.text!
             break
         case 102: // age
+            guard sender.text != nil && sender.text != "" else {
+                return
+            }
             if isCorrectNumber(sNumber : sender.text!, numberPattern : numberPattern) {
-                studentCopy?.stuAge = Int8(sender.text!)!
+                
+                let int = Int(sender.text!)
+                if ( int! >= 17 && int! <= 100) {
+                    studentCopy?.stuAge = Int8(sender.text!)!
+                    canSave = true
+                }
+                else {
+                    canSave = false
+                }
             }
             else {
-                sender.text = String(describing: studentCopy?.stuAge)
+                sender.text = String(Int(studentCopy!.stuAge))
             }
             break
         default:
@@ -168,7 +187,7 @@ class W5_StuDetail: UITableViewController {
         // set data detail
         txtFullName.text = myStu.stuName
         //        lbTime.text = myEvent.time.rawValue
-        if myStu.stuGender! {
+        if myStu.stuGender != nil && myStu.stuGender! {
             
             rdBtnMale.isSelected = true
         }
@@ -273,6 +292,15 @@ class W5_StuDetail: UITableViewController {
         
         present(refreshAlert, animated: true, completion: nil)
     }
+    
+    func alert(message: String, title: String = "") {
+        
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let OKAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(OKAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
+
     
     func keyboardDidShow(notification: NSNotification) {
         

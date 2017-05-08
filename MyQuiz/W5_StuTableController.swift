@@ -16,7 +16,8 @@ class W5_StuTableController: UITableViewController {
     var shouldAnimaCell: [Bool]?
     // create new bar search controller
     let searchController = UISearchController(searchResultsController: nil)
-    var isSearch: Bool = false
+    // now let's do search feature
+    var filterResultStudents: [W5_StudentController.Row] = []
     var newItem: Any? // use to creat nevarvent
     
     // MARK: - Life cycle
@@ -30,12 +31,12 @@ class W5_StuTableController: UITableViewController {
         shouldAnimaCell = [Bool](repeating: false, count: dataStudentController!.getNumberAllRow())
         // search added in headerview
         searchController.searchResultsUpdater = self as UISearchResultsUpdating
-        searchController.searchBar.delegate = self
         searchController.dimsBackgroundDuringPresentation = false
         definesPresentationContext = true
         tableView.tableHeaderView = searchController.searchBar
         // add scope for search
-        reloadScopeBar()
+        searchController.searchBar.scopeButtonTitles = reloadScopeBar()
+        searchController.searchBar.delegate = self
         
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         self.navigationItem.rightBarButtonItem = self.editButtonItem
@@ -55,6 +56,10 @@ class W5_StuTableController: UITableViewController {
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
+        if searchController.isActive && searchController.searchBar.text != "" {
+            return 1
+        }
+
         guard let dump = dataStudentController else {
             return 0
         }
@@ -64,6 +69,10 @@ class W5_StuTableController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+        if searchController.isActive && searchController.searchBar.text != "" {
+            return filterResultStudents.count
+        }
+
         guard let dump = dataStudentController else {
             return 0
         }
@@ -71,6 +80,9 @@ class W5_StuTableController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if searchController.isActive && searchController.searchBar.text != "" {
+            return "Search result"
+        }
         guard let dump = dataStudentController else {
             return ""
         }
@@ -81,13 +93,18 @@ class W5_StuTableController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! W5_StuTableCustomCell
         
         makeBorder(sender: cell)
-        
+        var model: W5_StudentController.Row
         // Configure the cell...
         guard let dump = dataStudentController else {
             return cell
         }
-        
-        cell.setCellData(dump.getModel(at: indexPath.section, row: indexPath.row)!)
+        if searchController.isActive && searchController.searchBar.text != "" {
+            model = filterResultStudents[indexPath.row]
+        }
+        else {
+            model = dump.getModel(at: indexPath.section, row: indexPath.row)!
+        }
+        cell.setCellData(model)
         
         return cell
     }
@@ -140,7 +157,7 @@ class W5_StuTableController: UITableViewController {
             return
         }
         if dump.moveModel(moveRowAt: fromIndexPath, to: to) {
-            tableView.reloadRows(at: [fromIndexPath, to], with: .middle)
+            tableView.reloadRows(at: [to], with: .middle)
         }
      }
     
@@ -191,7 +208,13 @@ class W5_StuTableController: UITableViewController {
 //            if isSearch && txtSearch.text != "" {
 //                data = filterResultEvents[(dumpIndexPath.row)]
 //            }
-            data = (dataStudentController?.getModel(at: dumpIndexPath.section, row: dumpIndexPath.row)!)!
+            // Configure the cell...
+            if searchController.isActive && searchController.searchBar.text != "" {
+                data = filterResultStudents[dumpIndexPath.row]
+            }
+            else {
+                data = (dataStudentController?.getModel(at: dumpIndexPath.section, row: dumpIndexPath.row)!)!
+            }            
             viewDetail.setData(myStu: data)
             viewDetail.senderViewController = self
             viewDetail.mustAddNewItem = -1;
@@ -232,7 +255,7 @@ class W5_StuTableController: UITableViewController {
         sender.layer.masksToBounds = true
     }
     
-    func reloadScopeBar () {
+    func reloadScopeBar () -> [String]{
     
             var allScope: [String] = []
             allScope.append("All")
@@ -243,9 +266,8 @@ class W5_StuTableController: UITableViewController {
 //                }
 //                allScope.append(dump.uName)
 //            }
-            searchController.searchBar.scopeButtonTitles?.removeAll()
-            searchController.searchBar.scopeButtonTitles?.append(contentsOf: allScope)
-        }
+            return allScope
+    }
     
 }
 
@@ -290,11 +312,22 @@ extension W5_StuTableController: UISearchResultsUpdating {
         
         let searchBar = searchController.searchBar
         let scope = searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex]
+        filterResultStudents.removeAll()
+        guard let dump =  dataStudentController?.filterContentForSearchText(searchText: searchBar.text!, scope: scope) else {
+            return
+        }
+        filterResultStudents = dump
+        tableView.reloadData()
     }
 }
 
 extension W5_StuTableController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
-        
+        filterResultStudents.removeAll()
+        guard let dump =  dataStudentController?.filterContentForSearchText(searchText: searchBar.text!, scope: searchBar.scopeButtonTitles![selectedScope]) else {
+            return
+        }
+        filterResultStudents = dump
+        tableView.reloadData()
     }
 }
