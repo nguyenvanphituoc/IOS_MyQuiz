@@ -13,14 +13,15 @@ class W5_StuDetail: UITableViewController {
     @IBOutlet weak var txtSearch: UITextField!
     @IBOutlet weak var pickUniver: UIPickerView!
     @IBOutlet weak var txtFullName: UITextField!
+    @IBOutlet weak var txtAge: UITextField!
     @IBOutlet weak var rdBtnFemale: RadioButton!
     @IBOutlet weak var rdBtnMale: RadioButton!
     @IBOutlet weak var txtDescr: UITextView!
     @IBOutlet weak var btnSave: UIButton!
-    
+    // MARK: - Local variables
     var senderViewController: W5_AddNewStudent? = nil
     var pickerDataSource: [String]? = nil
-    
+    let numberPattern : String = "^[1-9]*$"
     var rdBtns: [RadioButton] = []
     var heightUnit : CGFloat = 0.0
     var activeText: UIView?
@@ -30,6 +31,7 @@ class W5_StuDetail: UITableViewController {
     var row : Int?
     var mustAddNewItem: Int = -1 // isn't add func
     
+    // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         // Uncomment the following line to preserve selection between presentations
@@ -44,19 +46,25 @@ class W5_StuDetail: UITableViewController {
         view.addGestureRecognizer(dismiss)
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardDidShow(notification:)), name: NSNotification.Name.UIKeyboardDidShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillBeHidden(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
-
+        
         self.pickUniver.dataSource = self
         self.pickUniver.delegate   = self
         if senderViewController != nil {
             pickerDataSource = senderViewController?.getSectionArrayName()
         }
-        
+        if student! == studentCopy! {
+            btnSave.isEnabled = false
+        }
+        else {
+            btnSave.isEnabled = true
+        }
         makeBorder(sender: txtDescr)
         
         setDataDetail( studentCopy!)
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        self.pickerViewAddTitle(pickUniver, at: 0, title: "University")
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -68,15 +76,17 @@ class W5_StuDetail: UITableViewController {
             senderViewController!.isAdded(true)
         }
         else if mustAddNewItem == 0 {// not clicked
-           senderViewController!.isAdded(false)
+            senderViewController!.isAdded(false)
         }
-
+        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    // MARK: - Action outlet
     
     @IBAction func rdBtnGender_onClick(_ sender: RadioButton) {
         
@@ -85,8 +95,59 @@ class W5_StuDetail: UITableViewController {
         }
         sender.isSelected = !sender.isSelected
         sender.backgroundColor = UIColor.clear
+        if rdBtnMale.isSelected {
+            studentCopy?.stuGender = true
+        }
+        else {
+            studentCopy?.stuGender = false
+        }
+        if student! == studentCopy! {
+            btnSave.isEnabled = false
+        }
+        else {
+            btnSave.isEnabled = true
+        }
+        
     }
-
+    
+    @IBAction func btnSave_OnClicked(_ sender: UIButton) {
+        
+        if sender.isEnabled && mustAddNewItem != -1 {
+            //            isAddNewItem = true
+            mustAddNewItem = 1
+        }
+        student! += studentCopy!
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func TextField_OnChanged(_ sender: UITextField) {
+        
+        let tag = sender.tag
+        switch tag {
+        case 100: // search
+            break
+        case 101: // name
+            studentCopy?.stuName = sender.text!
+            break
+        case 102: // age
+            if isCorrectNumber(sNumber : sender.text!, numberPattern : numberPattern) {
+                studentCopy?.stuAge = Int8(sender.text!)!
+            }
+            else {
+                sender.text = String(describing: studentCopy?.stuAge)
+            }
+            break
+        default:
+            break
+        }
+        if student! == studentCopy! {
+            btnSave.isEnabled = false
+        }
+        else {
+            btnSave.isEnabled = true
+        }
+        
+    }
     
     // MARK: delegate
     
@@ -116,9 +177,10 @@ class W5_StuDetail: UITableViewController {
             rdBtnFemale.isSelected = true
         }
         txtDescr.text = myStu.stuDescription
-        pickUniver.selectedRow(inComponent: 0)
+        txtAge.text = String(describing: myStu.stuAge)
+        pickUniver.selectRow(findStudentInUniver(myStu), inComponent: 0, animated: true)
         if mustAddNewItem != -1 {
-            pickUniver.alpha = 0.6
+            pickUniver.selectedRow(inComponent: 0)
         }
     }
     
@@ -161,6 +223,24 @@ class W5_StuDetail: UITableViewController {
      // Pass the selected object to the new view controller.
      }
      */
+    // MARK: - Private func
+    
+    func findStudentInUniver (_ myStu: W5_StudentController.Row) -> Int {
+        for i in 0..<pickerDataSource!.count {
+            let s = pickerDataSource![i]
+            if s == myStu.stuUniversityName {
+                return i
+            }
+        }
+        return -1
+    }
+    
+    func isCorrectNumber( sNumber : String, numberPattern : String) -> Bool {
+        
+        let regex = NSPredicate(format:"SELF MATCHES %@", numberPattern);
+        return regex.evaluate(with: sNumber)
+    }
+    
     
     private func makeBorder( sender : UIView) {
         
@@ -223,12 +303,12 @@ class W5_StuDetail: UITableViewController {
     
     func keyboardWillBeHidden(notification: NSNotification) {
         
-         let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue
+        let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue
         self.view.frame.origin.y += (keyboardSize?.height)!
         
         let navigationBarHeight = self.navigationController?.navigationBar.frame.height
         let contentInsets = UIEdgeInsets(top: navigationBarHeight! + 15, left: 0.0, bottom: 0.0, right: 0.0)
-//        let contentInsets = UIEdgeInsets.zero
+        //        let contentInsets = UIEdgeInsets.zero
         self.tableView.contentInset = contentInsets
         self.tableView.scrollIndicatorInsets = contentInsets
     }
@@ -250,7 +330,7 @@ extension W5_StuDetail: UIPickerViewDelegate {
             btnSave.isEnabled = true
         }
     }
-
+    
 }
 
 extension W5_StuDetail: UIPickerViewDataSource {
@@ -273,7 +353,7 @@ extension W5_StuDetail: UIPickerViewDataSource {
         
         return pickerDataSource![row]
     }
-
+    
 }
 
 extension W5_StuDetail: UITextFieldDelegate {
@@ -306,6 +386,18 @@ extension W5_StuDetail: UITextViewDelegate {
     func textViewDidEndEditing(_ textView: UITextView) {
         activeText = nil
         self.tableView.isScrollEnabled = false
+    }
+    
+    func textViewDidChange(_ textView: UITextView) {
+        
+        studentCopy?.stuDescription = txtDescr.text
+        if student! == studentCopy! {
+            btnSave.isEnabled = false
+        }
+        else {
+            btnSave.isEnabled = true
+        }
+        
     }
     
     override func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {

@@ -19,6 +19,7 @@ class W5_StuTableController: UITableViewController {
     var isSearch: Bool = false
     var newItem: Any? // use to creat nevarvent
     
+    // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -43,6 +44,11 @@ class W5_StuTableController: UITableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        tableView.reloadData()
     }
     
     // MARK: - Table view data source
@@ -265,7 +271,6 @@ extension W5_StuTableController: W5_AddNewStudent {
                     alert(message: "new item added")
                 newItem = nil
             }
-            tableView.reloadData()
         }
     }
     

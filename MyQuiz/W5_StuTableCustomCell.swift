@@ -33,7 +33,7 @@ class W5_StuTableCustomCell: UITableViewCell {
         
         self.lbStuUniver.text = student.stuUniversityName
         self.lbStuName.text = student.stuName
-        self.lbStuDescr.text = student.stuDescription
+        self.lbStuDescr.text = String(student.stuAge)
         if student.stuGender! {
             lbStuGender.text = "👱 Nam"
         }

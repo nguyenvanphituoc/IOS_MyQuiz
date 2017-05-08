@@ -1698,18 +1698,19 @@
                             <tableViewSection headerTitle="UNIVERSITY" id="MWe-xZ-5B0">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="45" id="8jj-ez-B81">
-                                        <rect key="frame" x="0.0" y="55.333333333333336" width="414" height="45"/>
+                                        <rect key="frame" x="0.0" y="55" width="414" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8jj-ez-B81" id="7R9-hC-rOt">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e3V-Ye-krz">
+                                                <textField opaque="NO" clipsSubviews="YES" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e3V-Ye-krz">
                                                     <rect key="frame" x="21" y="2.3333333333333321" width="372.66666666666669" height="40"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
+                                                        <action selector="TextField_OnChanged:" destination="Hq5-27-U2i" eventType="editingChanged" id="JuY-KB-kWX"/>
                                                         <outlet property="delegate" destination="Hq5-27-U2i" id="map-ge-tdQ"/>
                                                     </connections>
                                                 </textField>
@@ -1724,7 +1725,7 @@
                                         <color key="backgroundColor" red="0.0" green="0.56537401676177979" blue="0.50218939781188965" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="96" id="otL-8D-nGB">
-                                        <rect key="frame" x="0.0" y="100.33333333333334" width="414" height="96"/>
+                                        <rect key="frame" x="0.0" y="100" width="414" height="96"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="otL-8D-nGB" id="2r8-Fb-qUs">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="95"/>
@@ -1747,7 +1748,7 @@
                             <tableViewSection headerTitle="INFORMATION" id="LVe-zA-8mt">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="116" id="TxB-F8-gON">
-                                        <rect key="frame" x="0.0" y="252.33333333333334" width="414" height="116"/>
+                                        <rect key="frame" x="0.0" y="252" width="414" height="116"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TxB-F8-gON" id="DVM-WE-3E0">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="115"/>
@@ -1760,12 +1761,13 @@
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nguyễn Văn A" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pCU-tN-G1v">
+                                                <textField opaque="NO" clipsSubviews="YES" tag="101" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nguyễn Văn A" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pCU-tN-G1v">
                                                     <rect key="frame" x="91" y="13" width="295" height="30"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
+                                                        <action selector="TextField_OnChanged:" destination="Hq5-27-U2i" eventType="editingChanged" id="K5d-XA-m3K"/>
                                                         <outlet property="delegate" destination="Hq5-27-U2i" id="CuK-MO-Ryn"/>
                                                     </connections>
                                                 </textField>
@@ -1837,11 +1839,13 @@
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="19" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oSu-4A-l14">
+                                                <textField opaque="NO" clipsSubviews="YES" tag="102" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="19" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oSu-4A-l14">
                                                     <rect key="frame" x="91" y="83" width="64" height="30"/>
                                                     <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                     <connections>
+                                                        <action selector="TextField_OnChanged:" destination="Hq5-27-U2i" eventType="editingChanged" id="Llx-Uf-5sE"/>
                                                         <outlet property="delegate" destination="Hq5-27-U2i" id="lyd-Si-P2f"/>
                                                     </connections>
                                                 </textField>
@@ -1871,7 +1875,7 @@
                                         <color key="backgroundColor" red="0.0" green="0.56537401679999999" blue="0.50218939780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="337" id="WAT-QR-H4g">
-                                        <rect key="frame" x="0.0" y="368.33333333333337" width="414" height="337"/>
+                                        <rect key="frame" x="0.0" y="368" width="414" height="337"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WAT-QR-H4g" id="TvV-Yu-rnX">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="336"/>
@@ -1897,7 +1901,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="59" id="qHZ-dQ-VnP">
-                                        <rect key="frame" x="0.0" y="705.33333333333337" width="414" height="59"/>
+                                        <rect key="frame" x="0.0" y="705" width="414" height="59"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qHZ-dQ-VnP" id="9ci-Xj-sn1">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="58"/>
@@ -1909,6 +1913,9 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <state key="normal" title="Save"/>
+                                                    <connections>
+                                                        <action selector="btnSave_OnClicked:" destination="Hq5-27-U2i" eventType="touchUpInside" id="LKq-Sj-Icd"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -1931,6 +1938,7 @@
                         <outlet property="pickUniver" destination="Vhn-7v-LwU" id="AzV-RF-Czq"/>
                         <outlet property="rdBtnFemale" destination="ma9-mO-7Bm" id="ukX-G9-6DH"/>
                         <outlet property="rdBtnMale" destination="ECu-6U-ZRY" id="KMy-Ss-O9v"/>
+                        <outlet property="txtAge" destination="oSu-4A-l14" id="EjS-fC-phG"/>
                         <outlet property="txtDescr" destination="XhD-WV-umG" id="2SG-em-YXP"/>
                         <outlet property="txtFullName" destination="pCU-tN-G1v" id="2U0-2S-9MO"/>
                         <outlet property="txtSearch" destination="e3V-Ye-krz" id="8BZ-bz-XLw"/>
