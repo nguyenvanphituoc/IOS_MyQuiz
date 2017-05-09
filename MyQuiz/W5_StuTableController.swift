@@ -136,7 +136,7 @@ class W5_StuTableController: UITableViewController {
      return true
      }
      */
-    
+    // MARK: - Delegate
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         
@@ -157,7 +157,7 @@ class W5_StuTableController: UITableViewController {
             return
         }
         if dump.moveModel(moveRowAt: fromIndexPath, to: to) {
-            tableView.reloadRows(at: [to], with: .middle)
+            tableView.reloadSections(IndexSet([to.section]), with: .middle)
         }
      }
     

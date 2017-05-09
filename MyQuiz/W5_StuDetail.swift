@@ -199,7 +199,9 @@ class W5_StuDetail: UITableViewController {
         txtAge.text = String(describing: myStu.stuAge)
         pickUniver.selectRow(findStudentInUniver(myStu), inComponent: 0, animated: true)
         if mustAddNewItem != -1 {
-            pickUniver.selectedRow(inComponent: 0)
+            btnSave.setTitle("Add", for: .normal)
+            pickUniver.selectRow(0, inComponent: 0, animated: true )
+            myStu.stuUniversityName = (pickerDataSource?[0])!
         }
     }
     

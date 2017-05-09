@@ -34,7 +34,7 @@ class W5_StuTableCustomCell: UITableViewCell {
         self.lbStuUniver.text = student.stuUniversityName
         self.lbStuName.text = student.stuName
         self.lbStuDescr.text = String(student.stuAge)
-        if student.stuGender! {
+        if student.stuGender != nil && student.stuGender!{
             lbStuGender.text = "👱 Nam"
         }
         else {
@@ -43,7 +43,7 @@ class W5_StuTableCustomCell: UITableViewCell {
         guard student is W5_StudentModel else {
             return
         }
-        if student.stuGender! {
+        if student.stuGender != nil && student.stuGender! {
            self.imgStu.image = UIImage(named: "theBoy")
         }
         else {
