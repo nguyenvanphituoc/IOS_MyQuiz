@@ -1,5 +1,7 @@
 # IOS_MyQuiz
 Nguyễn Văn Phi Tước learning, project trees, the prefix "W\\(number)" indicate project or demo in that week <br>
+~*~ Ngày 5-5-2017 ~*~ 
+<i> <b> Group Student Manger project (with UICollection), prefix: W5</b><i><br>
 ~*~ Ngày 30-4-2017 ~*~ 
 <i> <b> Group Event Manger project (with UICollection), prefix: W4</b><i><br>
 ~*~ Ngày 26-4-2017 ~*~ 
