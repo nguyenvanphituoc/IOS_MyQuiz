@@ -1,20 +1,14 @@
 //
-//  AbsController.swift
+//  W5_AbsController.swift
 //  MyQuiz
 //
-//  Created by PhiTuocMacOS on 4/30/17.
+//  Created by PhiTuocMacOS on 5/6/17.
 //  Copyright © 2017 nguyenvanphituoc. All rights reserved.
 //
 
 import Foundation
 
-
-enum MyErrorHandle: Error {
-    
-    case unwrapOptional
-}
-
-protocol AbsController {
+protocol W5_AbsController {
     
     associatedtype Section
     associatedtype Row
@@ -22,6 +16,8 @@ protocol AbsController {
     func getNumberOfSection() -> Int
     
     func getNumberOfRow(at indexSection: Int) -> Int
+    
+    func getNumberAllRow() -> Int
     
     func getSectionName(at indexSection: Int) -> String
     
@@ -34,7 +30,7 @@ protocol AbsController {
     func tryParseToRow (any anyClass: AnyObject) -> Row?
     
     func moveModel(moveRowAt fromIndexPath: IndexPath, to: IndexPath) -> Bool
-
+    
     func removeModel (at indexSection: Int, row indexRow: Int) -> Bool
     
     func insertModel (at indexSection: Int, row indexRow: Int, model: Row) -> Bool

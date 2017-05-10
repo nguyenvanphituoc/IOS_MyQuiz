@@ -1,36 +1,58 @@
 //
-//  EventController.swift
+//  W5_StudentController.swift
 //  MyQuiz
 //
-//  Created by PhiTuocMacOS on 4/30/17.
+//  Created by PhiTuocMacOS on 5/6/17.
 //  Copyright © 2017 nguyenvanphituoc. All rights reserved.
 //
 
 import Foundation
-public class EventController: AbsController {
+
+public class W5_StudentController: W5_AbsController {
     
-    typealias Section = DayMoDel
-    typealias Row  = AbsEventModel
+    typealias Section = W5_UniversityModel
+    typealias Row  = W5_AbsStudent
     
-    private var dayEvents : [Section]
+    private var studentOfUnivers : [Section]
     
-    init(_ dayEvents: [Section]) {
+    init(_ studentUnivers: [Section]) {
         
-        self.dayEvents = dayEvents
+        self.studentOfUnivers = studentUnivers
     }
     
-    func getNumberOfSection() -> Int { return dayEvents.count }
+    func getNumberOfSection() -> Int {
+        
+        return studentOfUnivers.count
+    }
     
-    func getNumberOfRow(at indexSection: Int) -> Int { return dayEvents[indexSection].events.count }
+    func getNumberOfRow(at indexSection: Int) -> Int {
+        
+        if !isUnwrapOpt(studentOfUnivers[indexSection].Students) {
+            return 0
+        }
+        return studentOfUnivers[indexSection].Students!.count
+    }
     
-    func getSectionName(at indexSection: Int) -> String { return dayEvents[indexSection].name.rawValue }
+    func getNumberAllRow() -> Int {
+        
+        var count = 0
+        for section in studentOfUnivers {
+            count += (section.Students?.count)!
+        }
+        return count
+    }
+    
+    func getSectionName(at indexSection: Int) -> String {
+        
+        return studentOfUnivers[indexSection].uName
+    }
     
     func getSection(at indexSection: Int) -> Section? {
         
         if !isValidIndexPath(at: indexSection, row: 0) {
             return nil
         }
-        return dayEvents[indexSection]
+        return studentOfUnivers[indexSection]
     }
     
     
@@ -39,7 +61,10 @@ public class EventController: AbsController {
         if !isValidIndexPath(at: indexSection, row: indexRow) {
             return nil
         }
-        return dayEvents[indexSection].events[indexRow]
+        if !isUnwrapOpt(studentOfUnivers[indexSection].Students) {
+            return nil
+        }
+        return studentOfUnivers[indexSection].Students![indexRow]
     }
     
     func createModel (type abstractType: String) -> Row? {
@@ -54,7 +79,7 @@ public class EventController: AbsController {
             return nil
         }
         
-        let myItem = cls as! EventModel.Type
+        let myItem = cls as! W5_AbsStudent.Type
         let instanceItem = myItem.init()
         
         return instanceItem
@@ -69,7 +94,7 @@ public class EventController: AbsController {
         
         // get data was moved
         let modelTemp = self.getModel(at: fromIndexPath.section, row: fromIndexPath.row)
-        guard var dump = modelTemp else {
+        guard let dump = modelTemp else {
             return false
         }
         // remove data from fromIndexPath
@@ -82,11 +107,12 @@ public class EventController: AbsController {
             let _  = self.insertModel(at: fromIndexPath.section, row: fromIndexPath.row, model: dump)
             return false
         }
-        // If change day <=> move another section
+        // If change university <=> move another section
         if fromIndexPath.section != to.section {
             
-            // change day
-            dump.time = dayEvents[to.section].name
+            // change university
+            dump.stuUniversityName = studentOfUnivers[to.section].uName
+            dump.University = studentOfUnivers[to.section]
         }
         return true
     }
@@ -97,11 +123,10 @@ public class EventController: AbsController {
         if !isValidIndexPath(at: indexSection, row: indexRow) {
             return false
         }
-        dayEvents[indexSection].events.remove(at: indexRow) // that's okay
-        //        let day = dayEvents[indexSection]
-        //        day.events.remove(at: indexRow) // that's okay
-        //        var events = day.events
-        //        events.remove(at: indexRow)// that's error
+        if !isUnwrapOpt(studentOfUnivers[indexSection].Students) {
+            return false
+        }
+        studentOfUnivers[indexSection].Students!.remove(at: indexRow)
         return true
     }
     
@@ -110,7 +135,10 @@ public class EventController: AbsController {
         if !isValidIndexPath(at: indexSection, row: indexRow) {
             return false
         }
-        dayEvents[indexSection].events.insert(model, at: indexRow)
+        if !isUnwrapOpt(studentOfUnivers[indexSection].Students) {
+            return false
+        }
+        studentOfUnivers[indexSection].Students!.insert(model, at: indexRow)
         return true
     }
     
@@ -125,23 +153,34 @@ public class EventController: AbsController {
     func filterContentForSearchText(searchText: String, scope: String = "All") -> [Row] {
         
         var filteredEvent = [Row]()
-        for day in dayEvents {
-            let templateEvents = day.events.filter { event in
-                let categoryMatch = (scope == "All") || (day.name.rawValue == scope)
-                return  categoryMatch && ( event.title.lowercased().contains(searchText.lowercased()) ||
-                            event.mDescription.lowercased().contains(searchText.lowercased()) )
+        for univer in studentOfUnivers {
+            if !isUnwrapOpt(univer.Students) {
+                continue
+            }
+            let templateEvents = univer.Students!.filter { student in
+                let categoryMatch = (scope == "All") || (univer.uName == scope)
+                return  categoryMatch && ( student.stuName.lowercased().contains(searchText.lowercased()) ||
+                    student.stuDescription.lowercased().contains(searchText.lowercased()) )
             }
             filteredEvent.append(contentsOf: templateEvents)
         }
         return filteredEvent
     }
     
+    private func isUnwrapOpt (_ wrapObj: Any?) -> Bool {
+        
+        if wrapObj != nil {
+            return true
+        }
+        return false
+    }
+    
     private func isValidIndexPath(at indexSection: Int, row indexRow: Int) -> Bool {
         
-        if dayEvents.count < indexSection {
+        if studentOfUnivers.count < indexSection {
             return false
         }
-        else if dayEvents[indexSection].events.count < indexRow {
+        else if isUnwrapOpt(studentOfUnivers[indexSection].Students) && studentOfUnivers[indexSection].Students!.count < indexRow {
             return false
         }
         return true

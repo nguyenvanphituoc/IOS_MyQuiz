@@ -14,18 +14,18 @@
 //  (7) Sunday
 import UIKit
 
-final class EventModel : AbsEventModel
+final class EventModel : NSObject, AbsEventModel
 {
 
     var time: enumDayInWeek
-    var description: String
+    var mDescription: String
     var title: String
     var status: enumStatus
     
-    init()
+    override init()
     {
         self.title = "";
-        self.description = "";
+        self.mDescription = "";
         self.time = .Sunday
         self.status = .Incoming
     }
@@ -34,7 +34,7 @@ final class EventModel : AbsEventModel
     init(titled: String, description: String, status : enumStatus, time : enumDayInWeek)
     {
         self.title = titled
-        self.description = description
+        self.mDescription = description
         self.status = status
         self.time = time
     }
@@ -42,7 +42,7 @@ final class EventModel : AbsEventModel
     init(source: EventModel)
     {
         self.title = source.title
-        self.description = source.description
+        self.mDescription = source.mDescription
         self.status = source.status
         self.time = source.time
     }

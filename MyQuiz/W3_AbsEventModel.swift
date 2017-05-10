@@ -17,6 +17,7 @@ public enum enumStatus
 
 public enum enumDayInWeek : String // raw type
 {
+    case NotADay = "Nil"
     case Sunday = "Sunday"
     case Monday = "Monday"
     case Tuesday = "TuesDay"
@@ -46,7 +47,7 @@ infix operator ===
 protocol AbsEventModel {
 
     var title: String        { get set }
-    var description: String  { get set }
+    var mDescription: String  { get set }
     var status: enumStatus   { get set }
     var time : enumDayInWeek { get set }
     

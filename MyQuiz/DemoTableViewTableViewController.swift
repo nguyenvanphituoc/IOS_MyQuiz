@@ -13,8 +13,9 @@ class DemoTableViewTableViewController: UITableViewController {
     lazy var productLines : [ProductLine] = { () -> [ProductLine] in
         return ProductLine.productLines()
     }()
+    // holding result after searched
     var filteredProduct = [Product]()
-    
+    // create new bar search controller
     let searchController = UISearchController(searchResultsController: nil)
     
     override func viewDidLoad() {
@@ -25,11 +26,12 @@ class DemoTableViewTableViewController: UITableViewController {
         
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         self.navigationItem.rightBarButtonItem = self.editButtonItem
-        searchController.searchResultsUpdater = self as? UISearchResultsUpdating
+        // search added in headerview
+        searchController.searchResultsUpdater = self as UISearchResultsUpdating
         searchController.dimsBackgroundDuringPresentation = false
         definesPresentationContext = true
         tableView.tableHeaderView = searchController.searchBar
-        
+        // add scope for search
         searchController.searchBar.scopeButtonTitles = ["All", "iDevices", "Mac", "Software", "iPod", "Services"]
         searchController.searchBar.delegate = self
     }
@@ -157,13 +159,14 @@ class DemoTableViewTableViewController: UITableViewController {
     }
     
     func filterContentForSearchText(searchText: String, scope: String = "All") {
+        
+        filteredProduct.removeAll()
         for productLine in productLines {
             let templateProduct = productLine.products.filter { product in
                 let categoryMatch = (scope == "All") || (productLine.name == scope)
                 return  categoryMatch && product.title.lowercased().contains(searchText.lowercased())
             }
-//            filteredProduct.append(contentsOf: templateProduct)
-            filteredProduct = templateProduct
+            filteredProduct.append(contentsOf: templateProduct)
         }
         tableView.reloadData()
     }
